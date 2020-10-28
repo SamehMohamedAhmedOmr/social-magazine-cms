@@ -1,0 +1,148 @@
+<kt-portlet-header [title]="'Edit Client'" [icon]="'flaticon-edit'"></kt-portlet-header>
+
+<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
+
+<!-- Form-->
+<div class="example-container" *ngIf="!isLoadingResults">
+	<kt-auth-notice></kt-auth-notice>
+	<div>
+		<form class="example-form p-3" [formGroup]="form" autocomplete="off">
+
+			<!-- Image -->
+			<div class="p-0">
+				<div class="d-flex justify-content-center">
+					<!-- Image -->
+					<label class="btn btn-outline-dark w-100">
+						Image <i class="flaticon2-image-file"></i>
+						<input type="file" (change)="onFileSelect($event)" hidden/>
+					</label>
+				</div>
+				<mat-error *ngIf="isControlHasError('image','required')">
+					<strong>{{ 'Image Field is required'}}</strong>
+				</mat-error>
+			</div>
+			<!-- Image -->
+			<div *ngIf="imgURL" class="uploaded-preview my-4">
+				<div>
+					<img src="{{ imgURL }}" alt="">
+				</div>
+			</div>
+
+			<mat-divider class="my-4"></mat-divider>
+
+			<!-- expiration_date  -->
+			<div class="row my-3">
+				<label class="col-4 pl-4 d-flex align-items-center">{{ 'Expiration Date'}}</label>
+				<div class="col-6">
+
+					<div class="w-100 row">
+						<mat-form-field class="col-10">
+							<label class="w-100">
+								<input [matDatepicker]="picker2"
+									   (click)="picker2.open()"
+									   formControlName="expiration_date"
+									   class="expiration_date"
+									   matInput
+									   placeholder="{{ 'Expiration Date' }}">
+							</label>
+							<mat-datepicker #picker2></mat-datepicker>
+						</mat-form-field>
+						<div class="col-2">
+							<button  mat-raised-button (click)="picker2.open()">Open</button>
+						</div>
+					</div>
+					<mat-error *ngIf="isControlHasError('expiration_date','required')" class="mb-2">
+						<strong>{{ 'Expiration Date is required'}}</strong>
+					</mat-error>
+				</div>
+			</div>
+			<!-- expiration_date  -->
+
+			<!--languages-->
+			<div class="col-12 p-2 mb-4" formArrayName="languages">
+				<label class="col-12 font-weight-bold mb-5"> languages: </label>
+				<div class="lang_section w-100"
+					 *ngFor="let lang of form.get('languages')['controls'] ; let i = index">
+					<div class="row" [formGroupName]="i">
+						<div class="col-md-6 p-2">
+
+							<!-- Title  -->
+							<div class="row mb-4">
+								<label class="col-4">{{ 'Title'}}</label>
+								<div class="col-6">
+									<label class="w-100">
+										<input formControlName="title" matInput type="text"
+											   placeholder="{{ 'Title' }}" autocomplete="off"/>
+									</label>
+									<mat-error *ngIf="isLanguageHasError(i ,'title','required')">
+										<strong>{{ 'Title Field is required'}}</strong>
+									</mat-error>
+								</div>
+							</div>
+							<!-- Title  -->
+
+							<!-- Language  -->
+							<div class="row">
+								<label class="col-4">{{ 'Language'}}</label>
+								<div class="col-6">
+									<label class="w-100">
+										<input formControlName="lang" matInput [readonly]="true" type="text"
+											   autocomplete="off"/>
+									</label>
+								</div>
+							</div>
+							<!-- Language  -->
+
+						</div>
+
+						<div class="col-md-6 p-2">
+
+							<!-- message  -->
+							<div class="row mb-4">
+								<label class="col-4">{{ 'Message'}}</label>
+								<div class="col-6">
+									<label class="w-100">
+										<input formControlName="message" matInput type="text"
+											   placeholder="{{ 'Message' }}" autocomplete="off"/>
+									</label>
+									<mat-error *ngIf="isLanguageHasError(i ,'message','required')">
+										<strong>{{ 'Message Field is required'}}</strong>
+									</mat-error>
+								</div>
+							</div>
+							<!-- message  -->
+
+							<!-- Description  -->
+							<div class="row mb-4">
+								<label class="col-4">{{ 'Description'}}</label>
+								<div class="col-6">
+									<label class="w-100">
+										<textarea formControlName="description" matInput
+												  placeholder="{{ 'Description' }}">
+										</textarea>
+									</label>
+									<mat-error *ngIf="isLanguageHasError(i ,'description','required')">
+										<strong>{{ 'Description Field is required'}}</strong>
+									</mat-error>
+								</div>
+							</div>
+							<!-- Description  -->
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!--languages-->
+
+
+			<div class="col-12 text-center px-3">
+				<button type="submit" class="btn btn-outline-primary mx-3" (click)="updateForm()">
+					Update Client
+				</button>
+			</div>
+
+		</form>
+	</div>
+</div>
+

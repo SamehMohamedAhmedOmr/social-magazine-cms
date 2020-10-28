@@ -1,0 +1,104 @@
+<kt-portlet-header [title]="'Add New Client'" [icon]="'flaticon-add'"></kt-portlet-header>
+
+<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
+
+<div class="p-4" *ngIf="run_job">
+	<mat-progress-bar mode="buffer"></mat-progress-bar>
+	<div class="d-flex justify-content-center mt-3">
+		<p class="progress-weight">
+			Installation Progress {{ installation_progress }} %
+		</p>
+	</div>
+</div>
+
+<!-- Form-->
+<div class="example-container" *ngIf="!run_job">
+	<kt-auth-notice></kt-auth-notice>
+	<div [hidden]="isLoadingResults">
+		<form class="example-form p-3" [formGroup]="form" autocomplete="off">
+
+			<!-- app_name  -->
+			<div class="row my-3">
+				<label class="col-4 pl-4">{{ 'App Name'}}</label>
+				<div class="col-6">
+					<label class="w-100">
+						<input formControlName="app_name" matInput placeholder="{{ 'App Name' }}">
+					</label>
+
+					<mat-error *ngIf="isControlHasError('app_name','required')" class="mb-2">
+						<strong>{{ 'App Name is required'}}</strong>
+					</mat-error>
+				</div>
+			</div>
+			<!-- app_name  -->
+
+			<!-- admin_email  -->
+			<div class="row my-3">
+				<label class="col-4 pl-4">{{ 'Admin Email'}}</label>
+				<div class="col-6">
+					<label class="w-100">
+						<input formControlName="admin_email" matInput placeholder="{{ 'Admin Email' }}">
+					</label>
+
+					<mat-error *ngIf="isControlHasError('admin_email','required')" class="mb-2">
+						<strong>{{ 'Admin Email is required'}}</strong>
+					</mat-error>
+				</div>
+			</div>
+			<!-- admin_email  -->
+
+			<!-- admin_password  -->
+			<div class="row my-3">
+				<label class="col-4 pl-4">{{ 'Admin Password'}}</label>
+				<div class="col-6">
+					<label class="w-100">
+						<input formControlName="admin_password" matInput placeholder="{{ 'Admin Password' }}" value="">
+					</label>
+
+					<mat-error *ngIf="isControlHasError('admin_password','required')" class="mb-2">
+						<strong>{{ 'Admin Password is required'}}</strong>
+					</mat-error>
+				</div>
+			</div>
+			<!-- admin_password  -->
+
+			<!-- expiration_date  -->
+			<div class="row my-3">
+				<label class="col-4 pl-4 d-flex align-items-center">{{ 'Expiration Date'}}</label>
+				<div class="col-6">
+
+					<div class="w-100 row">
+						<mat-form-field class="col-10">
+							<label class="w-100">
+								<input [matDatepicker]="picker2"
+									   (click)="picker2.open()"
+									   formControlName="expiration_date"
+									   class="expiration_date"
+									   matInput
+									   placeholder="{{ 'Expiration Date' }}">
+							</label>
+							<mat-datepicker #picker2></mat-datepicker>
+						</mat-form-field>
+						<div class="col-2">
+							<button  mat-raised-button (click)="picker2.open()">Open</button>
+						</div>
+					</div>
+					<mat-error *ngIf="isControlHasError('expiration_date','required')" class="mb-2">
+						<strong>{{ 'Expiration Date is required'}}</strong>
+					</mat-error>
+				</div>
+			</div>
+			<!-- expiration_date  -->
+
+
+			<div class="col-12 text-center px-3 mt-4">
+				<button type="submit" class="btn btn-outline-success mx-3" (click)="submitForm()">
+					Add New Client
+				</button>
+				<button class="btn btn-outline-info mx-3" (click)="clearForm()"> Clear Form</button>
+			</div>
+		</form>
+	</div>
+
+</div>
+

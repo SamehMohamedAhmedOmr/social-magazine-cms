@@ -1,0 +1,83 @@
+<kt-portlet-header [title]="'Client Details'" [icon]="'flaticon-eye'"></kt-portlet-header>
+
+<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
+
+<div class="example-container" *ngIf="!isLoadingResults">
+	<kt-auth-notice></kt-auth-notice>
+
+	<mat-vertical-stepper  #stepper>
+
+		<mat-step aria-label="Client Information">
+			<ng-template matStepLabel>Client Information</ng-template>
+			<div class="pb-4 px-4">
+				<table class="w-100">
+					<tr>
+						<th>Name</th>
+						<td>{{project.name}}</td>
+					</tr>
+					<tr>
+						<th>Slug</th>
+						<td>{{project.slug}}</td>
+					</tr>
+					<tr>
+						<th>Admin Email</th>
+						<td>{{project.admin_email}}</td>
+					</tr>
+					<tr>
+						<th>Expiration Date</th>
+						<td>{{project.expiration_date | customDate}}</td>
+					</tr>
+					<tr>
+						<th>Title</th>
+						<td>{{project.title}}</td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td>{{project.description}}</td>
+					</tr>
+					<tr>
+						<th>Message</th>
+						<td>{{project.message}}</td>
+					</tr>
+					<tr>
+						<th>Payment Message</th>
+						<td>{{project.payment_message}}</td>
+					</tr>
+					<tr>
+						<th>Status</th>
+						<td>
+							{{ (project.is_active) ? 'Active' : 'Not Active' }}
+						</td>
+					</tr>
+				</table>
+			</div>
+		</mat-step>
+
+		<mat-step aria-label="Client Configuration">
+			<ng-template matStepLabel>Client Configuration</ng-template>
+			<div class="pb-4 px-4">
+				<table class="w-100">
+					<tr>
+						<th>API URL</th>
+						<td>{{project.api_url}}</td>
+					</tr>
+					<tr>
+						<th>CMS Url</th>
+						<td>{{project.cms_url}}</td>
+					</tr>
+					<tr>
+						<th>Port</th>
+						<td>{{project.port}}</td>
+					</tr>
+					<tr>
+						<th>Sub Domain</th>
+						<td>{{project.sub_domain}}</td>
+					</tr>
+				</table>
+			</div>
+		</mat-step>
+
+	</mat-vertical-stepper>
+
+
+</div>

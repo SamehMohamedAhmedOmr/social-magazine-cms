@@ -1,0 +1,144 @@
+<kt-portlet-header [title]="'Components.CLIENTS.name' | translate"
+				   [icon]="'flaticon-users-1'"></kt-portlet-header>
+
+<kt-filter [ButtonAddName]="'Components.CLIENTS.Add_Button' | translate"
+		   [ButtonAddUrl]="'add'"
+		   [HasAdd]="true"
+		   [isLoadingResults]="isLoadingResults"
+		   [currentComponent] = "this"
+		   [HasItemPerPage]="true"
+		   [HasActive]="true"
+		   [HasSearchFilter]="true"
+		   [HasExport]="false"
+		   [headerParams]="headerParams"
+></kt-filter>
+
+<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
+
+<!--DataTable-->
+<div class="example-container" [hidden]="isLoadingResults">
+	<kt-auth-notice></kt-auth-notice>
+	<div class="example-table-container mb-4">
+
+		<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 w-100" matSort>
+			<!-- ID Column -->
+			<ng-container matColumnDef="id">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>
+					{{ 'Components.id' | translate }}
+				</th>
+				<td mat-cell *matCellDef="let element"> {{element.id}} </td>
+				<td mat-footer-cell *matFooterCellDef> {{ 'Components.id' | translate }}</td>
+			</ng-container>
+
+			<!-- Name Column -->
+			<ng-container matColumnDef="name">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Components.CLIENTS.columns.Title' | translate }}</th>
+				<td mat-cell
+					*matCellDef="let element"> {{ element.name }} </td>
+				<td mat-footer-cell *matFooterCellDef> {{ 'Components.CLIENTS.columns.Title' | translate }}</td>
+			</ng-container>
+
+			<!-- Image Column -->
+			<ng-container matColumnDef="admin_email">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Components.CLIENTS.columns.admin_email' | translate }}</th>
+				<td mat-cell
+					*matCellDef="let element"> {{ element.admin_email }} </td>
+				<td mat-footer-cell *matFooterCellDef> {{ 'Components.CLIENTS.columns.admin_email' | translate }}</td>
+			</ng-container>
+
+
+			<!-- expiration_date Column -->
+			<ng-container matColumnDef="expiration_date">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Components.CLIENTS.columns.expiration_date' | translate }}</th>
+				<td mat-cell
+					*matCellDef="let element"> {{ element.expiration_date | customDate }} </td>
+				<td mat-footer-cell *matFooterCellDef> {{ 'Components.CLIENTS.columns.expiration_date' | translate }}</td>
+			</ng-container>
+
+			<!-- is_active Column -->
+			<ng-container matColumnDef="image">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Components.CLIENTS.columns.Image' | translate }}</th>
+				<td mat-cell *matCellDef="let element">
+					<img class="img-thumbnail" alt="image" *ngIf="element.image" src="{{element.image}}">
+					<span *ngIf="!element.image">
+						{{ 'Components.no_image' | translate }}
+					</span>
+				</td>
+				<td mat-footer-cell *matFooterCellDef> {{ 'Components.CLIENTS.columns.Image' | translate }}</td>
+			</ng-container>
+
+			<!-- Active Column -->
+			<ng-container matColumnDef="is_active">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>
+					{{ 'Components.active' | translate }}
+				</th>
+				<td mat-cell *matCellDef="let element">
+					<i class="flaticon2-check-mark" *ngIf="element.is_active == true"></i>
+					<i class="flaticon2-cancel-music" *ngIf="element.is_active == false"></i>
+				</td>
+				<td mat-footer-cell *matFooterCellDef>
+					{{ 'Components.active' | translate }}
+				</td>
+			</ng-container>
+
+			<!-- options Column -->
+			<ng-container matColumnDef="options">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'Components.options' | translate }}</th>
+				<td mat-cell *matCellDef="let element" width="20%">
+					<div class="dropdown">
+						<button class="btn btn-outline-hover-dark btn-outline-secondary btn-circle"
+								type="button" id="dropdownMenuButton" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+							<i class="flaticon-settings"></i>
+						</button>
+
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<!--Edit-->
+							<div class="col-12 my-2 dropdown-option">
+								<button class="btn btn-outline-dark w-100" [routerLink]="element.id">
+									{{ 'Components.Edit' | translate }} <i class="flaticon-edit"></i>
+								</button>
+							</div>
+
+							<!--show-->
+							<div class="col-12 my-2 dropdown-option">
+								<button class="btn btn-outline-primary w-100" [routerLink]="'details/'+element.id">
+									{{ 'Components.Details' | translate }} <i class="flaticon-eye"></i>
+								</button>
+							</div>
+
+							<!--change-status-->
+							<div class="col-12 my-2 dropdown-option">
+								<button class="btn btn-outline-success w-100" (click)="changeStatus(element)">
+
+									<span *ngIf="!element.is_active">{{ 'Components.active' | translate }} </span>
+									<span *ngIf="element.is_active">{{ 'Components.is_active' | translate }} </span>
+
+									<i class="flaticon-edit-1"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td mat-footer-cell *matFooterCellDef> {{ 'Components.options' | translate }}</td>
+			</ng-container>
+
+			<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+			<tr mat-row *matRowDef="let row; columns: displayedColumns;" class="record-{{row.id}}"
+				[ngStyle]="{'background-color':row.is_active == 1 ? '#fff' : '#ff00000a' }"></tr>
+		</table>
+		<div class="no-data" *ngIf="!resultsLength">
+			<h4>No records found</h4>
+		</div>
+		<!--Table-->
+		<mat-paginator
+			[length]="resultsLength"
+			[pageIndex]="pageIndex"
+			[pageSize]="headerParams.per_page"
+			(page)="pagination($event)"
+		></mat-paginator>
+	</div>
+
+</div>
+
+
