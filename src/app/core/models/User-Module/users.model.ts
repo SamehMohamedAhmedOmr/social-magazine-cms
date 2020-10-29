@@ -6,6 +6,8 @@ export class UsersModel extends ModelBase {
 	public family_name:string;
 	public email:string;
 	public alternative_email:string;
+	public password:string;
+	public is_active:boolean;
 
 	public gender:{
 		id: number,
@@ -60,6 +62,7 @@ export class UsersModel extends ModelBase {
 			'family_name' : this.family_name,
 			'email' : this.email,
 			'alternative_email' : this.alternative_email,
+			'is_active' : this.is_active,
 
 			'gender' : (this.gender.name) ? this.gender.name : null,
 			'country' : (this.country.name) ? this.country.name : null,
