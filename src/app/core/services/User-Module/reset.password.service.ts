@@ -2,21 +2,21 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {BaseService} from '../Base/base.service';
 import {environment} from '../../../../environments/environment';
-import {UsersModel} from '../../models/User-Module/users.model';
-import {UsersSerializer} from '../../Serializers/User-Module/users.serializer';
+import {ResetPasswordModel} from '../../models/User-Module/reset.password.model';
+import {ResetPasswordSerializer} from '../../Serializers/User-Module/reset.password.serializer';
 
 @Injectable({
 	providedIn: 'root'
 })
 
-export class UsersService extends BaseService<UsersModel> {
+export class ResetPasswordService extends BaseService<ResetPasswordModel> {
 
 	constructor(Http: HttpClient) {
 		super(
 			Http,
 			environment.url(),
-			'admins/users',
-			new UsersSerializer());
+			'admins/reset/password',
+			new ResetPasswordSerializer());
 	}
 
 }

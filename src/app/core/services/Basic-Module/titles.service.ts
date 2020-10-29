@@ -2,21 +2,21 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {BaseService} from '../Base/base.service';
 import {environment} from '../../../../environments/environment';
-import {UsersModel} from '../../models/User-Module/users.model';
-import {UsersSerializer} from '../../Serializers/User-Module/users.serializer';
+import {TitleModel} from '../../models/Basic-Module/title.model';
+import {TitleSerializer} from '../../Serializers/Basic-Module/title.serializer';
 
 @Injectable({
 	providedIn: 'root'
 })
 
-export class UsersService extends BaseService<UsersModel> {
+export class TitlesService extends BaseService<TitleModel> {
 
 	constructor(Http: HttpClient) {
 		super(
 			Http,
 			environment.url(),
-			'admins/users',
-			new UsersSerializer());
+			'titles',
+			new TitleSerializer());
 	}
 
 }
