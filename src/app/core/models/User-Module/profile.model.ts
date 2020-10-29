@@ -1,39 +1,17 @@
 import {ModelBase} from '../Base/base.model';
 
-export class UsersModel extends ModelBase {
+export class ProfileModel extends ModelBase {
 
 	public first_name:string;
 	public family_name:string;
 	public email:string;
 	public alternative_email:string;
 
-	public gender:{
-		id: number,
-		name: string,
-		key: string
-	};
-
-	public title:{
-		id: number,
-		name: string,
-		key: string
-	};
-	public educational_level:{
-		id: number,
-		name: string,
-		key: string
-	};
-	public educational_degree:{
-		id: number,
-		name: string,
-		image: string,
-		country_code: string
-	};
-	public country:{
-		id: number,
-		name: string,
-		key: string
-	};
+	public gender_id:number;
+	public title_id:number;
+	public educational_level_id:number;
+	public educational_degree_id:number;
+	public country_id:number;
 
 	public educational_field:string;
 	public university:string;
@@ -47,8 +25,6 @@ export class UsersModel extends ModelBase {
 		key: string
 	}[];
 
-	public account_type_id:number;
-
 	constructor(id: number) {
 		super(id);
 	}
@@ -61,11 +37,11 @@ export class UsersModel extends ModelBase {
 			'email' : this.email,
 			'alternative_email' : this.alternative_email,
 
-			'gender' : (this.gender.name) ? this.gender.name : null,
-			'country' : (this.country.name) ? this.country.name : null,
-			'title' : (this.title.name) ? this.title.name : null,
-			'educational_level' : (this.educational_level.name) ? this.educational_level.name : null,
-			'educational_degree' : (this.educational_degree.name) ? this.educational_degree.name : null,
+			'gender_id' : this.gender_id,
+			'country_id' : this.country_id,
+			'title_id' : this.title_id,
+			'educational_level_id' : this.educational_level_id,
+			'educational_degree_id' : this.educational_degree_id,
 
 			'educational_field' : this.educational_field,
 			'university' : this.university,
@@ -74,7 +50,8 @@ export class UsersModel extends ModelBase {
 			'fax_number' : this.fax_number,
 			'address' : this.address,
 			'types' : this.types,
-			'account_type_id' : this.account_type_id,
 		};
 	}
+
+
 }
