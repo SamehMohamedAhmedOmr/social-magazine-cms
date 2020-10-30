@@ -11,10 +11,23 @@ import { FormsComponent } from './views/pages/Templates/forms/forms.component';
 import { DataTablesComponent } from './views/pages/Templates/data-tables/data-tables.component';
 import { AnalyticsComponent } from './views/pages/Templates/analytics/analytics.component';
 import {PermissionsGuard} from './core/guards/permissions.guard';
+import {RoutesName} from './core/Global/routes.name';
 
 
 const routes: Routes = [
-	{ path: '', canActivate: [GuestGuard], loadChildren: () => import('./views/pages/auth/auth.module').then(m => m.AuthModule) },
+	{
+		path: '',
+		canActivate: [GuestGuard],
+		loadChildren: () => import('./views/pages/auth/auth.module')
+			.then(m => m.AuthModule)
+	},
+	// اعادة-تعيين-كلمة-المرور
+	{
+		path: RoutesName.forgetPassword(),
+		canActivate: [GuestGuard],
+		loadChildren: () => import('./views/pages/users-module/forget-password/forget-password.module')
+			.then(m => m.ForgetPasswordModule)
+	},
 	{
 		path: 'cms',
 		component: BaseComponent,
@@ -52,6 +65,116 @@ const routes: Routes = [
 				loadChildren: () => import('./views/pages/clients/clients.module')
 					.then(m => m.ClientsModule)
 			},
+
+			// Section - Module
+			// ًمن-نحن
+			{
+				path: RoutesName.whoIsUs(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/who-is-us/who-is-us.module')
+					.then(m => m.WhoIsUsModule)
+			},
+
+			// الهيئة-الاستشارية
+			{
+				path: RoutesName.advisoryBody(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/advisory-body/advisory-body.module')
+					.then(m => m.AdvisoryBodyModule)
+			},
+
+			// شروط-النشر
+			{
+				path: RoutesName.publicationRules(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/publication-rule/publication-rule.module')
+					.then(m => m.PublicationRuleModule)
+			},
+
+			// التصنيف
+			{
+				path: RoutesName.magazineCategory(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/magazine-category/magazine-category.module')
+					.then(m => m.MagazineCategoryModule)
+			},
+
+			// الاخبار
+			{
+				path: RoutesName.magazineNews(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/magazine-news/magazine-news.module')
+					.then(m => m.MagazineNewsModule)
+			},
+
+			// قالوا-عنا
+			{
+				path: RoutesName.testimonial(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/testimonial/testimonial.module')
+					.then(m => m.TestimonialModule)
+			},
+
+			// اهداف-المجلة
+			{
+				path: RoutesName.magazineGoals(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/magazine-goals/magazine-goals.module')
+					.then(m => m.MagazineGoalsModule)
+			},
+
+			// معلومات-عن-المجلة
+			{
+				path: RoutesName.magazineInformation(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/magazine-information/magazine-information.module')
+					.then(m => m.MagazineInformationModule)
+			},
+
+
+			// user-module
+			// الملف-الشخصي
+			{
+				path: RoutesName.profile(),
+				loadChildren: () => import('./views/pages/users-module/profile/profile.module')
+					.then(m => m.ProfileModule)
+			},
+
+			// المستخدمين
+			{
+				path: RoutesName.users(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/users-module/users/users.module')
+					.then(m => m.UsersModule)
+			},
+
 
 		]
 	},
