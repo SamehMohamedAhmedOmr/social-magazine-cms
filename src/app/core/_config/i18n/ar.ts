@@ -144,9 +144,6 @@ export const locale = {
 
 			CLIENTS: {
 				name: 'العملاء',
-				Add_Button: 'اضافة عميل جديد',
-				Delete_Button: 'حذف عميل',
-				Delete_Body: 'هل أنت متأكد من أن العميل الذي يحمل الرقم التعريفي [{{value}}] سيتم حذفه نهائيًا !!!',
 				filter: 'البحث في اسم العميل',
 				columns: {
 					Title: 'العنوان',
@@ -155,6 +152,114 @@ export const locale = {
 					expiration_date: 'تاريخ الإنتهاء',
 				}
 			},
+
+			WHO_IS_US: {
+				name: 'من نحن',
+				columns: {
+				}
+			},
+
+			PUBLICATION_RULE: {
+				name: 'شروط النشر',
+				columns: {
+				}
+			},
+
+			ADVISORY_BODY: {
+				name: 'الهيئة الاستشارية',
+				columns: {
+					job: 'الوظيفة'
+				}
+			},
+
+			MAGAZINE_CATEGORY: {
+				name: 'التصنيف',
+				columns: {
+				}
+			},
+
+			MAGAZINE_NEWS: {
+				name: 'الاخبار',
+				columns: {
+				}
+			},
+
+			TESTIMONIAL: {
+				name: 'قالوا عننا',
+				columns: {
+				}
+			},
+
+			MAGAZINE_GOAL: {
+				name: 'اهداف المجلة',
+				columns: {
+				}
+			},
+
+			MAGAZINE_INFORMATION: {
+				name: 'معلومات عنا',
+				columns: {
+					vision: 'الرؤية',
+					mission: 'الرسالة',
+					fax_number: 'رقم الفاكس',
+					postal_code: 'الكود البريدي',
+				}
+			},
+
+			USERS: {
+				users: 'المستخدمين',
+				profile: 'الملف الشخصي',
+				change_password : 'تغيير كلمة المرور',
+				columns: {
+					first_name: 'الاسم الاول',
+					family_name: 'اسم العائلة',
+					alternative_email: 'البريد الالكتروني البديل',
+					country: 'البلد',
+					gender: 'النوع',
+					title: 'اللقب',
+					educational_level: 'المستوى التعليمي',
+					educational_degree: 'الدرجة العلمية',
+					educational_field: 'مجال الدراسة',
+					university: 'الجامعة',
+					faculty: 'الكلية',
+					fax_number: 'رقم الفاكس',
+					account_type: 'نوع الحساب'
+				}
+			}
+
+		},
+
+		BASIC:{
+			APP_NAME : 'مجلة مستقبل العلوم الاجتماعية',
+			ADMIN_PANEL : "لوحة التحكم",
+		},
+
+		COMMON:{
+			id: 'الرقم التعريفي',
+			is_active : 'غير مفعل',
+			email : 'مفعل',
+			password : 'كلمة المرور',
+			remember_me : 'تذكرني',
+			password_confirmation: 'تأكيد كلمة المرور',
+			forget_password: 'هل نسيت كلمة المرور ؟',
+			reset_password: 'اعادة تعيين كلمة المرور',
+			token : 'الرمز',
+			content: 'المحتوى',
+			name : 'الاسم',
+			title : 'العنوان',
+			images: 'الصور',
+			image : 'الصورة',
+			phone: 'الهاتف',
+			address: 'العنوان',
+			visitors: 'الزوار',
+			visit_number : 'عدد الزيارات',
+			Add_Button: 'اضافة {{name}}',
+			Edit_Button: 'تعديل {{name}}',
+			Delete_Button: 'حذف {{name}}',
+			Delete_Body: 'هل انت متأكد من حذف {{name}} ؟ ، سيتم حذفه نهائيًا!',
+		},
+
+		MSG:{
 
 		},
 

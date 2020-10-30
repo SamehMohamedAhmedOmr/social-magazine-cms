@@ -153,6 +153,116 @@ export const locale = {
 				}
 			},
 
+			WHO_IS_US: {
+				name: 'Who Is us',
+				columns: {
+				}
+			},
+
+			PUBLICATION_RULE: {
+				name: 'Publication Rule',
+				columns: {
+				}
+			},
+
+			ADVISORY_BODY: {
+				name: 'Advisory Body',
+				columns: {
+					job: 'Job'
+				}
+			},
+
+			MAGAZINE_CATEGORY: {
+				name: 'Category',
+				columns: {
+				}
+			},
+
+			MAGAZINE_NEWS: {
+				name: 'News',
+				columns: {
+				}
+			},
+
+			TESTIMONIAL: {
+				name: 'Testimonial',
+				columns: {
+				}
+			},
+
+			MAGAZINE_GOAL: {
+				name: 'Magazine Goal',
+				columns: {
+				}
+			},
+
+			MAGAZINE_INFORMATION: {
+				name: 'Magazine Information',
+				columns: {
+					vision: 'vision',
+					mission: 'mission',
+					fax_number: 'fax_number',
+					postal_code: 'postal_code',
+				}
+			},
+
+			USERS: {
+				users: 'Users',
+				profile: 'Profile',
+				change_password : 'تغيير كلمة المرور',
+				columns: {
+					first_name: 'First Name',
+					family_name: 'Family Name',
+					alternative_email: 'Alternative Email',
+					country: 'Country',
+					gender: 'Gender',
+					title: 'Title',
+					educational_level: 'Educational level',
+					educational_degree: 'Educational degree',
+					educational_field: 'Educational field',
+					university: 'University',
+					faculty: 'Faculty',
+					fax_number: 'Fax number',
+					account_type: 'Account type'
+				}
+			}
+
 		},
+
+		BASIC:{
+			APP_NAME : 'JFSC',
+			ADMIN_PANEL : "Admin Panel",
+		},
+
+		COMMON:{
+			id: 'ID',
+			is_active : 'is active',
+			active : 'active',
+			email : 'Email',
+			password : 'Password',
+			remember_me : 'Remember me',
+			password_confirmation: 'Password Confirmation',
+			forget_password: 'Forget Password ?',
+			reset_password: 'Reset Your Password',
+			token : 'Token',
+			content: 'Content',
+			name : 'Name',
+			title : 'Title',
+			images: 'Images',
+			image : 'Image',
+			phone: 'Phone',
+			address: 'Address',
+			visitors: 'Visitors',
+			visit_number : 'Visits',
+			Add_Button: 'Add {{name}}',
+			Edit_Button: 'Edit {{name}}',
+			Delete_Button: 'Delete {{name}}',
+			Delete_Body: 'Are your sure to delete {{name}} ?, This will delete permanently!',
+		},
+
+		MSG:{
+
+		},
+
 	}
 };

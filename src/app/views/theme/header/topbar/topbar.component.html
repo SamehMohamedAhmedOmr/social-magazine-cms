@@ -1,21 +1,21 @@
 <!-- begin:: Header Topbar -->
-<div class="kt-header__topbar">
+<div class="kt-header__topbar w-100">
 
-	<div class="d-flex text-right row">
-		<div class="col-12 row">
+	<div class="d-flex text-right w-100 justify-content-end">
+		<div class="row" style="width: 150px;">
 
-			<!-- Arabic Language Switch -->
-			<div class="col-7 d-block align-items-center">
-				<mat-form-field class="lang-switch" style="max-width:100% !important;">
-					<mat-select [(ngModel)]="lang" (selectionChange)="switchLanguage()" >
-						<mat-option [value]="'ar'">  {{ 'MENU.LANG.AR' | translate }} </mat-option>
-						<mat-option [value]="'en'"> {{ 'MENU.LANG.EN' | translate }} </mat-option>
-					</mat-select>
-				</mat-form-field>
-			</div>
+<!--			&lt;!&ndash; Arabic Language Switch &ndash;&gt;-->
+<!--			<div class="col-7 d-block align-items-center">-->
+<!--				<mat-form-field class="lang-switch" style="max-width:100% !important;">-->
+<!--					<mat-select [(ngModel)]="lang" (selectionChange)="switchLanguage()" >-->
+<!--						<mat-option [value]="'ar'">  {{ 'MENU.LANG.AR' | translate }} </mat-option>-->
+<!--						<mat-option [value]="'en'"> {{ 'MENU.LANG.EN' | translate }} </mat-option>-->
+<!--					</mat-select>-->
+<!--				</mat-form-field>-->
+<!--			</div>-->
 
 			<!--profile Button-->
-			<div class="col-5 d-flex align-items-center">
+			<div class="col-12 d-flex align-items-center">
 
 				<div class="dropdown w-100">
 					<a class="btn btn-secondary dropdown-toggle p-0 px-0 w-100 profile-menu"
@@ -40,6 +40,11 @@
 					</a>
 
 					<div class="dropdown-menu w-100 mt-3" aria-labelledby="dropdownMenuLink">
+						<button class="dropdown-item"
+								(click)="Logout()">
+							{{ 'Components.USERS.profile' | translate }}
+						</button>
+
 						<button class="dropdown-item"
 								(click)="Logout()">
 							{{ 'MENU.LOGOUT' | translate }}
