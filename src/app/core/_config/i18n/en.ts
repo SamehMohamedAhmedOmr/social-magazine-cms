@@ -80,6 +80,32 @@ export const locale = {
 			}
 		},
 
+		MENUS:{
+			USERS:{
+				TITLE : 'Users',
+				menu:{
+					MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Manager',
+					JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Director',
+					REFEREES: 'Referees',
+					RESEARCHER: 'Researcher',
+				}
+			},
+			MAGAZINE_SETTINGS:{
+				TITLE : 'Magazine Settings',
+				menu:{
+					WHO_IS_US: 'Who is us',
+					PUBLICATION_RULE: 'Publication Rule',
+					ADVISORY_BODY: 'Advisory Body',
+					MAGAZINE_CATEGORY: 'Magazine Category',
+					MAGAZINE_NEWS: 'Magazine News',
+					TESTIMONIAL: 'Testimonial',
+					MAGAZINE_GOAL: 'Magazine Goals',
+					MAGAZINE_INFORMATION: 'Magazine Information',
+				}
+			},
+		},
+
+
 		AUTH: {
 			GENERAL: {
 				OR: 'Or',

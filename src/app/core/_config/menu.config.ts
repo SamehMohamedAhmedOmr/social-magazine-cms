@@ -1,19 +1,20 @@
-import {SalesMenuConfig} from './aside-menues/sales.menu.config';
 import {ShortAccessMenuConfig} from './header-menues/short.access.menu.config';
 import {AddNewMenuConfig} from './header-menues/add.new.menu.config';
+import {RoutesName} from '../Global/routes.name';
+import {MagazineSettingMenuConfig} from './aside-menues/magazine-setting.menu.config';
 
 
 export class MenuConfig {
 
 	// Aside Menu
-	salesMenuConfig:SalesMenuConfig;
+	magazineSettingMenuConfig: MagazineSettingMenuConfig;
 
 	// Header Menu
 	shortAccessMenuConfig: ShortAccessMenuConfig;
 	addNewMenuConfig:AddNewMenuConfig;
 
 	constructor() {
-		this.salesMenuConfig = new SalesMenuConfig();
+		this.magazineSettingMenuConfig = new MagazineSettingMenuConfig();
 
 		this.shortAccessMenuConfig = new ShortAccessMenuConfig();
 		this.addNewMenuConfig = new AddNewMenuConfig();
@@ -27,7 +28,7 @@ export class MenuConfig {
 					title: 'Dashboards',
 					root: true,
 					alignment: 'left',
-					page: '/cms/dashboard',
+					page: RoutesName.default(),
 					translate: 'MENU.DASHBOARD',
 				},
 
@@ -40,7 +41,7 @@ export class MenuConfig {
 					title: 'Dashboard',
 					root: true,
 					icon: 'flaticon2-architecture-and-city',
-					page: '/cms/dashboard',
+					page: RoutesName.default(),
 					translate: 'MENU.DASHBOARD',
 					bullet: 'dot',
 				},
@@ -56,10 +57,9 @@ export class MenuConfig {
 
 	public attachAsideMenuItems(){
 
-		// Sales Config
-		let sales_items = this.salesMenuConfig.configs;
-		this.attachAsideMenu(sales_items);
-
+		// Magazine Setting Config
+		let magazine_setting_config = this.magazineSettingMenuConfig.configs;
+		this.attachAsideMenu(magazine_setting_config);
 	}
 
 	public attachHeaderMenuItems() {

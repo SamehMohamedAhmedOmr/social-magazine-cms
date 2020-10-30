@@ -29,13 +29,13 @@ const routes: Routes = [
 			.then(m => m.ForgetPasswordModule)
 	},
 	{
-		path: 'cms',
+		path: RoutesName.cms(),
 		component: BaseComponent,
 		canActivate: [AuthGuard],
 		runGuardsAndResolvers: 'always',
 		children: [
 			{
-				path: 'dashboard',
+				path: '',
 				loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
 			},
 

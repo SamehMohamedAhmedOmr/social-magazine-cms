@@ -27,7 +27,7 @@ const routes: Routes = [
 			// 	path: 'details/:id',
 			// 	component: ShowComponent
 			// },
-			{path: '**', redirectTo: '', pathMatch: ''},
+			// {path: '**', redirectTo: '', pathMatch: ''},
 		]
 	}
 ];

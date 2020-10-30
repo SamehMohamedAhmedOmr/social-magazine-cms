@@ -1,47 +1,39 @@
 
-export class RoutesName {
-
-	public static default(){
-		return '/';
-	}
-
-	public static cms(){
-		return 'cms';
-	}
+export class SectionIconsName {
 
 	// Section Module
 	public static whoIsUs() {
-		return 'من-نحن';
+		return 'flaticon-info';
 	}
 
 	public static advisoryBody() {
-		return 'الهيئة-الاستشارية';
+		return 'flaticon2-avatar';
 	}
 
 	public static publicationRules() {
-		return 'شروط-النشر';
+		return 'flaticon-edit';
 	}
 
 	public static magazineCategory() {
-		return 'التصنيف';
+		return 'flaticon-squares';
 	}
 
 	public static magazineNews() {
-		return 'الاخبار';
+		return 'flaticon2-rectangular';
 	}
 
 	public static testimonial() {
-		return 'قالوا-عنا';
+		return 'fas fa-microphone-alt';
 	}
 
 
 	public static magazineGoals() {
-		return 'اهداف-المجلة';
+		return 'fas fa-list-ul';
 	}
 
 
 	public static magazineInformation() {
-		return 'معلومات-عن-المجلة';
+		return 'flaticon-information';
 	}
 
 
@@ -52,11 +44,11 @@ export class RoutesName {
 
 
 	public static profile() {
-		return 'الملف-الشخصي';
+		return 'fas fa-user-tie';
 	}
 
 	public static users() {
-		return 'المستخدمين';
+		return 'fas fa-users';
 	}
 
 }

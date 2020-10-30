@@ -41,7 +41,7 @@
 
 					<div class="dropdown-menu w-100 mt-3" aria-labelledby="dropdownMenuLink">
 						<button class="dropdown-item"
-								(click)="Logout()">
+								[routerLink]="[profileLink()]">
 							{{ 'Components.USERS.profile' | translate }}
 						</button>
 

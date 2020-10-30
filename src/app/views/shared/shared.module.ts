@@ -26,6 +26,7 @@ import { NextPreviousListComponent } from './next-previous-list/next-previous-li
 import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
 import { PopupGalleryComponent } from './popup-gallery/popup-gallery.component';
 import {GlobalNoticeComponent} from './global-notice/global-notice.component';
+import { SoonComponent } from './soon/soon.component';
 
 
 
@@ -34,7 +35,7 @@ import {GlobalNoticeComponent} from './global-notice/global-notice.component';
 		AuthNoticeComponent,GlobalNoticeComponent,
     	FilterComponent, ApiLoaderComponent,
 		DeleteModalComponent, GalleryComponent,
-		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent
+		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent, SoonComponent
 	],
     imports: [
         CommonModule,
@@ -64,15 +65,16 @@ import {GlobalNoticeComponent} from './global-notice/global-notice.component';
 		SuccessModalComponent,
 		PopupGalleryComponent,
     ],
-	exports: [
-		FilterComponent,
-		ApiLoaderComponent,
-		DeleteModalComponent,
-		SuccessModalComponent,
-		GalleryComponent,
-		AuthNoticeComponent,
-		GlobalNoticeComponent,
-		NextPreviousListComponent
-	]
+    exports: [
+        FilterComponent,
+        ApiLoaderComponent,
+        DeleteModalComponent,
+        SuccessModalComponent,
+        GalleryComponent,
+        AuthNoticeComponent,
+        GlobalNoticeComponent,
+        NextPreviousListComponent,
+        SoonComponent
+    ]
 })
 export class SharedModule { }

@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {LangService} from '../../../../core/services/lang.service';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../core/services/auth.service';
+import {RoutesName} from '../../../../core/Global/routes.name';
 
 @Component({
 	selector: 'kt-topbar',
@@ -73,5 +74,9 @@ export class TopbarComponent implements OnInit {
 
 		return abbreviation;
 
+	}
+
+	profileLink(){
+		return RoutesName.profile();
 	}
 }

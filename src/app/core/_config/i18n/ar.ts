@@ -80,6 +80,31 @@ export const locale = {
 			}
 		},
 
+		MENUS:{
+			USERS:{
+				TITLE : '',
+				menu:{
+					MAGAZINE_EDITOR_MANAGER: 'رئيس التحرير',
+					JOURNAL_EDITOR_DIRECTOR: 'مدير التحرير',
+					REFEREES: 'المحكمين',
+					RESEARCHER: 'الباحثين',
+				}
+			},
+			MAGAZINE_SETTINGS:{
+				TITLE : 'اعدادات المجلة',
+				menu:{
+					WHO_IS_US: 'من نحن',
+					PUBLICATION_RULE: 'شروط النشر',
+					ADVISORY_BODY: 'الهيئة الاستشارية',
+					MAGAZINE_CATEGORY: 'التصنيف',
+					MAGAZINE_NEWS: 'الاخبار',
+					TESTIMONIAL: 'قالوا عنا',
+					MAGAZINE_GOAL: 'اهداف المجلة',
+					MAGAZINE_INFORMATION: 'معلومات المجلة',
+				}
+			},
+		},
+
 
 		AUTH: {
 			GENERAL: {
@@ -197,7 +222,7 @@ export const locale = {
 			},
 
 			MAGAZINE_INFORMATION: {
-				name: 'معلومات عنا',
+				name: 'معلومات عن المجلة',
 				columns: {
 					vision: 'الرؤية',
 					mission: 'الرسالة',

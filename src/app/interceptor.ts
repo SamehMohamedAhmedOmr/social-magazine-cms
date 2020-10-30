@@ -8,6 +8,7 @@ import {
 import {Observable, throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {catchError} from 'rxjs/operators';
+import {RoutesName} from './core/Global/routes.name';
 
 @Injectable()
 export class Interceptor implements HttpInterceptor {
@@ -80,8 +81,8 @@ export class Interceptor implements HttpInterceptor {
 		}
 
 		if (error.status == 403) { // unauthorized
-			if (!(url == '/' || url == '/cms/dashboard')) {
-				this.router.navigate(['cms/dashboard']).then();
+			if (!(url == '/' || url == '/' + RoutesName.cms())) {
+				this.router.navigate([RoutesName.cms()]).then();
 			}
 		}
 	}

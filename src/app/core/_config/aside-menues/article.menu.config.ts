@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {SystemPermissionsHelperService} from '../../services/Helpers/system.permissions.helper.service';
+import {RoutesName} from '../../Global/routes.name';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class SalesMenuConfig {
+export class MagazineSettingMenuConfig {
 
 	systemPermissionsHelperService: SystemPermissionsHelperService;
 
@@ -13,22 +14,22 @@ export class SalesMenuConfig {
 		this.systemPermissionsHelperService = new SystemPermissionsHelperService();
 	}
 
-	private header = {section: 'Sales', translate: 'Sales.TITLE'};
+	private header = {section: 'MAGAZINE_SETTINGS', translate: 'MENUS.MAGAZINE_SETTINGS.TITLE'};
 
 	private section = {
-		title: 'Sales',
+		title: 'MAGAZINE_SETTINGS',
 		root: true,
-		translate: 'Sales.TITLE',
-		icon: 'flaticon2-shopping-cart-1',
+		translate: 'MENUS.MAGAZINE_SETTINGS.TITLE',
+		icon: 'flaticon2-settings',
 		submenu: [
 		]
 	};
 
-	public clients_url = {
-		icon: 'flaticon-users-1',
-		title: 'Projects',
-		translate: 'Sales.menu.projects',
-		page: '/cms/clients'
+	public who_is_us_url = {
+		icon: 'flaticon2-settings',
+		title: 'Who is us',
+		translate: 'MENUS.MAGAZINE_SETTINGS.menu.WHO_IS_US',
+		page: RoutesName.cms() + '/' + RoutesName.whoIsUs()
 	};
 
 
@@ -41,7 +42,7 @@ export class SalesMenuConfig {
 
 	public checkRoutePermissions(){
 
-		this.attachMenuItem([],this.clients_url);
+		this.attachMenuItem([],this.who_is_us_url);
 
 		this.attachMenu();
 
