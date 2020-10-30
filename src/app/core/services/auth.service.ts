@@ -11,7 +11,7 @@ export class AuthService {
     constructor(private http: HttpClient) {}
     // Authentication/Authorization
     login(authData : {email , password}): Observable<Admin> {
-		return this.http.post<Admin>(environment.url() + 'users/account/login' , authData);
+		return this.http.post<Admin>(environment.url() + 'admins/login' , authData);
     }
     // getter and setter token
 	getToken(): string {

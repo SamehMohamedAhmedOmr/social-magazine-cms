@@ -5,6 +5,7 @@ export const locale = {
 		TRANSLATOR: {
 			SELECT: 'Select your language',
 		},
+
 		MENU: {
 			NEW: 'new',
 			ACTIONS: 'Actions',
@@ -36,6 +37,20 @@ export const locale = {
 				ADD: 'Add Banner'
 			}
 
+		},
+
+		VALIDATION: {
+			INVALID: '{{name}} is not valid',
+			REQUIRED: '{{name}} is required',
+			REQUIRED_F: '{{name}} is required',
+			MIN_LENGTH: '{{name}} minimum length is {{min}}',
+			AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
+			NOT_FOUND: 'The requested {{name}} is not found',
+			INVALID_LOGIN: 'The login detail is incorrect',
+			REQUIRED_FIELD: 'Required field',
+			MIN_LENGTH_FIELD: 'Minimum field length:',
+			MAX_LENGTH_FIELD: 'Maximum field length:',
+			INVALID_FIELD: 'Field is not valid',
 		},
 
 		STATISTICS: {
@@ -98,18 +113,6 @@ export const locale = {
 				CONFIRM_PASSWORD: 'Confirm Password',
 				USERNAME: 'Username'
 			},
-			VALIDATION: {
-				INVALID: '{{name}} is not valid',
-				REQUIRED: '{{name}} is required',
-				MIN_LENGTH: '{{name}} minimum length is {{min}}',
-				AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
-				NOT_FOUND: 'The requested {{name}} is not found',
-				INVALID_LOGIN: 'The login detail is incorrect',
-				REQUIRED_FIELD: 'Required field',
-				MIN_LENGTH_FIELD: 'Minimum field length:',
-				MAX_LENGTH_FIELD: 'Maximum field length:',
-				INVALID_FIELD: 'Field is not valid',
-			}
 		},
 
 		Components: {

@@ -127,9 +127,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 		this.loading = true;
 		this.auth.login(authData).subscribe(
 			(resp: Admin) => {
-				localStorage.setItem('token', resp.meta.access_token);
-				localStorage.setItem('name', resp.data.name);
-				localStorage.setItem('token_expired', String(resp.meta.expires_in));
+				localStorage.setItem('token', resp.body.token);
+				localStorage.setItem('name', resp.body.first_name);
+				localStorage.setItem('token_expired', String(resp.body.expire_at));
 
 				this.cdr.markForCheck();
 				location.reload();

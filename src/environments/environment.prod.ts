@@ -1,7 +1,7 @@
 export const environment = {
 	production: false,
 	apisVersion: "v1" ,
-	baseUrl: window["env"]["productionUrl"] || 'http://163.172.8.204:8012',
+	baseUrl: window["env"]["productionUrl"] || 'https://magazine-backend.sameh.store',
 	debug: window["env"]["debug"] || false,
 
 	url : function url (version: string = null) {

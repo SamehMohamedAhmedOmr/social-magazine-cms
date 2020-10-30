@@ -10,20 +10,20 @@ export class LangService {
   constructor(@Inject(DOCUMENT) private document: Document,private trlanslation: TranslationService) {
   }
 	loadStyle() {
-		let lang = localStorage.getItem('cms_pam_lang');
+		let lang = localStorage.getItem('cms_lang');
 		let styleName = '';
-		if(lang == 'ar') {
-			this.document.dir ='rtl';
-			this.document.documentElement.lang ='ar';
-			this.document.documentElement.style.direction ='rtl';
-			styleName = "assets/css_languages/style.angular.rtl.css";
-			this.trlanslation.setLanguage('ar');
-		} else {
+		if(lang == 'en') {
 			this.document.dir ='ltr';
 			this.document.documentElement.lang ='en';
 			this.document.documentElement.style.direction ='ltr';
 			styleName = "assets/css_languages/style.angular.css";
 			this.trlanslation.setLanguage('en');
+		} else {
+			this.document.dir ='rtl';
+			this.document.documentElement.lang ='ar';
+			this.document.documentElement.style.direction ='rtl';
+			styleName = "assets/css_languages/style.angular.rtl.css";
+			this.trlanslation.setLanguage('ar');
 		}
 		const head = this.document.getElementsByTagName('head')[0];
 

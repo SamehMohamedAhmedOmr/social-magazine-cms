@@ -1,13 +1,11 @@
-<!--begin::Head-->
-<div class="kt-login__head">
-	<span class="kt-login__signup-label">Content Management System (CMS)</span>&nbsp;&nbsp;
-</div>
-<!--end::Head-->
+<!--&lt;!&ndash;begin::Head&ndash;&gt;-->
+<!--<div class="kt-login__head">-->
+<!--	<span class="kt-login__signup-label">Content Management System (CMS)</span>&nbsp;&nbsp;-->
+<!--</div>-->
+<!--&lt;!&ndash;end::Head&ndash;&gt;-->
 
 <!--begin::Body-->
 <div class="kt-login__body">
-
-
 
 	<!--begin::Signin-->
 	<div class="kt-login__form">
@@ -23,21 +21,21 @@
 
 		<!--begin::Form-->
 		<form class="kt-form" [formGroup]="loginForm" autocomplete="off">
-			<div class="form-group">
+			<div class="form-group mb-5">
 				<mat-form-field>
 					<mat-label>{{ 'AUTH.INPUT.EMAIL' | translate }}</mat-label>
 					<input matInput type="email" placeholder="{{ 'AUTH.INPUT.EMAIL' | translate }}" formControlName="email" autocomplete="off"/>
 					<mat-error *ngIf="isControlHasError('email','required')">
-						<strong>{{ 'AUTH.VALIDATION.REQUIRED_FIELD' | translate }}</strong>
+						<strong>{{ 'VALIDATION.REQUIRED' | translate:{name: 'AUTH.INPUT.EMAIL' | translate } }}</strong>
 					</mat-error>
 					<mat-error *ngIf="isControlHasError('email','email')">
-						<strong>{{ 'AUTH.VALIDATION.INVALID_FIELD' | translate }}</strong>
+						<strong>{{ 'VALIDATION.INVALID' | translate:{name: 'AUTH.INPUT.EMAIL' | translate } }}</strong>
 					</mat-error>
 					<mat-error *ngIf="isControlHasError('email','minlength')">
-						<strong>{{ 'AUTH.VALIDATION.MIN_LENGTH_FIELD' | translate }} 3</strong>
+						<strong>{{ 'VALIDATION.MIN_LENGTH_FIELD' | translate }} 3</strong>
 					</mat-error>
 					<mat-error *ngIf="isControlHasError('email','maxlength')">
-						<strong>{{ 'AUTH.VALIDATION.MAX_LENGTH_FIELD' | translate }} 320</strong>
+						<strong>{{ 'VALIDATION.MAX_LENGTH_FIELD' | translate }} 255</strong>
 					</mat-error>
 				</mat-form-field>
 			</div>
@@ -47,13 +45,13 @@
 					<mat-label>{{ 'AUTH.INPUT.PASSWORD' | translate }}</mat-label>
 					<input matInput type="password" placeholder="{{ 'AUTH.INPUT.PASSWORD' | translate }}" formControlName="password" autocomplete="off"/>
 					<mat-error *ngIf="isControlHasError('password','required')">
-						<strong>{{ 'AUTH.VALIDATION.REQUIRED_FIELD' | translate }}</strong>
+						<strong>{{ 'VALIDATION.REQUIRED_F' | translate:{name: 'AUTH.INPUT.PASSWORD' | translate } }}</strong>
 					</mat-error>
 					<mat-error *ngIf="isControlHasError('password','minlength')">
-						<strong>{{ 'AUTH.VALIDATION.MIN_LENGTH_FIELD' | translate }} 3</strong>
+						<strong>{{ 'VALIDATION.MIN_LENGTH_FIELD' | translate }} 3</strong>
 					</mat-error>
 					<mat-error *ngIf="isControlHasError('password','maxlength')">
-						<strong>{{ 'AUTH.VALIDATION.MAX_LENGTH_FIELD' | translate }} 100</strong>
+						<strong>{{ 'VALIDATION.MAX_LENGTH_FIELD' | translate }} 100</strong>
 					</mat-error>
 				</mat-form-field>
 			</div>

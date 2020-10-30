@@ -36,7 +36,7 @@ export class Interceptor implements HttpInterceptor {
 			else{
 				apiReq = req.clone({
 					setHeaders: {
-						'Accept-Language': localStorage.getItem('cms_pam_lang'),
+						'Accept-Language': localStorage.getItem('cms_lang'),
 						'Authorization': 'Bearer ' + token,
 					},
 				});
@@ -55,7 +55,7 @@ export class Interceptor implements HttpInterceptor {
 
 		const apiReq = req.clone({
 			setHeaders: {
-				'Accept-Language': localStorage.getItem('cms_pam_lang'),
+				'Accept-Language': localStorage.getItem('cms_lang'),
 				'Authorization': 'Bearer ' + token,
 			},
 		});

@@ -39,6 +39,20 @@ export const locale = {
 			}
 		},
 
+		VALIDATION: {
+			INVALID: '{{name}} غير صحيح',
+			REQUIRED: '{{name}} مطلوب',
+			REQUIRED_F: '{{name}} مطلوبة',
+			MIN_LENGTH: '{{name}} الحد الادني لعدد الحروف هو {{min}}',
+			AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
+			NOT_FOUND: '{{name}} غير موجود لدينا',
+			INVALID_LOGIN: 'The login detail is incorrect',
+			REQUIRED_FIELD: 'مطلوب',
+			MIN_LENGTH_FIELD: 'اقل عدد من الحروف هو:',
+			MAX_LENGTH_FIELD: 'أكبر عدد من الحروف هو:',
+			INVALID_FIELD: '{{name}} غير صحيح',
+		},
+
 		STATISTICS: {
 			ORDERS: {
 				orders_count: 'اجمالي الطلبات',
@@ -94,24 +108,12 @@ export const locale = {
 				SUCCESS: 'Your account has been successfuly registered.'
 			},
 			INPUT: {
-				EMAIL: 'Email',
+				EMAIL: 'البريد الالكتروني',
 				FULLNAME: 'Fullname',
-				PASSWORD: 'Password',
+				PASSWORD: 'كلمة المرور',
 				CONFIRM_PASSWORD: 'Confirm Password',
 				USERNAME: 'Nutzername'
 			},
-			VALIDATION: {
-				INVALID: '{{name}} is not valid',
-				REQUIRED: '{{name}} is required',
-				MIN_LENGTH: '{{name}} minimum length is {{min}}',
-				AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
-				NOT_FOUND: 'The requested {{name}} is not found',
-				INVALID_LOGIN: 'The login detail is incorrect',
-				REQUIRED_FIELD: 'Required field',
-				MIN_LENGTH_FIELD: 'Minimum field length:',
-				MAX_LENGTH_FIELD: 'Maximum field length:',
-				INVALID_FIELD: 'Field is not valid',
-			}
 		},
 
 

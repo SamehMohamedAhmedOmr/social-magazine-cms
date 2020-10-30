@@ -25,7 +25,7 @@ export class TranslationService {
 	constructor(private translate: TranslateService) {
 		// add new langIds to the list
 		this.loadTranslations(enLang ,arLang);
-		this.translate.setDefaultLang('en')
+		this.translate.setDefaultLang('ar')
 	}
 
 	/**
@@ -58,7 +58,7 @@ export class TranslationService {
 		if (lang) {
 			this.translate.use(this.translate.getDefaultLang());
 			this.translate.use(lang);
-			localStorage.setItem('cms_pam_lang', lang);
+			localStorage.setItem('cms_lang', lang);
 		}
 	}
 
@@ -66,6 +66,6 @@ export class TranslationService {
 	 * Returns selected language
 	 */
 	getSelectedLanguage(): any {
-		return localStorage.getItem('cms_pam_lang') || this.translate.getDefaultLang();
+		return localStorage.getItem('cms_lang') || this.translate.getDefaultLang();
 	}
 }
