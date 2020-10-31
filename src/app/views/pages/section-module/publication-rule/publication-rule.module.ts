@@ -9,6 +9,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {EditComponent} from './edit/edit.component';
 import {IndexComponent} from './index/index.component';
 import {AddComponent} from './add/add.component';
+import { FormComponent } from './form/form.component';
 
 const routes: Routes = [
 	{
@@ -37,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [PublicationRuleComponent, IndexComponent, AddComponent, EditComponent],
+	declarations: [PublicationRuleComponent, IndexComponent, AddComponent, EditComponent, FormComponent],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),

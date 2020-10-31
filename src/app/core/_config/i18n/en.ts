@@ -181,43 +181,50 @@ export const locale = {
 
 			WHO_IS_US: {
 				name: 'Who Is us',
+				single: 'Content',
 				columns: {
 				}
 			},
 
 			PUBLICATION_RULE: {
-				name: 'Publication Rule',
+				name: 'Publication Rules',
+				single: 'Publication Rule',
 				columns: {
 				}
 			},
 
 			ADVISORY_BODY: {
-				name: 'Advisory Body',
+				name: 'Advisory Bodies',
+				single: 'Member',
 				columns: {
 					job: 'Job'
 				}
 			},
 
 			MAGAZINE_CATEGORY: {
-				name: 'Category',
+				name: 'Categories',
+				single: 'Category',
 				columns: {
 				}
 			},
 
 			MAGAZINE_NEWS: {
 				name: 'News',
+				single: 'News',
 				columns: {
 				}
 			},
 
 			TESTIMONIAL: {
-				name: 'Testimonial',
+				name: 'Testimonials',
+				single: 'Testimonial',
 				columns: {
 				}
 			},
 
 			MAGAZINE_GOAL: {
 				name: 'Magazine Goal',
+				single: 'Goal',
 				columns: {
 				}
 			},
@@ -234,6 +241,7 @@ export const locale = {
 
 			USERS: {
 				users: 'Users',
+				single: 'User',
 				profile: 'Profile',
 				change_password : 'تغيير كلمة المرور',
 				columns: {
@@ -262,8 +270,13 @@ export const locale = {
 
 		COMMON:{
 			id: 'ID',
-			is_active : 'is active',
+			in_active : 'Inactive',
 			active : 'active',
+			activation: 'Activation',
+
+			activation_button: 'Active',
+			deactivation_button: 'Inactive',
+
 			email : 'Email',
 			password : 'Password',
 			remember_me : 'Remember me',
@@ -280,11 +293,18 @@ export const locale = {
 			address: 'Address',
 			visitors: 'Visitors',
 			visit_number : 'Visits',
+			clear_form : 'Clear Form',
 			no_record_found : 'No Record Found',
 			Add_Button: 'Add {{name}}',
 			Edit_Button: 'Edit {{name}}',
-			Delete_Button: 'Delete {{name}}',
-			Delete_Body: 'Are your sure to delete {{name}} ?, This will delete permanently!',
+			Delete_Title: 'Delete {{name}}',
+			Delete_Button: 'Delete',
+			Delete_Body: 'Are your sure to delete {{name}} that have id {{id}} ?, This will delete permanently!',
+			Added_successfully : '{{name}} added Successfully',
+			Edited_successfully : '{{name}} edited Successfully',
+			Deleted_successfully : '{{name}} deleted Successfully',
+			Item_not_found: '{{name}} is Not Found or not exists anymore',
+			status_changed: 'Status changed successfully',
 		},
 
 		MSG:{

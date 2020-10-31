@@ -7,6 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {PublicationRulesService} from '../../../../../core/services/Section-Module/publication.rules.service';
 import {PublicationRulesModel} from '../../../../../core/models/section-module/publication.rules.model';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
 	selector: 'kt-add',
@@ -14,6 +15,9 @@ import {PublicationRulesModel} from '../../../../../core/models/section-module/p
 	styleUrls: ['./add.component.scss']
 })
 export class AddComponent implements OnInit, OnDestroy, InitializeComponentInterface {
+
+	page_name:string;
+	content_name: string;
 
 	navigationSubscription;
 	isValidationError:boolean = false;
@@ -25,6 +29,7 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
+				public translateService : TranslateService,
 				private authNoticeService: AuthNoticeService,
 				private helper: HelperService) {
 		this.navigationSubscription = this.helper.routingSubscribe(this);
@@ -32,6 +37,8 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 	ngOnInit() {
 		this.initialiseComponent();
+		this.page_name = this.translateService.instant('Components.PUBLICATION_RULE.name');
+		this.content_name = this.translateService.instant('Components.PUBLICATION_RULE.single');
 	}
 
 	initialiseComponent() {
@@ -51,19 +58,6 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 		});
 	}
 
-	/**
-	 * Checking control validation
-	 *
-	 * @param controlName: string => Equals to formControlName
-	 * @param validationType: string => Equals to validators name
-	 */
-	isControlHasError(controlName: string, validationType: string): boolean {
-		return this.formErrorService.isControlHasError(this.form,controlName,validationType);
-	}
-
-	isLanguageHasError(index , controlName: string, validationType: string): boolean {
-		return this.formErrorService.isLanguageHasError(this.form, index, controlName, validationType)
-	}
 
 	clearForm() {
 		this.form.reset();
@@ -78,14 +72,16 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 		const model = new PublicationRulesModel(null);
 		model.is_active = controls['is_active'].value;
-		model.content = controls['key'].value;
+		model.content = controls['content'].value;
 
 		// call service to store Banner
 		this.isLoadingResults = true;
 		this.service.create(model).subscribe(resp => {
 			this.form.reset();
 			this.isLoadingResults = false;
-			this.authNoticeService.setNotice('Payment Method Added Successfully', 'success');
+			this.authNoticeService.setNotice(this.translateService.instant('COMMON.Added_successfully',
+				{name : this.content_name}),
+				'success');
 			this.router.navigate(['../'], { relativeTo: this.route }).then();
 		} , handler => {
 			this.authNoticeService.setNotice(this.helper.showingErrors(handler.error), 'danger');

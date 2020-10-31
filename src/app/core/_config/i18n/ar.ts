@@ -180,18 +180,21 @@ export const locale = {
 
 			WHO_IS_US: {
 				name: 'من نحن',
+				single: 'المحتوى',
 				columns: {
 				}
 			},
 
 			PUBLICATION_RULE: {
 				name: 'شروط النشر',
+				single: 'شرط النشر',
 				columns: {
 				}
 			},
 
 			ADVISORY_BODY: {
 				name: 'الهيئة الاستشارية',
+				single: 'العضو في الهيئة الاستشارية',
 				columns: {
 					job: 'الوظيفة'
 				}
@@ -199,24 +202,28 @@ export const locale = {
 
 			MAGAZINE_CATEGORY: {
 				name: 'التصنيف',
+				single: 'التصنيف',
 				columns: {
 				}
 			},
 
 			MAGAZINE_NEWS: {
 				name: 'الاخبار',
+				single: 'الخبر',
 				columns: {
 				}
 			},
 
 			TESTIMONIAL: {
 				name: 'قالوا عننا',
+				single: 'التوصية',
 				columns: {
 				}
 			},
 
 			MAGAZINE_GOAL: {
 				name: 'اهداف المجلة',
+				single: 'الهدف',
 				columns: {
 				}
 			},
@@ -233,6 +240,7 @@ export const locale = {
 
 			USERS: {
 				users: 'المستخدمين',
+				single: 'المستخدم',
 				profile: 'الملف الشخصي',
 				change_password : 'تغيير كلمة المرور',
 				columns: {
@@ -261,8 +269,14 @@ export const locale = {
 
 		COMMON:{
 			id: 'الرقم التعريفي',
-			is_active : 'غير مفعل',
-			email : 'مفعل',
+			in_active : 'غير مفعل',
+			active : 'مفعل',
+			activation: 'التفعيل',
+
+			activation_button: 'تفعيل',
+			deactivation_button: 'تعطيل',
+
+			email : 'البريد الالكتروني',
 			password : 'كلمة المرور',
 			remember_me : 'تذكرني',
 			password_confirmation: 'تأكيد كلمة المرور',
@@ -279,10 +293,17 @@ export const locale = {
 			visitors: 'الزوار',
 			no_record_found : 'لا يوجد بيانات',
 			visit_number : 'عدد الزيارات',
+			clear_form : 'اعادة تعيين الصفحة',
 			Add_Button: 'اضافة {{name}}',
 			Edit_Button: 'تعديل {{name}}',
-			Delete_Button: 'حذف {{name}}',
-			Delete_Body: 'هل انت متأكد من حذف {{name}} ؟ ، سيتم حذفه نهائيًا!',
+			Delete_Title: 'حذف {{name}}',
+			Delete_Button: 'حذف',
+			Delete_Body: 'هل انت متأكد من حذف {{name}} ذو الرقم التعريفي {{id}} ؟ ، سيتم حذفه نهائيًا!',
+			Added_successfully : '{{name}} تم اضافته بنجاح',
+			Edited_successfully : '{{name}} تم تعديله بنجاح',
+			Deleted_successfully :  '{{name}} تم حذفه بنجاح',
+			Item_not_found: '{{name}} غير موجود او تم حذفه',
+			status_changed: 'تم تغيير التفعيل بنجاح',
 		},
 
 		MSG:{

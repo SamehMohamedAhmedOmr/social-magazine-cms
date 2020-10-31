@@ -15,6 +15,7 @@ import {DeleteModalComponent} from '../../../../shared/delete-modal/delete-modal
 import {MatDialog} from '@angular/material';
 import {PublicationRulesService} from '../../../../../core/services/Section-Module/publication.rules.service';
 import {SectionIconsName} from '../../../../../core/Global/section.icons.name';
+import {TranslateService} from '@ngx-translate/core';
 
 declare var $ :any;
 
@@ -25,6 +26,9 @@ declare var $ :any;
 })
 export class IndexComponent implements OnInit , OnDestroy, IndexInterface , InitializeComponentInterface{
 
+	page_name:string;
+	content_name:string;
+
 	navigationSubscription;
 
 	@ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
@@ -32,9 +36,8 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 
 	//Data table variables
 	dataSource;
-	displayedColumns: string[] = ['id' , 'content' , 'options'];
+	displayedColumns: string[] = ['id' , 'content' , 'is_active' , 'options'];
 	isLoadingResults:boolean = true;
-	deletedItem = null;
 	// pagination variables
 	resultsLength = 0;
 	pageIndex = 0;
@@ -51,7 +54,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	constructor(private cdr: ChangeDetectorRef ,
 				public service: PublicationRulesService,
 				private authNoticeService: AuthNoticeService,
-				public dialog: MatDialog,
+				public translateService : TranslateService,
 				private router: Router,
 				private helper: HelperService) {
 		this.navigationSubscription = this.helper.routingSubscribe(this);
@@ -60,6 +63,8 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	// onInit get Data from api
 	ngOnInit() {
 		this.initialiseComponent();
+		this.page_name = this.translateService.instant('Components.PUBLICATION_RULE.name');
+		this.content_name = this.translateService.instant('Components.PUBLICATION_RULE.single');
 	}
 
 	initialiseComponent() {
@@ -85,47 +90,11 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 			});
 	}
 
-
-
-	changeStatus(item){
-
-		let is_active = !item.is_active;
-
-		this.service.changeStatus(item.id, is_active).subscribe(res => {
-			this.authNoticeService.setNotice('Status changed successfully', 'success');
-			this.get(this.headerParams);
-		}, handler => {
-			this.authNoticeService.setNotice(this.helper.showingErrors(handler.error), 'danger');
-		});
-	}
-
 	// pagination data tables
 	public pagination (event?:PageEvent) {
 		this.pageIndex = event.pageIndex;
 		this.headerParams.next_page_index = this.pageIndex;
 		this.get(this.headerParams);
-	}
-
-	deleteModal(item) {
-		const dialogRef = this.dialog.open(DeleteModalComponent, {
-			width: '40rem',
-			data: {
-				title: 'Payment Method will be deleted ?',
-				body: `Are you sure , Payment Method with id ${item.id} , will be permanently deleted !!!`,
-				name: 'Payment Method',
-			}
-		});
-		dialogRef.afterClosed().subscribe(result => {
-			if (result) {
-				this.service.delete(item.id).subscribe(res => {
-					this.authNoticeService.setNotice('Payment Method deleted successfully', 'success');
-					this.get(this.headerParams);
-				}, handler => {
-					this.authNoticeService.setNotice(this.helper.showingErrors(handler.error), 'danger');
-					this.deletedItem = null;
-				});
-			}
-		});
 	}
 
 	/**

@@ -1,4 +1,5 @@
-<kt-portlet-header [title]="'Components.Payment_Methods.Add_Button' | translate" [icon]="'flaticon-add'"></kt-portlet-header>
+<kt-portlet-header [title]="'COMMON.Add_Button' | translate : {name : content_name}"
+				   [icon]="'flaticon-add'"></kt-portlet-header>
 <!--Loader-->
 <div class="example-container m-auto" *ngIf="isLoadingResults">
 	<div class="example-loading-shade mt-5 mb-5">
@@ -9,97 +10,18 @@
 <!-- Form-->
 <div class="example-container">
 	<kt-auth-notice></kt-auth-notice>
-	<div [hidden]="isLoadingResults">
-		<form class="example-form p-3" [formGroup]="form" autocomplete="off">
+	<div [hidden]="isLoadingResults" class="my-4">
 
+		<kt-form [form]="form"></kt-form>
 
-			<!-- key  -->
-			<div class="row my-3">
-				<label class="col-4 pl-4">{{ 'Payment Method key'}}</label>
-				<div class="col-6">
-					<label class="w-100">
-						<input formControlName="key" matInput placeholder="{{ 'Payment Method key' }}" value="">
-					</label>
-
-					<mat-error *ngIf="isControlHasError('key','required')" class="mb-2">
-						<strong>{{ 'Key is required'}}</strong>
-					</mat-error>
-				</div>
-			</div>
-			<!-- key  -->
-
-
-			<!--Active -->
-			<div class="row my-3">
-				<label class="col-4 pl-4">Active: </label>
-				<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
-								 formControlName="is_active">
-					<div class="row ">
-						<div class="col-md-6 p-0">
-							<mat-radio-button class=" example-radio-button" checked value="1">&nbsp;Active
-							</mat-radio-button>
-						</div>
-						<div class="col-md-6 p-0">
-							<mat-radio-button class="example-radio-button" value="0">&nbsp;Inactive</mat-radio-button>
-						</div>
-					</div>
-				</mat-radio-group>
-			</div>
-			<!--Active-->
-
-
-			<mat-divider class="mt-5 mb-3"></mat-divider>
-
-			<!--Payment Method languages-->
-			<div class="col-12 p-2" formArrayName="languages">
-				<label class="col-12 font-weight-bold mb-5"> Payment Method languages: </label>
-				<div class="lang_section w-100"
-					 *ngFor="let lang of form.get('languages')['controls'] ; let i = index">
-					<div class="row" [formGroupName]="i">
-						<div class="col-md-6 p-2">
-							<!-- Title  -->
-							<div class="row">
-								<label class="col-4">{{ 'Payment Method Name'}}</label>
-								<div class="col-6">
-									<label class="w-100">
-										<input formControlName="name" matInput type="text"
-											   placeholder="{{ 'Payment Method Name' }}" autocomplete="off"/>
-									</label>
-									<mat-error *ngIf="isLanguageHasError(i ,'name','required')">
-										<strong>{{ 'Name Field is required'}}</strong>
-									</mat-error>
-								</div>
-							</div>
-							<!-- Title  -->
-
-
-
-						</div>
-						<div class="col-md-6 p-2">
-							<!-- Language  -->
-							<div class="row">
-								<label class="col-4">{{ 'Payment Method Language'}}</label>
-								<div class="col-6">
-									<label class="w-100">
-										<input formControlName="lang" matInput [readonly]="true" type="text"
-											   autocomplete="off"/>
-									</label>
-								</div>
-							</div>
-							<!-- Language  -->
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--Payment Method languages-->
-
-			<div class="col-12 text-center px-3">
-				<button type="submit" class="btn btn-outline-success mx-3" (click)="submitForm()">
-					Add New Payment Method
-				</button>
-				<button class="btn btn-outline-info mx-3" (click)="clearForm()"> Clear Form</button>
-			</div>
-		</form>
+		<div class="col-12 text-center px-3">
+			<button type="submit" class="btn btn-outline-success mx-3" (click)="submitForm()">
+				{{ 'COMMON.Add_Button' | translate : {name : content_name} }}
+			</button>
+			<button class="btn btn-outline-info mx-3" (click)="clearForm()">
+				{{ 'COMMON.clear_form' | translate }}
+			</button>
+		</div>
 	</div>
 
 </div>

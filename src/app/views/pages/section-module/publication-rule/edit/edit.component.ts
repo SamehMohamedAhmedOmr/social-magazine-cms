@@ -9,6 +9,7 @@ import {FormErrorService} from '../../../../../core/services/FormError.service';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {PublicationRulesService} from '../../../../../core/services/Section-Module/publication.rules.service';
 import {PublicationRulesModel} from '../../../../../core/models/section-module/publication.rules.model';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
 	selector: 'kt-edit',
@@ -16,6 +17,9 @@ import {PublicationRulesModel} from '../../../../../core/models/section-module/p
 	styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit, OnDestroy, InitializeComponentInterface {
+
+	page_name:string;
+	content_name: string;
 
 	navigationSubscription;
 	isValidationError:boolean = false;
@@ -34,12 +38,15 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 				private router:Router,
 				private cdr: ChangeDetectorRef,
 				private authNoticeService: AuthNoticeService,
+				public translateService : TranslateService,
 				private helper: HelperService) {
 		this.navigationSubscription = this.helper.routingSubscribe(this);
 	}
 
 	ngOnInit() {
 		this.initialiseComponent();
+		this.page_name = this.translateService.instant('Components.PUBLICATION_RULE.name');
+		this.content_name = this.translateService.instant('Components.PUBLICATION_RULE.single');
 	}
 
 	initialiseComponent() {
@@ -57,10 +64,12 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			this.service.get(this.id).subscribe(
 				(data) => {
 					this.is_result = true;
-					this.initializeForm(data);
 					this.model = data;
+					this.initializeForm();
 				} , error => {
-					this.authNoticeService.setNotice('Payment Method Not Found or not exists anymore', 'danger');
+					this.authNoticeService.setNotice(this.translateService.instant('COMMON.Item_not_found',
+						{name : this.content_name}),
+						'danger');
 					this.isLoadingResults = false;
 					this.isValidationError = true;
 					this.cdr.markForCheck();
@@ -73,10 +82,10 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 	 * Initiate the form
 	 *
 	 */
-	initializeForm(data) {
+	initializeForm() {
 		this.form = this.formBuilder.group({
-			content:		[data.key +'', Validators.required] ,
-			is_active: 	[data.is_active + '', Validators.required],
+			content:		[this.model.content +'', Validators.required] ,
+			is_active: 	[this.model.is_active + '', Validators.required],
 		});
 
 		this.isLoadingResults = false;
@@ -84,10 +93,6 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	}
 
-
-	isLanguageHasError(index , controlName: string, validationType: string): boolean {
-		return this.formErrorService.isLanguageHasError(this.form, index, controlName, validationType)
-	}
 
 	/**
 	 * Checking control validation
@@ -113,7 +118,9 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 		this.isLoadingResults = true;
 		this.service.update(this.model.id,this.model).subscribe(resp => {
 			this.isLoadingResults = false;
-			this.authNoticeService.setNotice('Payment Method Updated Successfully', 'success');
+			this.authNoticeService.setNotice(this.translateService.instant('COMMON.Edited_successfully',
+				{name : this.content_name}),
+				'success');
 			this.cdr.markForCheck();
 			this.router.navigate(['../'], { relativeTo: this.route }).then();
 		} , handler => {

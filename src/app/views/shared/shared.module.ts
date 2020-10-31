@@ -28,6 +28,8 @@ import { PopupGalleryComponent } from './popup-gallery/popup-gallery.component';
 import {GlobalNoticeComponent} from './global-notice/global-notice.component';
 import { SoonComponent } from './soon/soon.component';
 import { NoRecordFoundComponent } from './no-record-found/no-record-found.component';
+import { FormErrorComponent } from './form-error/form-error.component';
+import { ListOptionsComponent } from './list-options/list-options.component';
 
 
 
@@ -36,7 +38,8 @@ import { NoRecordFoundComponent } from './no-record-found/no-record-found.compon
 		AuthNoticeComponent,GlobalNoticeComponent,
     	FilterComponent, ApiLoaderComponent,
 		DeleteModalComponent, GalleryComponent,
-		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent, SoonComponent, NoRecordFoundComponent
+		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent,
+		SoonComponent, NoRecordFoundComponent, FormErrorComponent, ListOptionsComponent
 	],
     imports: [
         CommonModule,
@@ -76,7 +79,9 @@ import { NoRecordFoundComponent } from './no-record-found/no-record-found.compon
 		GlobalNoticeComponent,
 		NextPreviousListComponent,
 		SoonComponent,
-		NoRecordFoundComponent
+		NoRecordFoundComponent,
+		FormErrorComponent,
+		ListOptionsComponent
 	]
 })
 export class SharedModule { }

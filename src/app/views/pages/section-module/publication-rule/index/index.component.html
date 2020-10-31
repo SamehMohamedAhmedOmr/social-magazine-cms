@@ -1,7 +1,7 @@
-<kt-portlet-header [title]="'Components.PUBLICATION_RULE.name' | translate"
+<kt-portlet-header [title]="page_name"
 				   [icon]="pageIcon()"></kt-portlet-header>
 
-<kt-filter [ButtonAddName]="'COMMON.Add_Button' | translate: {name : 'Components.PUBLICATION_RULE.name' | translate}"
+<kt-filter [ButtonAddName]="'COMMON.Add_Button' | translate: {name : content_name}"
 		   [ButtonAddUrl]="'اضافة'"
 		   [HasAdd]="true"
 		   [isLoadingResults]="isLoadingResults"
@@ -15,7 +15,6 @@
 ></kt-filter>
 
 <kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
-
 
 
 <!--DataTable-->
@@ -43,7 +42,7 @@
 			<!-- Active Column -->
 			<ng-container matColumnDef="is_active">
 				<th mat-header-cell *matHeaderCellDef mat-sort-header>
-					{{ 'Components.active' | translate }}
+					{{ 'COMMON.activation' | translate }}
 				</th>
 				<td mat-cell *matCellDef="let element">
 					<i class="flaticon2-check-mark" *ngIf="element.is_active == 1"></i>
@@ -57,42 +56,14 @@
 					{{ 'Components.options' | translate }}
 				</th>
 				<td mat-cell *matCellDef="let element" width="20%">
-					<div class="dropdown">
-						<button class="btn btn-outline-hover-dark btn-outline-secondary btn-circle" type="button"
-								id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false">
-							<i class="flaticon-settings"></i>
-						</button>
+					<kt-list-options
+						[currentService]="service"
+						[element]="element"
+						[currentComponent]="this"
+						[headerParams]="headerParams"
+						[content_name]="content_name"
+					></kt-list-options>
 
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<!--Edit-->
-							<div class="col-12 my-2 dropdown-option">
-								<button class="btn btn-outline-dark w-100" [routerLink]="element.id">
-									{{ 'Components.Edit' | translate }} <i class="flaticon-edit"></i>
-								</button>
-							</div>
-
-							<!--change-status-->
-							<div class="col-12 my-2 dropdown-option">
-								<button class="btn btn-outline-success w-100" (click)="changeStatus(element)">
-
-									<span *ngIf="!element.is_active">{{ 'Components.active' | translate }} </span>
-									<span *ngIf="element.is_active">{{ 'Components.is_active' | translate }} </span>
-
-									<i class="flaticon-edit-1"></i>
-								</button>
-							</div>
-
-
-							<!--Delete-->
-							<div class="col-12 my-2 dropdown-option" *ngIf="!element.is_active">
-								<button class="btn btn-outline-danger w-100" (click)="deleteModal(element)">
-									{{ 'Components.Delete' | translate }} <i class="flaticon-delete"></i>
-								</button>
-							</div>
-
-						</div>
-					</div>
 				</td>
 			</ng-container>
 
