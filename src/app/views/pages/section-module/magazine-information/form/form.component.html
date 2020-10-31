@@ -1,0 +1,155 @@
+<div class="form-div">
+	<form class="p-3" [formGroup]="form" autocomplete="off">
+
+		<mat-horizontal-stepper #stepper>
+			<mat-step>
+				<ng-template matStepLabel>
+					{{ 'stepper.basic_data' | translate }}
+				</ng-template>
+
+				<!-- title  -->
+				<div class="my-4">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'COMMON.title' | translate }}</mat-label>
+							<input matInput
+								   [readonly]="true"
+								   formControlName="title"
+								   placeholder="{{ 'COMMON.title' | translate }}" >
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- title  -->
+
+				<div class="row">
+					<div class="col-md-6 col-12">
+
+						<!-- phone  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'COMMON.phone' | translate }}</mat-label>
+									<input matInput
+										   formControlName="phone"
+										   placeholder="{{ 'COMMON.phone' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- phone  -->
+
+						<!-- fax_number  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.fax_number' | translate }}</mat-label>
+									<input matInput
+										   formControlName="fax_number"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.fax_number' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- fax_number  -->
+
+					</div>
+					<div class="col-md-6 col-12">
+
+						<!-- email  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'COMMON.email' | translate }}</mat-label>
+									<input matInput
+										   formControlName="email"
+										   placeholder="{{ 'COMMON.email' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- email  -->
+
+						<!-- postal_code  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.postal_code' | translate }}</mat-label>
+									<input matInput
+										   formControlName="postal_code"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.postal_code' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- postal_code  -->
+
+					</div>
+				</div>
+
+
+
+				<!-- address  -->
+				<div class="my-3">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'COMMON.address' | translate }}</mat-label>
+							<textarea matInput
+									  formControlName="address"
+									  placeholder="{{ 'COMMON.address' | translate }}"
+							></textarea>
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- address  -->
+
+				<div class="d-flex justify-content-end">
+					<button matStepperNext class="btn btn-primary">
+						{{ 'stepper.next' | translate }}
+					</button>
+				</div>
+			</mat-step>
+
+			<mat-step>
+				<ng-template matStepLabel>
+					{{ 'stepper.vision_mission' | translate }}
+				</ng-template>
+
+
+				<!-- vision  -->
+				<div class="my-3">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.vision' | translate }}</mat-label>
+							<textarea matInput
+									  formControlName="vision"
+									  placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.vision' | translate }}"
+							></textarea>
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- vision  -->
+
+				<!-- mission  -->
+				<div class="my-3">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.mission' | translate }}</mat-label>
+							<textarea matInput
+									  formControlName="mission"
+									  placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.mission' | translate }}"
+							></textarea>
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- mission  -->
+
+
+				<div class="d-flex justify-content-end">
+					<button matStepperPrevious class="btn btn-dark">
+						{{ 'stepper.back' | translate }}
+					</button>
+				</div>
+
+			</mat-step>
+
+		</mat-horizontal-stepper>
+
+	</form>
+</div>
+

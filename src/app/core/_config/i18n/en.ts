@@ -297,5 +297,12 @@ export const locale = {
 
 		},
 
+		stepper:{
+			basic_data : 'Basic Data',
+			vision_mission: 'Vision and Mission',
+			next: 'Next',
+			back:'Back',
+		},
+
 	}
 };

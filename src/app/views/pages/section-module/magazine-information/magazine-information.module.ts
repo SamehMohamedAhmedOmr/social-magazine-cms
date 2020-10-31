@@ -3,43 +3,33 @@ import {CommonModule} from '@angular/common';
 import {MagazineInformationComponent} from './magazine-information.component';
 import {RouterModule, Routes} from '@angular/router';
 import {PagesModule} from '../../pages.module';
-import {MatDividerModule} from '@angular/material';
+import {MatDividerModule, MatStepperModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
+import {EditComponent} from './edit/edit.component';
+import {FormComponent} from './form/form.component';
 
 const routes: Routes = [
 	{
 		path: '',
 		component: MagazineInformationComponent,
 		children: [
-			// {
-			// 	path: '',
-			// 	component: IndexComponent
-			// },
-			// {
-			// 	path: 'add',
-			// 	component: AddComponent
-			// },
-			// {
-			// 	path: ':id',
-			// 	component: EditComponent
-			// },
-			// {
-			// 	path: 'details/:id',
-			// 	component: ShowComponent
-			// },
-			// {path: '**', redirectTo: '', pathMatch: ''},
+			{
+				path: '',
+				component: EditComponent
+			},
 		]
 	}
 ];
 
 @NgModule({
-	declarations: [MagazineInformationComponent],
+	declarations: [MagazineInformationComponent, EditComponent , FormComponent],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
 		PagesModule,
 		MatDividerModule,
 		TranslateModule,
+		MatStepperModule,
 	]
 })
 export class MagazineInformationModule {

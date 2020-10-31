@@ -299,6 +299,13 @@ export const locale = {
 
 		},
 
+		stepper:{
+			basic_data : 'البيانات الاساسية',
+			vision_mission: 'الرؤية و الرسالة',
+			next: 'التالي',
+			back:'رجوع',
+		},
+
 	}
 };
 
