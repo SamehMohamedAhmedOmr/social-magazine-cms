@@ -5,6 +5,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {PagesModule} from '../../pages.module';
 import {MatDividerModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
+import {RoutesName} from '../../../../core/Global/routes.name';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
 			// 	component: IndexComponent
 			// },
 			// {
-			// 	path: 'add',
+			// path: RoutesName.add(),
 			// 	component: AddComponent
 			// },
 			// {

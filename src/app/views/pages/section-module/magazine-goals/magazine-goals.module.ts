@@ -5,6 +5,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {PagesModule} from '../../pages.module';
 import {MatDividerModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
+import {IndexComponent} from './index/index.component';
+import {EditComponent} from './edit/edit.component';
+import {AddComponent} from './add/add.component';
+import {FormComponent} from './form/form.component';
+import {RoutesName} from '../../../../core/Global/routes.name';
 
 
 const routes: Routes = [
@@ -12,29 +17,27 @@ const routes: Routes = [
 		path: '',
 		component: MagazineGoalsComponent,
 		children: [
-			// {
-			// 	path: '',
-			// 	component: IndexComponent
-			// },
-			// {
-			// 	path: 'add',
-			// 	component: AddComponent
-			// },
-			// {
-			// 	path: ':id',
-			// 	component: EditComponent
-			// },
-			// {
-			// 	path: 'details/:id',
-			// 	component: ShowComponent
-			// },
-			// {path: '**', redirectTo: '', pathMatch: ''},
+			{
+				path: '',
+				component: IndexComponent
+			},
+			{
+				path: RoutesName.add(),
+				component: AddComponent
+			},
+			{
+				path: ':id',
+				component: EditComponent
+			},
+			{path: '**', redirectTo: '', pathMatch: ''},
 		]
 	}
 ];
 
 @NgModule({
-	declarations: [MagazineGoalsComponent],
+	declarations: [
+		MagazineGoalsComponent, IndexComponent, EditComponent, AddComponent, FormComponent
+	],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
