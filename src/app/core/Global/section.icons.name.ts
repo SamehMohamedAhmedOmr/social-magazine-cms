@@ -51,4 +51,20 @@ export class SectionIconsName {
 		return 'fas fa-users';
 	}
 
+	public static MAGAZINE_EDITOR_MANAGER(){
+		return 'fas fa-user-shield';
+	}
+
+	public static JOURNAL_EDITOR_DIRECTOR(){
+		return 'fas fa-user-tag';
+	}a
+
+	public static REFEREES(){
+		return 'fas fa-users-cog';
+	}
+
+	public static RESEARCHER(){
+		return 'fas fa-user-friends';
+	}
+
 }

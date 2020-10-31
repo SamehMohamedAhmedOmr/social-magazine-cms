@@ -63,4 +63,20 @@ export class RoutesName {
 		return 'اضافة';
 	}
 
+	public static MAGAZINE_EDITOR_MANAGER(){
+		return 'رؤساء-التحرير';
+	}
+
+	public static JOURNAL_EDITOR_DIRECTOR(){
+		return 'مديرين-التحرير';
+	}
+
+	public static REFEREES(){
+		return 'المحكمين';
+	}
+
+	public static RESEARCHER(){
+		return 'الباحثين';
+	}
+
 }

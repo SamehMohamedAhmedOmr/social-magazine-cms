@@ -106,7 +106,7 @@
 	</span>
 
 	<!-- if menu item has submenu child then put arrow icon -->
-	<i *ngIf="item.submenu" class="kt-menu__ver-arrow la la-angle-right"></i>
+	<i *ngIf="item.submenu" class="kt-menu__ver-arrow la {{check_lang()}}"></i>
 </ng-template>
 
 <ng-template #menuItemSeparatorTemplate let-item="item" let-parentItem="parentItem">

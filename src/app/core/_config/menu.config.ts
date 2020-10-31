@@ -1,13 +1,16 @@
 import {ShortAccessMenuConfig} from './header-menues/short.access.menu.config';
 import {AddNewMenuConfig} from './header-menues/add.new.menu.config';
 import {RoutesName} from '../Global/routes.name';
-import {MagazineSettingMenuConfig} from './aside-menues/magazine-setting.menu.config';
+import {MagazineSettingMenuConfig} from './aside-menues/article.menu.config';
+import {UsersMenuConfig} from './aside-menues/users.menu.config';
+
 
 
 export class MenuConfig {
 
 	// Aside Menu
 	magazineSettingMenuConfig: MagazineSettingMenuConfig;
+	usersMenuConfig: UsersMenuConfig;
 
 	// Header Menu
 	shortAccessMenuConfig: ShortAccessMenuConfig;
@@ -15,6 +18,7 @@ export class MenuConfig {
 
 	constructor() {
 		this.magazineSettingMenuConfig = new MagazineSettingMenuConfig();
+		this.usersMenuConfig = new UsersMenuConfig();
 
 		this.shortAccessMenuConfig = new ShortAccessMenuConfig();
 		this.addNewMenuConfig = new AddNewMenuConfig();
@@ -56,6 +60,10 @@ export class MenuConfig {
 	}
 
 	public attachAsideMenuItems(){
+
+		// users Config
+		let usersMenuConfig = this.usersMenuConfig.configs;
+		this.attachAsideMenu(usersMenuConfig);
 
 		// Magazine Setting Config
 		let magazine_setting_config = this.magazineSettingMenuConfig.configs;

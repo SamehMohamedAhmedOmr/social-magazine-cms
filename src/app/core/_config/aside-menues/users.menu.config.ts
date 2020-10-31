@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
 import {SystemPermissionsHelperService} from '../../services/Helpers/system.permissions.helper.service';
 import {RoutesName} from '../../Global/routes.name';
+import {SectionIconsName} from '../../Global/section.icons.name';
 
 
 @Injectable({
 	providedIn: 'root'
 })
-export class MagazineSettingMenuConfig {
+export class UsersMenuConfig {
 
 	systemPermissionsHelperService: SystemPermissionsHelperService;
 
@@ -14,24 +15,44 @@ export class MagazineSettingMenuConfig {
 		this.systemPermissionsHelperService = new SystemPermissionsHelperService();
 	}
 
-	private header = {section: 'MAGAZINE_SETTINGS', translate: 'MENUS.MAGAZINE_SETTINGS.TITLE'};
+	private header = {section: 'USERS', translate: 'MENUS.USERS.TITLE'};
 
 	private section = {
-		title: 'MAGAZINE_SETTINGS',
+		title: 'USERS',
 		root: true,
-		translate: 'MENUS.MAGAZINE_SETTINGS.TITLE',
-		icon: 'flaticon2-settings',
+		translate: 'MENUS.USERS.TITLE',
+		icon: SectionIconsName.users(),
 		submenu: [
 		]
 	};
 
-	public who_is_us_url = {
-		icon: 'flaticon2-settings',
-		title: 'Who is us',
-		translate: 'MENUS.MAGAZINE_SETTINGS.menu.WHO_IS_US',
-		page: RoutesName.whoIsUs()
+	public MAGAZINE_EDITOR_MANAGER = {
+		icon: SectionIconsName.MAGAZINE_EDITOR_MANAGER(),
+		title: 'MAGAZINE_EDITOR_MANAGER',
+		translate: 'MENUS.USERS.menu.MAGAZINE_EDITOR_MANAGER',
+		page: RoutesName.users() + '/' + RoutesName.MAGAZINE_EDITOR_MANAGER()
 	};
 
+	public JOURNAL_EDITOR_DIRECTOR = {
+		icon: SectionIconsName.JOURNAL_EDITOR_DIRECTOR(),
+		title: 'JOURNAL_EDITOR_DIRECTOR',
+		translate: 'MENUS.USERS.menu.JOURNAL_EDITOR_DIRECTOR',
+		page: RoutesName.users() + '/' + RoutesName.JOURNAL_EDITOR_DIRECTOR()
+	};
+
+	public REFEREES = {
+		icon: SectionIconsName.REFEREES(),
+		title: 'REFEREES',
+		translate: 'MENUS.USERS.menu.REFEREES',
+		page: RoutesName.users() + '/' + RoutesName.REFEREES()
+	};
+
+	public RESEARCHER = {
+		icon: SectionIconsName.RESEARCHER(),
+		title: 'RESEARCHER',
+		translate: 'MENUS.USERS.menu.RESEARCHER',
+		page: RoutesName.users() + '/' + RoutesName.RESEARCHER()
+	};
 
 
 	public menu: any = {
@@ -42,7 +63,10 @@ export class MagazineSettingMenuConfig {
 
 	public checkRoutePermissions(){
 
-		this.attachMenuItem([],this.who_is_us_url);
+		this.attachMenuItem([],this.MAGAZINE_EDITOR_MANAGER);
+		this.attachMenuItem([],this.JOURNAL_EDITOR_DIRECTOR);
+		this.attachMenuItem([],this.REFEREES);
+		this.attachMenuItem([],this.RESEARCHER);
 
 		this.attachMenu();
 

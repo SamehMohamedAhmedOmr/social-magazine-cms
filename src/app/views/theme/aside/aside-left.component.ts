@@ -227,4 +227,13 @@ export class AsideLeftComponent implements OnInit, AfterViewInit {
 	disableScroll() {
 		return this.layoutConfigService.getConfig('aside.menu.dropdown') || false;
 	}
+
+	check_lang(){
+		let lang = localStorage.getItem('cms_lang');
+		if (lang == 'en'){
+			return 'la-angle-right';
+		}
+		return 'la-angle-left';
+	}
+
 }

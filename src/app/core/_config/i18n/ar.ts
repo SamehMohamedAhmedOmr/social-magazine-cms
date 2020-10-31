@@ -82,7 +82,7 @@ export const locale = {
 
 		MENUS:{
 			USERS:{
-				TITLE : '',
+				TITLE : 'المستخدمين',
 				menu:{
 					MAGAZINE_EDITOR_MANAGER: 'رئيس التحرير',
 					JOURNAL_EDITOR_DIRECTOR: 'مدير التحرير',
