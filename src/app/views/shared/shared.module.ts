@@ -27,6 +27,7 @@ import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
 import { PopupGalleryComponent } from './popup-gallery/popup-gallery.component';
 import {GlobalNoticeComponent} from './global-notice/global-notice.component';
 import { SoonComponent } from './soon/soon.component';
+import { NoRecordFoundComponent } from './no-record-found/no-record-found.component';
 
 
 
@@ -35,7 +36,7 @@ import { SoonComponent } from './soon/soon.component';
 		AuthNoticeComponent,GlobalNoticeComponent,
     	FilterComponent, ApiLoaderComponent,
 		DeleteModalComponent, GalleryComponent,
-		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent, SoonComponent
+		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent, SoonComponent, NoRecordFoundComponent
 	],
     imports: [
         CommonModule,
@@ -65,16 +66,17 @@ import { SoonComponent } from './soon/soon.component';
 		SuccessModalComponent,
 		PopupGalleryComponent,
     ],
-    exports: [
-        FilterComponent,
-        ApiLoaderComponent,
-        DeleteModalComponent,
-        SuccessModalComponent,
-        GalleryComponent,
-        AuthNoticeComponent,
-        GlobalNoticeComponent,
-        NextPreviousListComponent,
-        SoonComponent
-    ]
+	exports: [
+		FilterComponent,
+		ApiLoaderComponent,
+		DeleteModalComponent,
+		SuccessModalComponent,
+		GalleryComponent,
+		AuthNoticeComponent,
+		GlobalNoticeComponent,
+		NextPreviousListComponent,
+		SoonComponent,
+		NoRecordFoundComponent
+	]
 })
 export class SharedModule { }

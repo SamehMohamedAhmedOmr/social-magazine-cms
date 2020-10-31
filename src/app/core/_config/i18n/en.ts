@@ -280,6 +280,7 @@ export const locale = {
 			address: 'Address',
 			visitors: 'Visitors',
 			visit_number : 'Visits',
+			no_record_found : 'No Record Found',
 			Add_Button: 'Add {{name}}',
 			Edit_Button: 'Edit {{name}}',
 			Delete_Button: 'Delete {{name}}',

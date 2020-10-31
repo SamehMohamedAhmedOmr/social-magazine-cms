@@ -6,34 +6,38 @@ import {PagesModule} from '../../pages.module';
 import {MatDividerModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 
+import {EditComponent} from './edit/edit.component';
+import {IndexComponent} from './index/index.component';
+import {AddComponent} from './add/add.component';
+
 const routes: Routes = [
 	{
 		path: '',
 		component: PublicationRuleComponent,
 		children: [
-			// {
-			// 	path: '',
-			// 	component: IndexComponent
-			// },
-			// {
-			// 	path: 'add',
-			// 	component: AddComponent
-			// },
-			// {
-			// 	path: ':id',
-			// 	component: EditComponent
-			// },
+			{
+				path: '',
+				component: IndexComponent
+			},
+			{
+				path: 'اضافة',
+				component: AddComponent
+			},
+			{
+				path: ':id',
+				component: EditComponent
+			},
 			// {
 			// 	path: 'details/:id',
 			// 	component: ShowComponent
 			// },
-			// {path: '**', redirectTo: '', pathMatch: ''},
+			{path: '**', redirectTo: '', pathMatch: ''},
 		]
 	}
 ];
 
 @NgModule({
-	declarations: [PublicationRuleComponent],
+	declarations: [PublicationRuleComponent, IndexComponent, AddComponent, EditComponent],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),

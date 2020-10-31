@@ -277,6 +277,7 @@ export const locale = {
 			phone: 'الهاتف',
 			address: 'العنوان',
 			visitors: 'الزوار',
+			no_record_found : 'لا يوجد بيانات',
 			visit_number : 'عدد الزيارات',
 			Add_Button: 'اضافة {{name}}',
 			Edit_Button: 'تعديل {{name}}',
