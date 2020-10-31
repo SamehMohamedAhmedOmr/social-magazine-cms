@@ -30,28 +30,28 @@ export class UsersMenuConfig {
 		icon: SectionIconsName.MAGAZINE_EDITOR_MANAGER(),
 		title: 'MAGAZINE_EDITOR_MANAGER',
 		translate: 'MENUS.USERS.menu.MAGAZINE_EDITOR_MANAGER',
-		page: RoutesName.users() + '/' + RoutesName.MAGAZINE_EDITOR_MANAGER()
+		page: RoutesName.MAGAZINE_EDITOR_MANAGER()
 	};
 
 	public JOURNAL_EDITOR_DIRECTOR = {
 		icon: SectionIconsName.JOURNAL_EDITOR_DIRECTOR(),
 		title: 'JOURNAL_EDITOR_DIRECTOR',
 		translate: 'MENUS.USERS.menu.JOURNAL_EDITOR_DIRECTOR',
-		page: RoutesName.users() + '/' + RoutesName.JOURNAL_EDITOR_DIRECTOR()
+		page: RoutesName.JOURNAL_EDITOR_DIRECTOR()
 	};
 
 	public REFEREES = {
 		icon: SectionIconsName.REFEREES(),
 		title: 'REFEREES',
 		translate: 'MENUS.USERS.menu.REFEREES',
-		page: RoutesName.users() + '/' + RoutesName.REFEREES()
+		page: RoutesName.REFEREES()
 	};
 
 	public RESEARCHER = {
 		icon: SectionIconsName.RESEARCHER(),
 		title: 'RESEARCHER',
 		translate: 'MENUS.USERS.menu.RESEARCHER',
-		page: RoutesName.users() + '/' + RoutesName.RESEARCHER()
+		page: RoutesName.RESEARCHER()
 	};
 
 

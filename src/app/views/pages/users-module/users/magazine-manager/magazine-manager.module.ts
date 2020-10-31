@@ -1,22 +1,23 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {UsersComponent} from './users.component';
+import {MagazineManagerComponent} from './magazine-manager.component';
 import {RouterModule, Routes} from '@angular/router';
-import {PagesModule} from '../../pages.module';
+import {PagesModule} from '../../../pages.module';
 import {MatDividerModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
+import {RoutesName} from '../../../../../core/Global/routes.name';
 
 const routes: Routes = [
 	{
 		path: '',
-		component: UsersComponent,
+		component: MagazineManagerComponent,
 		children: [
 			// {
 			// 	path: '',
 			// 	component: IndexComponent
 			// },
 			// {
-			// 	path: 'add',
+			// path: RoutesName.add(),
 			// 	component: AddComponent
 			// },
 			// {
@@ -33,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	declarations: [UsersComponent],
+	declarations: [MagazineManagerComponent],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
@@ -42,5 +43,5 @@ const routes: Routes = [
 		TranslateModule,
 	]
 })
-export class UsersModule {
+export class MagazineManagerModule {
 }

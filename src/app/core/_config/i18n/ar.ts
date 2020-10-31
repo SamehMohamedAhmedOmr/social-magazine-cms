@@ -84,8 +84,8 @@ export const locale = {
 			USERS:{
 				TITLE : 'المستخدمين',
 				menu:{
-					MAGAZINE_EDITOR_MANAGER: 'رئيس التحرير',
-					JOURNAL_EDITOR_DIRECTOR: 'مدير التحرير',
+					MAGAZINE_EDITOR_MANAGER: 'رؤساء التحرير',
+					JOURNAL_EDITOR_DIRECTOR: 'مديرين التحرير',
 					REFEREES: 'المحكمين',
 					RESEARCHER: 'الباحثين',
 				}
@@ -230,6 +230,10 @@ export const locale = {
 			USERS: {
 				users: 'المستخدمين',
 				single: 'المستخدم',
+				MAGAZINE_EDITOR_MANAGER: 'رؤساء التحرير',
+				JOURNAL_EDITOR_DIRECTOR: 'مديرين التحرير',
+				REFEREES: 'المحكمين',
+				RESEARCHER: 'الباحثين',
 				profile: 'الملف الشخصي',
 				change_password : 'تغيير كلمة المرور',
 				columns: {

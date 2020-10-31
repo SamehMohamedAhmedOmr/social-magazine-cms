@@ -164,15 +164,48 @@ const routes: Routes = [
 					.then(m => m.ProfileModule)
 			},
 
-			// المستخدمين
+			// رؤساء التحرير
 			{
-				path: RoutesName.users(),
+				path: RoutesName.MAGAZINE_EDITOR_MANAGER(),
 				// canActivate: [PermissionsGuard],
 				// data: {
 				// 	permissions: permissionCatalogueConfig.product_permissions,
 				// },
-				loadChildren: () => import('./views/pages/users-module/users/users.module')
-					.then(m => m.UsersModule)
+				loadChildren: () => import('./views/pages/users-module/users/magazine-manager/magazine-manager.module')
+					.then(m => m.MagazineManagerModule)
+			},
+
+			// مدير التحرير
+			{
+				path: RoutesName.JOURNAL_EDITOR_DIRECTOR(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/users-module/users/magazine-director/magazine-director.module')
+					.then(m => m.MagazineDirectorModule)
+			},
+
+			// المحكمين
+			{
+				path: RoutesName.REFEREES(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/users-module/users/magazine-referees/magazine-referees.module')
+					.then(m => m.MagazineRefereesModule)
+			},
+
+			// الباحثين
+			{
+				path: RoutesName.RESEARCHER(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/users-module/users/researcher/researcher.module')
+					.then(m => m.ResearcherModule)
 			},
 
 

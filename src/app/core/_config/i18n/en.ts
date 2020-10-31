@@ -228,6 +228,10 @@ export const locale = {
 			USERS: {
 				users: 'Users',
 				single: 'User',
+				MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Manager',
+				JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Director',
+				REFEREES: 'Referees',
+				RESEARCHER: 'Researcher',
 				profile: 'Profile',
 				change_password : 'تغيير كلمة المرور',
 				columns: {
