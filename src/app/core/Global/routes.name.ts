@@ -59,4 +59,8 @@ export class RoutesName {
 		return 'المستخدمين';
 	}
 
+	public static add(){
+		return 'اضافة';
+	}
+
 }

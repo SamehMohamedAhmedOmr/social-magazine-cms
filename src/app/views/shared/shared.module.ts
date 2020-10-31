@@ -39,7 +39,7 @@ import { ListOptionsComponent } from './list-options/list-options.component';
     	FilterComponent, ApiLoaderComponent,
 		DeleteModalComponent, GalleryComponent,
 		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent,
-		SoonComponent, NoRecordFoundComponent, FormErrorComponent, ListOptionsComponent
+		SoonComponent, NoRecordFoundComponent, FormErrorComponent, ListOptionsComponent,
 	],
     imports: [
         CommonModule,
@@ -81,7 +81,7 @@ import { ListOptionsComponent } from './list-options/list-options.component';
 		SoonComponent,
 		NoRecordFoundComponent,
 		FormErrorComponent,
-		ListOptionsComponent
+		ListOptionsComponent,
 	]
 })
 export class SharedModule { }

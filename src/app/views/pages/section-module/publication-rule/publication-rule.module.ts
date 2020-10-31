@@ -10,6 +10,7 @@ import {EditComponent} from './edit/edit.component';
 import {IndexComponent} from './index/index.component';
 import {AddComponent} from './add/add.component';
 import { FormComponent } from './form/form.component';
+import {RoutesName} from '../../../../core/Global/routes.name';
 
 const routes: Routes = [
 	{
@@ -21,7 +22,7 @@ const routes: Routes = [
 				component: IndexComponent
 			},
 			{
-				path: 'اضافة',
+				path: RoutesName.add(),
 				component: AddComponent
 			},
 			{

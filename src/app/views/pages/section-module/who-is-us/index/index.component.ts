@@ -2,6 +2,7 @@ import {ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild} from '@angul
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+
 import {IndexInterface} from '../../../../shared/Base-Interface/Index.Interface';
 import {PaginateParams} from '../../../../../core/models/paginateParams.interface';
 import {AuthNoticeService} from '../../../../../core/services/auth-notice.service';
@@ -9,10 +10,10 @@ import {HelperService} from '../../../../../core/services/helper.service';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {Router} from '@angular/router';
 import {GlobalConfig} from '../../../../../core/Global/global.config';
-import {PublicationRulesService} from '../../../../../core/services/Section-Module/publication.rules.service';
 import {SectionIconsName} from '../../../../../core/Global/section.icons.name';
 import {TranslateService} from '@ngx-translate/core';
 import {RoutesName} from '../../../../../core/Global/routes.name';
+import {WhoIsUsService} from '../../../../../core/services/Section-Module/who.is.us.service';
 
 declare var $ :any;
 
@@ -50,7 +51,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	};
 
 	constructor(private cdr: ChangeDetectorRef ,
-				public service: PublicationRulesService,
+				public service: WhoIsUsService,
 				private authNoticeService: AuthNoticeService,
 				public translateService : TranslateService,
 				private router: Router,
@@ -61,8 +62,8 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	// onInit get Data from api
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.PUBLICATION_RULE.name');
-		this.content_name = this.translateService.instant('Components.PUBLICATION_RULE.single');
+		this.page_name = this.translateService.instant('Components.WHO_IS_US.name');
+		this.content_name = this.translateService.instant('Components.WHO_IS_US.single');
 		this.add_route = RoutesName.add();
 	}
 
@@ -109,7 +110,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	}
 
 	pageIcon(){
-		return SectionIconsName.publicationRules();
+		return SectionIconsName.whoIsUs();
 	}
 
 	displayContent(text){
