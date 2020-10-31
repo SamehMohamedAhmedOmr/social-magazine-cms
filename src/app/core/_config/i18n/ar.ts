@@ -167,17 +167,6 @@ export const locale = {
 			export: 'تصدير',
 			no_image:'لا يوجد صوره',
 
-			CLIENTS: {
-				name: 'العملاء',
-				filter: 'البحث في اسم العميل',
-				columns: {
-					Title: 'العنوان',
-					Image: 'الصورة',
-					admin_email: 'البريد الاكتروني للادمن',
-					expiration_date: 'تاريخ الإنتهاء',
-				}
-			},
-
 			WHO_IS_US: {
 				name: 'من نحن',
 				single: 'المحتوى',
@@ -194,7 +183,7 @@ export const locale = {
 
 			ADVISORY_BODY: {
 				name: 'الهيئة الاستشارية',
-				single: 'العضو في الهيئة الاستشارية',
+				single: 'عضو في الهيئة الاستشارية',
 				columns: {
 					job: 'الوظيفة'
 				}

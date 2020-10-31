@@ -165,20 +165,6 @@ export const locale = {
 			export: 'Export',
 			no_image:'No Image Yet',
 
-			CLIENTS: {
-				name: 'Clients',
-				Add_Button: 'Add New Client',
-				Delete_Button: 'Delete Client',
-				Delete_Body: 'Aِre you sure, Client with id [{{value}}] will be permanently deleted !!!',
-				filter: 'Filter Client Titles',
-				columns: {
-					Title: 'Title',
-					Image: 'Image',
-					admin_email: 'Admin Email',
-					expiration_date: 'Expiration date',
-				}
-			},
-
 			WHO_IS_US: {
 				name: 'Who Is us',
 				single: 'Content',
