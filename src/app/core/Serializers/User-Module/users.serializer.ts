@@ -80,6 +80,7 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 		let object =  new UsersModel(item.id);
 		object.first_name = item.first_name;
 		object.family_name = item.family_name;
+		object.full_name = item.first_name + ' ' + item.family_name;
 		object.email = item.email;
 		object.alternative_email = item.alternative_email;
 		object.is_active = item.is_active;

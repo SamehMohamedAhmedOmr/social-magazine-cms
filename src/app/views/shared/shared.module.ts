@@ -30,6 +30,8 @@ import { SoonComponent } from './soon/soon.component';
 import { NoRecordFoundComponent } from './no-record-found/no-record-found.component';
 import { FormErrorComponent } from './form-error/form-error.component';
 import { ListOptionsComponent } from './list-options/list-options.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 
@@ -39,7 +41,7 @@ import { ListOptionsComponent } from './list-options/list-options.component';
     	FilterComponent, ApiLoaderComponent,
 		DeleteModalComponent, GalleryComponent,
 		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent,
-		SoonComponent, NoRecordFoundComponent, FormErrorComponent, ListOptionsComponent,
+		SoonComponent, NoRecordFoundComponent, FormErrorComponent, ListOptionsComponent, UserFormComponent, UserListComponent,
 	],
     imports: [
         CommonModule,
@@ -69,19 +71,20 @@ import { ListOptionsComponent } from './list-options/list-options.component';
 		SuccessModalComponent,
 		PopupGalleryComponent,
     ],
-	exports: [
-		FilterComponent,
-		ApiLoaderComponent,
-		DeleteModalComponent,
-		SuccessModalComponent,
-		GalleryComponent,
-		AuthNoticeComponent,
-		GlobalNoticeComponent,
-		NextPreviousListComponent,
-		SoonComponent,
-		NoRecordFoundComponent,
-		FormErrorComponent,
-		ListOptionsComponent,
-	]
+    exports: [
+        FilterComponent,
+        ApiLoaderComponent,
+        DeleteModalComponent,
+        SuccessModalComponent,
+        GalleryComponent,
+        AuthNoticeComponent,
+        GlobalNoticeComponent,
+        NextPreviousListComponent,
+        SoonComponent,
+        NoRecordFoundComponent,
+        FormErrorComponent,
+        ListOptionsComponent,
+        UserListComponent,
+    ]
 })
 export class SharedModule { }

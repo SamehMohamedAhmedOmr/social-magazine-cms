@@ -1,8 +1,8 @@
 import {ShortAccessMenuConfig} from './header-menues/short.access.menu.config';
 import {AddNewMenuConfig} from './header-menues/add.new.menu.config';
 import {RoutesName} from '../Global/routes.name';
-import {MagazineSettingMenuConfig} from './aside-menues/article.menu.config';
 import {UsersMenuConfig} from './aside-menues/users.menu.config';
+import {MagazineSettingMenuConfig} from './aside-menues/magazine-setting.menu.config';
 
 
 

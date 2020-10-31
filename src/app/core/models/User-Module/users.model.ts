@@ -4,6 +4,7 @@ export class UsersModel extends ModelBase {
 
 	public first_name:string;
 	public family_name:string;
+	public full_name:string;
 	public email:string;
 	public alternative_email:string;
 	public password:string;
@@ -60,15 +61,16 @@ export class UsersModel extends ModelBase {
 			'id': this.id,
 			'first_name' : this.first_name,
 			'family_name' : this.family_name,
+			'full_name' : this.full_name,
 			'email' : this.email,
 			'alternative_email' : this.alternative_email,
 			'is_active' : this.is_active,
 
-			'gender' : (this.gender.name) ? this.gender.name : null,
-			'country' : (this.country.name) ? this.country.name : null,
-			'title' : (this.title.name) ? this.title.name : null,
-			'educational_level' : (this.educational_level.name) ? this.educational_level.name : null,
-			'educational_degree' : (this.educational_degree.name) ? this.educational_degree.name : null,
+			'gender' : (this.gender) ? this.gender.name : null,
+			'country' : (this.country) ? this.country.name : null,
+			'title' : (this.title) ? this.title.name : null,
+			'educational_level' : (this.educational_level) ? this.educational_level.name : null,
+			'educational_degree' : (this.educational_degree) ? this.educational_degree.name : null,
 
 			'educational_field' : this.educational_field,
 			'university' : this.university,

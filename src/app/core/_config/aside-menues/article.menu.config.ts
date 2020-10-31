@@ -6,7 +6,7 @@ import {RoutesName} from '../../Global/routes.name';
 @Injectable({
 	providedIn: 'root'
 })
-export class MagazineSettingMenuConfig {
+export class ArticleMenuConfig {
 
 	systemPermissionsHelperService: SystemPermissionsHelperService;
 
