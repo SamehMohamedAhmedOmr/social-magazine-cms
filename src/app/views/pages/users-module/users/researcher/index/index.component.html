@@ -1,0 +1,35 @@
+<kt-portlet-header [title]="page_name"
+				   [icon]="pageIcon()"></kt-portlet-header>
+
+<kt-filter [ButtonAddName]="'COMMON.Add_Button' | translate: {name : content_name}"
+		   [ButtonAddUrl]="add_route"
+		   [HasAdd]="true"
+		   [isLoadingResults]="isLoadingResults"
+		   [currentComponent] = "this"
+		   [HasItemPerPage]="true"
+		   [HasActive]="true"
+		   [HasSearchFilter]="true"
+		   [HasExport]="false"
+		   [headerParams]="headerParams"
+		   [currentService]="service"
+></kt-filter>
+
+<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
+
+
+<div *ngIf="!isLoadingResults">
+	<kt-user-list
+		[dataSource]="this.dataSource"
+		[isLoadingResults]="isLoadingResults"
+		[currentService]="service"
+		[currentComponent]="this"
+		[headerParams]="headerParams"
+		[content_name]="content_name"
+		[displayedColumns]="displayedColumns"
+		[resultsLength]="resultsLength"
+		[pageIndex]="pageIndex"
+		[current_type]="4"
+	></kt-user-list>
+</div>
+
+

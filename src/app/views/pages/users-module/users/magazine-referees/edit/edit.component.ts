@@ -47,8 +47,8 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER');
-		this.content_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER_SINGLE');
+		this.page_name = this.translateService.instant('Components.USERS.REFEREES');
+		this.content_name = this.translateService.instant('Components.USERS.REFEREES_SINGLE');
 	}
 
 	initialiseComponent() {

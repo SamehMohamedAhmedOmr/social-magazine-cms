@@ -3,7 +3,6 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {InitializeComponentInterface} from '../../../../../shared/Base-Interface/Initialize.Component.Interface';
-import {AdvisoryBodyModel} from '../../../../../../core/models/section-module/advisory.body.model';
 import {FormErrorService} from '../../../../../../core/services/FormError.service';
 import {AuthNoticeService} from '../../../../../../core/services/auth-notice.service';
 import {HelperService} from '../../../../../../core/services/helper.service';
@@ -47,8 +46,8 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER');
-		this.content_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER_SINGLE');
+		this.page_name = this.translateService.instant('Components.USERS.JOURNAL_EDITOR_DIRECTOR');
+		this.content_name = this.translateService.instant('Components.USERS.JOURNAL_EDITOR_DIRECTOR_SINGLE');
 	}
 
 	initialiseComponent() {
