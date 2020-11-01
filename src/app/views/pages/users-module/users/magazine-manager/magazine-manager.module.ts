@@ -19,19 +19,19 @@ const routes: Routes = [
 				path: '',
 				component: IndexComponent
 			},
-			// {
-			// path: RoutesName.add(),
-			// 	component: AddComponent
-			// },
-			// {
-			// 	path: ':id',
-			// 	component: EditComponent
-			// },
+			{
+				path: RoutesName.add(),
+				component: AddComponent
+			},
+			{
+				path: ':id',
+				component: EditComponent
+			},
 			// {
 			// 	path: 'details/:id',
 			// 	component: ShowComponent
 			// },
-			//{path: '**', redirectTo: '', pathMatch: ''},
+			{path: '**', redirectTo: '', pathMatch: ''},
 		]
 	}
 ];

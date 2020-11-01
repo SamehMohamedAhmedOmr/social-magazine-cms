@@ -26,6 +26,8 @@ export class ListOptionsComponent implements OnInit {
 
 	@Input() content_name: string;
 
+	@Input() enabled_delete: boolean = true;
+
 
 	constructor(private authNoticeService: AuthNoticeService,
 				public translateService : TranslateService,

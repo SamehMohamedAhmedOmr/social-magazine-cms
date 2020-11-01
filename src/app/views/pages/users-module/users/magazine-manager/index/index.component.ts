@@ -34,7 +34,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 
 	//Data table variables
 	dataSource;
-	displayedColumns: string[] = ['id' , 'full_name' , 'email' , 'is_active' , 'options'];
+	displayedColumns: string[] = ['id' , 'full_name' , 'email' , 'is_active' , 'type' , 'options'];
 	isLoadingResults:boolean = true;
 	// pagination variables
 	resultsLength = 0;
@@ -61,8 +61,8 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	// onInit get Data from api
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.ADVISORY_BODY.name');
-		this.content_name = this.translateService.instant('Components.ADVISORY_BODY.single');
+		this.page_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER');
+		this.content_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER_SINGLE');
 		this.add_route = RoutesName.add();
 	}
 
@@ -74,7 +74,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	get(headerParams) {
 		this.headerParams = headerParams;
 		this.isLoadingResults = true;
-		let data = this.service.list(headerParams).subscribe(
+		let data = this.service.list(headerParams,1).subscribe(
 			(resp) => {
 				this.dataSource =  new MatTableDataSource(resp);
 				this.dataSource.sort = this.sort;

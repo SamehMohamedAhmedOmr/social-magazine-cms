@@ -6,8 +6,8 @@ import {FormErrorService} from '../../../../../../core/services/FormError.servic
 import {ActivatedRoute, Router} from '@angular/router';
 import {InitializeComponentInterface} from '../../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {TranslateService} from '@ngx-translate/core';
-import {AdvisoryBodiesService} from '../../../../../../core/services/Section-Module/advisory.bodies.service';
-import {AdvisoryBodyModel} from '../../../../../../core/models/section-module/advisory.body.model';
+import {UsersService} from '../../../../../../core/services/User-Module/users.service';
+import {UsersModel} from '../../../../../../core/models/User-Module/users.model';
 
 @Component({
 	selector: 'kt-add',
@@ -24,8 +24,11 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 	isLoadingResults: any = true;
 	form: FormGroup;
+
+	educational_form: FormGroup;
+
 	constructor(private fb: FormBuilder ,
-				private service: AdvisoryBodiesService,
+				private service: UsersService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
@@ -37,8 +40,8 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.ADVISORY_BODY.name');
-		this.content_name = this.translateService.instant('Components.ADVISORY_BODY.single');
+		this.page_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER');
+		this.content_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER_SINGLE');
 	}
 
 	initialiseComponent() {
@@ -53,15 +56,38 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 	 */
 	private initForm() {
 		this.form = this.fb.group({
-			name:['', Validators.required] ,
-			job:['', Validators.required] ,
-			is_active: 		['1', Validators.required],
+			// Basic Data
+			first_name:['', Validators.required] ,
+			family_name:['', Validators.required] ,
+			email:['', Validators.required] ,
+			password:['', Validators.required] ,
+			gender:['', Validators.required] ,
+			account_type_id:[1] ,
+			phone:['', Validators.required] ,
+			country:['', Validators.required] ,
+
+
+			// Additional Data
+			fax_number:[''] ,
+			alternative_email:[''] ,
+			address:[''] ,
+		});
+
+		this.educational_form = this.fb.group({
+			// Educational Data
+			educational_degree:['', Validators.required] ,
+			educational_level:['', Validators.required] ,
+			title:['', Validators.required] ,
+			educational_field:[''] ,
+			university:[''] ,
+			faculty:[''] ,
 		});
 	}
 
 
 	clearForm() {
 		this.form.reset();
+		this.educational_form.reset();
 	}
 
 	submitForm () {
@@ -71,10 +97,35 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 			return this.formErrorService.markAsTouched(controls);
 		}
 
-		const model = new AdvisoryBodyModel(null);
-		model.is_active = controls['is_active'].value;
-		model.name = controls['name'].value;
-		model.job = controls['job'].value;
+		const controls_educational_form = this.educational_form.controls;
+		/** showing Errors  */
+		if (this.educational_form.invalid) {
+			return this.formErrorService.markAsTouched(controls_educational_form);
+		}
+
+		const model = new UsersModel(null);
+
+		model.initialLists();
+
+		model.first_name = controls['first_name'].value;
+		model.family_name = controls['family_name'].value;
+		model.email = controls['email'].value;
+		model.password = controls['password'].value;
+		model.gender.id = controls['gender'].value;
+		model.account_type_id = controls['account_type_id'].value;
+		model.phone_number = controls['phone'].value;
+		model.country.id = controls['country'].value;
+
+		model.fax_number = controls['fax_number'].value;
+		model.alternative_email = controls['alternative_email'].value;
+		model.address = controls['address'].value;
+
+		model.title.id = controls_educational_form['title'].value;
+		model.educational_degree.id = controls_educational_form['educational_degree'].value;
+		model.educational_level.id = controls_educational_form['educational_level'].value;
+		model.educational_field = controls_educational_form['educational_field'].value;
+		model.university = controls_educational_form['university'].value;
+		model.faculty = controls_educational_form['faculty'].value;
 
 		// call service to store Banner
 		this.isLoadingResults = true;

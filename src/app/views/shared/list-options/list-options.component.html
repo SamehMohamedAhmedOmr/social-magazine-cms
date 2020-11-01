@@ -26,10 +26,12 @@
 		</div>
 
 		<!--Delete-->
-		<div class="col-12 my-2 dropdown-option" *ngIf="!element.is_active">
-			<button class="btn btn-outline-danger w-100" (click)="deleteModal(element)">
-				{{ 'Components.Delete' | translate }} <i class="flaticon-delete"></i>
-			</button>
+		<div class="col-12" *ngIf="enabled_delete">
+			<div class="my-2 dropdown-option" *ngIf="!element.is_active">
+				<button class="btn btn-outline-danger w-100" (click)="deleteModal(element)">
+					{{ 'Components.Delete' | translate }} <i class="flaticon-delete"></i>
+				</button>
+			</div>
 		</div>
 
 	</div>

@@ -15,7 +15,10 @@
 	<div *ngIf="!isLoadingResults">
 
 		<div *ngIf="is_result">
-<!--			<kt-form [form]="form"></kt-form>-->
+
+			<kt-user-form [form]="form"
+						  [hide_password]="true"
+						  [educational_form]="educational_form"></kt-user-form>
 
 			<div class="col-12 text-center px-3">
 				<button type="submit" class="btn btn-success mx-3" (click)="updateForm()">

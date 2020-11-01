@@ -234,6 +234,12 @@ export const locale = {
 				JOURNAL_EDITOR_DIRECTOR: 'مديرين التحرير',
 				REFEREES: 'المحكمين',
 				RESEARCHER: 'الباحثين',
+
+				MAGAZINE_EDITOR_MANAGER_SINGLE: 'رئيس التحرير',
+				JOURNAL_EDITOR_DIRECTOR_SINGLE: 'مدير التحرير',
+				REFEREES_SINGLE: 'محكم',
+				RESEARCHER_SINGLE: 'باحث',
+
 				profile: 'الملف الشخصي',
 				change_password : 'تغيير كلمة المرور',
 				columns: {
@@ -250,7 +256,9 @@ export const locale = {
 					faculty: 'الكلية',
 					fax_number: 'رقم الفاكس',
 					account_type: 'نوع الحساب'
-				}
+				},
+				change_type: 'تم تغيير نوع المستخدم الى {{name}} بنجاح',
+				change_account_type : 'تغيير نوع الحساب'
 			}
 
 		},
@@ -305,10 +313,15 @@ export const locale = {
 
 		stepper:{
 			basic_data : 'البيانات الاساسية',
+			additional_data : 'البيانات الاضافية',
+			education_degree: "المستوى التعليمي",
 			vision_mission: 'الرؤية و الرسالة',
 			next: 'التالي',
 			back:'رجوع',
+			error:"من فضلك ادخل البيانات المطلوبة"
 		},
+
+
 
 	}
 };

@@ -4,10 +4,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
 import {InitializeComponentInterface} from '../../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {AdvisoryBodyModel} from '../../../../../../core/models/section-module/advisory.body.model';
-import {AdvisoryBodiesService} from '../../../../../../core/services/Section-Module/advisory.bodies.service';
 import {FormErrorService} from '../../../../../../core/services/FormError.service';
 import {AuthNoticeService} from '../../../../../../core/services/auth-notice.service';
 import {HelperService} from '../../../../../../core/services/helper.service';
+import {UsersService} from '../../../../../../core/services/User-Module/users.service';
+import {UsersModel} from '../../../../../../core/models/User-Module/users.model';
 
 
 @Component({
@@ -25,13 +26,15 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	isLoadingResults: any = true;
 	form: FormGroup;
-	model: AdvisoryBodyModel;
+	educational_form: FormGroup;
+
+	model: UsersModel;
 
 	id = null;
 	is_result:boolean;
 
 	constructor(private formBuilder: FormBuilder ,
-				private service: AdvisoryBodiesService,
+				private service: UsersService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
@@ -44,8 +47,8 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.ADVISORY_BODY.name');
-		this.content_name = this.translateService.instant('Components.ADVISORY_BODY.single');
+		this.page_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER');
+		this.content_name = this.translateService.instant('Components.USERS.MAGAZINE_EDITOR_MANAGER_SINGLE');
 	}
 
 	initialiseComponent() {
@@ -82,10 +85,38 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 	 *
 	 */
 	initializeForm() {
+
+		let gender =  (this.model.gender) ? this.model.gender.id : null;
+		let country =  (this.model.country) ? this.model.country.id : null;
+		let educational_degree =  (this.model.educational_degree) ? this.model.educational_degree.id : null;
+		let educational_level =  (this.model.educational_level) ? this.model.educational_level.id : null;
+		let title =  (this.model.title) ? this.model.title.id : null;
+
 		this.form = this.formBuilder.group({
-			name:		[this.model.name +'', Validators.required] ,
-			job:		[this.model.job +'', Validators.required] ,
-			is_active: 	[this.model.is_active + '', Validators.required],
+			// Basic Data
+			first_name:[this.model.first_name, Validators.required] ,
+			family_name:[this.model.family_name, Validators.required] ,
+			email:[this.model.email, Validators.required] ,
+			gender:[gender, Validators.required] ,
+			account_type_id:[1] ,
+			phone:[this.model.phone_number, Validators.required] ,
+			country:[country, Validators.required] ,
+
+
+			// Additional Data
+			fax_number:[this.model.fax_number] ,
+			alternative_email:[this.model.alternative_email] ,
+			address:[this.model.address] ,
+		});
+
+		this.educational_form = this.formBuilder.group({
+			// Educational Data
+			educational_degree:[educational_degree, Validators.required] ,
+			educational_level:[educational_level, Validators.required] ,
+			title:[title, Validators.required] ,
+			educational_field:[this.model.educational_field] ,
+			university:[this.model.university] ,
+			faculty:[this.model.faculty] ,
 		});
 
 		this.isLoadingResults = false;
@@ -111,11 +142,34 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			return this.formErrorService.markAsTouched(controls);
 		}
 
-		this.model.name = controls['name'].value;
-		this.model.job = controls['job'].value;
-		this.model.is_active = controls['is_active'].value;
+		const controls_educational_form = this.educational_form.controls;
+		/** showing Errors  */
+		if (this.educational_form.invalid) {
+			return this.formErrorService.markAsTouched(controls_educational_form);
+		}
 
-		// call service to store shipping rule
+		this.model.initialLists();
+
+
+		this.model.first_name = controls['first_name'].value;
+		this.model.family_name = controls['family_name'].value;
+		this.model.email = controls['email'].value;
+		this.model.gender.id = controls['gender'].value;
+		this.model.account_type_id = controls['account_type_id'].value;
+		this.model.phone_number = controls['phone'].value;
+		this.model.country.id = controls['country'].value;
+
+		this.model.fax_number = controls['fax_number'].value;
+		this.model.alternative_email = controls['alternative_email'].value;
+		this.model.address = controls['address'].value;
+
+		this.model.title.id = controls_educational_form['title'].value;
+		this.model.educational_degree.id = controls_educational_form['educational_degree'].value;
+		this.model.educational_level.id = controls_educational_form['educational_level'].value;
+		this.model.educational_field = controls_educational_form['educational_field'].value;
+		this.model.university = controls_educational_form['university'].value;
+		this.model.faculty = controls_educational_form['faculty'].value;
+
 		this.isLoadingResults = true;
 		this.service.update(this.model.id,this.model).subscribe(resp => {
 			this.isLoadingResults = false;

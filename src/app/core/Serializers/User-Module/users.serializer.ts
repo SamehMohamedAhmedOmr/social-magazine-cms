@@ -69,6 +69,7 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 			user_object['is_active'] = model.is_active;
 		}
 
+
 		return user_object;
 	}
 
@@ -103,6 +104,12 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 	status(status): any {
 		return {
 			'is_active' : status,
+		};
+	}
+
+	user_type(account_type_id): any {
+		return {
+			'account_type_id' : account_type_id,
 		};
 	}
 

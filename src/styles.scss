@@ -275,3 +275,8 @@ textarea{
 .btn{
 	font-size: 1.1rem !important;
 }
+
+.mat-select-value span span{
+	top: 0 !important;
+	position: absolute;
+}

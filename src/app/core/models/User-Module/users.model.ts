@@ -21,21 +21,24 @@ export class UsersModel extends ModelBase {
 		name: string,
 		key: string
 	};
+
 	public educational_level:{
 		id: number,
 		name: string,
 		key: string
 	};
+
 	public educational_degree:{
+		id: number,
+		name: string,
+		key: string
+	};
+
+	public country:{
 		id: number,
 		name: string,
 		image: string,
 		country_code: string
-	};
-	public country:{
-		id: number,
-		name: string,
-		key: string
 	};
 
 	public educational_field:string;
@@ -80,6 +83,38 @@ export class UsersModel extends ModelBase {
 			'address' : this.address,
 			'types' : this.types,
 			'account_type_id' : this.account_type_id,
+		};
+	}
+
+	public initialLists(){
+		this.educational_degree = {
+			id: null,
+			name: null,
+			key: null
+		};
+		this.educational_level = {
+			id: null,
+			name: null,
+			key: null
+		};
+
+		this.title = {
+			id: null,
+			name: null,
+			key: null
+		};
+
+		this.gender = {
+			id: null,
+			name: null,
+			key: null
+		};
+
+		this.country = {
+			id: null,
+			name: null,
+			image: null,
+			country_code: null
 		};
 	}
 }

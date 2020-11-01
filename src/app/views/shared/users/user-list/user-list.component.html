@@ -39,6 +39,24 @@
 				</td>
 			</ng-container>
 
+			<!-- type Column -->
+			<ng-container matColumnDef="type">
+				<th mat-header-cell *matHeaderCellDef mat-sort-header>
+					{{ 'Components.USERS.columns.account_type' | translate }}
+				</th>
+				<td mat-cell *matCellDef="let element">
+					<button mat-button [matMenuTriggerFor]="menu">
+						{{ 'Components.USERS.change_account_type' | translate }}
+					</button>
+					<mat-menu #menu="matMenu">
+						<button mat-menu-item *ngFor="let type of getAvailableType()"
+							(click)="changeUserType(element, type.id, type.name)">
+							{{ type.name }}
+						</button>
+					</mat-menu>
+				</td>
+			</ng-container>
+
 			<!-- options Column -->
 			<ng-container matColumnDef="options">
 				<th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -51,6 +69,7 @@
 						[currentComponent]="currentComponent"
 						[headerParams]="headerParams"
 						[content_name]="content_name"
+						[enabled_delete]="false"
 					></kt-list-options>
 
 				</td>

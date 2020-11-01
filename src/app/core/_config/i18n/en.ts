@@ -228,10 +228,17 @@ export const locale = {
 			USERS: {
 				users: 'Users',
 				single: 'User',
-				MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Manager',
-				JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Director',
+
+				MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Managers',
+				JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Directors',
 				REFEREES: 'Referees',
-				RESEARCHER: 'Researcher',
+				RESEARCHER: 'Researchers',
+
+				MAGAZINE_EDITOR_MANAGER_SINGLE: 'Magazine Editor Manager',
+				JOURNAL_EDITOR_DIRECTOR_SINGLE: 'Journal Editor Director',
+				REFEREES_SINGLE: 'Referee',
+				RESEARCHER_SINGLE: 'Researcher',
+
 				profile: 'Profile',
 				change_password : 'تغيير كلمة المرور',
 				columns: {
@@ -248,7 +255,10 @@ export const locale = {
 					faculty: 'Faculty',
 					fax_number: 'Fax number',
 					account_type: 'Account type'
-				}
+				},
+				change_type: 'User Type Changed to {{name}} successfully',
+				change_account_type : 'Change Account Type'
+
 			}
 
 		},
@@ -303,9 +313,13 @@ export const locale = {
 
 		stepper:{
 			basic_data : 'Basic Data',
+			additional_data : 'Additional Data',
+			education_degree: "المستوى التعليمي",
 			vision_mission: 'Vision and Mission',
 			next: 'Next',
 			back:'Back',
+			error:"Please Enter the Required Data"
+
 		},
 
 	}
