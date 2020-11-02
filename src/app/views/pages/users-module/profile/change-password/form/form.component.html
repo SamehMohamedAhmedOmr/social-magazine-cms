@@ -1,0 +1,47 @@
+<div class="form-div">
+	<form class="p-3" [formGroup]="form" autocomplete="off">
+
+		<!-- old_password  -->
+		<div class="my-4">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'COMMON.old_password' | translate }}</mat-label>
+					<input matInput
+						   formControlName="old_password"
+						   placeholder="{{ 'COMMON.old_password' | translate }}" >
+				</mat-form-field>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'old_password'"
+				[validationType]="'required'"
+				[controlText]= "'COMMON.old_password' | translate"
+				[IS_F]="true"
+			></kt-form-error>
+		</div>
+		<!-- old_password  -->
+
+		<!-- new_password  -->
+		<div class="my-4">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'COMMON.new_password' | translate }}</mat-label>
+					<input matInput
+						   formControlName="new_password"
+						   placeholder="{{ 'COMMON.new_password' | translate }}" >
+				</mat-form-field>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'new_password'"
+				[validationType]="'required'"
+				[controlText]= "'COMMON.new_password' | translate"
+				[IS_F]="true"
+			></kt-form-error>
+		</div>
+		<!-- new_password  -->
+
+
+	</form>
+</div>
+

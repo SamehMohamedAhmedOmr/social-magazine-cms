@@ -305,6 +305,9 @@ export const locale = {
 			Deleted_successfully :  '{{name}} تم حذفه بنجاح',
 			Item_not_found: '{{name}} غير موجود او تم حذفه',
 			status_changed: 'تم تغيير التفعيل بنجاح',
+			old_password : 'كلمة المرور الحالية',
+			new_password : 'كلمة المرور الجديدة',
+
 		},
 
 		MSG:{

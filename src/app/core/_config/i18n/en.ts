@@ -305,6 +305,8 @@ export const locale = {
 			Deleted_successfully : '{{name}} deleted Successfully',
 			Item_not_found: '{{name}} is Not Found or not exists anymore',
 			status_changed: 'Status changed successfully',
+			old_password : 'Old Password',
+			new_password : 'New Password',
 		},
 
 		MSG:{
