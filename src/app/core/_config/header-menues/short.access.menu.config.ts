@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {SystemPermissionsHelperService} from '../../services/Helpers/system.permissions.helper.service';
+import {SectionIconsName} from '../../Global/section.icons.name';
+import {RoutesName} from '../../Global/routes.name';
 
 
 @Injectable({
@@ -19,16 +21,16 @@ export class ShortAccessMenuConfig {
 		title: 'Short Access',
 		root: true,
 		translate: 'MENU.SHORT_ACCESS',
-		icon: 'flaticon2-photograph',
+		icon: 'flaticon2-reply-1',
 		submenu: [
 		]
 	};
 
-	private clients_url = {
-		icon: 'flaticon-users-1',
-		title: 'Project',
-		translate: 'Sales.menu.projects',
-		page: '/cms/clients'
+	public MAGAZINE_EDITOR_MANAGER = {
+		icon: SectionIconsName.MAGAZINE_EDITOR_MANAGER(),
+		title: 'MAGAZINE_EDITOR_MANAGER',
+		translate: 'MENUS.USERS.menu.MAGAZINE_EDITOR_MANAGER',
+		page: RoutesName.MAGAZINE_EDITOR_MANAGER()
 	};
 
 
@@ -39,7 +41,7 @@ export class ShortAccessMenuConfig {
 
 	public checkRoutePermissions(){
 
-		this.attachMenuItem([], this.clients_url);
+		this.attachMenuItem([], this.MAGAZINE_EDITOR_MANAGER);
 
 		this.attachMenu();
 	}

@@ -32,6 +32,7 @@ export class MenuConfig {
 					title: 'Dashboards',
 					root: true,
 					alignment: 'left',
+					icon: 'flaticon2-architecture-and-city',
 					page: RoutesName.default(),
 					translate: 'MENU.DASHBOARD',
 				},
