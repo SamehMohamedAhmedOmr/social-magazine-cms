@@ -1,0 +1,85 @@
+<div class="form-div">
+
+	<form class="p-3" [formGroup]="form" autocomplete="off">
+
+		<!-- content  -->
+		<div class="my-3">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'COMMON.content' | translate }}</mat-label>
+					<textarea matInput
+							  formControlName="content"
+							  placeholder="{{ 'COMMON.content' | translate }}"
+					></textarea>
+				</mat-form-field>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'content'"
+				[validationType]="'required'"
+				[controlText]="'COMMON.content' | translate"
+			></kt-form-error>
+		</div>
+		<!-- content  -->
+
+		<!-- Image -->
+		<div class="p-0">
+			<div class="d-flex justify-content-end">
+				<button type="button" class="btn btn-outline-success mx-3"
+						(click)="showGallery('MAGAZINE_CATEGORY')">
+					{{ 'Components.Gallery.open_gallery' | translate }}
+				</button>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'image'"
+				[validationType]="'required'"
+				[controlText]="'COMMON.image' | translate"
+			></kt-form-error>
+		</div>
+		<!-- Image -->
+
+
+		<div class="my-4" *ngIf="old_images.length">
+			<gallery [items]="old_images" thumbPosition="left"></gallery>
+		</div>
+
+<!--		<div *ngIf="old_images.length" class="uploaded-preview my-4">-->
+<!--			<div *ngFor="let image of imgURL">-->
+<!--				<img src="{{ image.image }}" alt="">-->
+<!--			</div>-->
+
+<!--		</div>-->
+
+		<!--Active -->
+		<div class="my-3">
+			<div class="row">
+				<label class="col-4 pl-4">{{ 'COMMON.activation' | translate }}: </label>
+				<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+								 formControlName="is_active">
+					<div class="row ">
+						<div class="col-md-6 p-0">
+							<mat-radio-button class=" example-radio-button" checked value="1">
+								&nbsp;{{ 'COMMON.active' | translate }}
+							</mat-radio-button>
+						</div>
+						<div class="col-md-6 p-0">
+							<mat-radio-button class="example-radio-button" value="0">
+								&nbsp;{{ 'COMMON.in_active' | translate }}
+							</mat-radio-button>
+						</div>
+					</div>
+				</mat-radio-group>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'is_active'"
+				[validationType]="'required'"
+				[controlText]="'COMMON.activation' | translate"
+			></kt-form-error>
+		</div>
+		<!--Active-->
+
+	</form>
+
+</div>

@@ -6,6 +6,11 @@ import {PagesModule} from '../../pages.module';
 import {MatDividerModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 import {RoutesName} from '../../../../core/Global/routes.name';
+import {IndexComponent} from './index/index.component';
+import {AddComponent} from './add/add.component';
+import {EditComponent} from './edit/edit.component';
+import {FormComponent} from './form/form.component';
+import {GalleryModule} from '@ngx-gallery/core';
 
 
 const routes: Routes = [
@@ -13,35 +18,34 @@ const routes: Routes = [
 		path: '',
 		component: MagazineCategoryComponent,
 		children: [
-			// {
-			// 	path: '',
-			// 	component: IndexComponent
-			// },
-			// {
-			// path: RoutesName.add(),
-			// 	component: AddComponent
-			// },
-			// {
-			// 	path: ':id',
-			// 	component: EditComponent
-			// },
-			// {
-			// 	path: 'details/:id',
-			// 	component: ShowComponent
-			// },
-			// {path: '**', redirectTo: '', pathMatch: ''},
+			{
+				path: '',
+				component: IndexComponent
+			},
+			{
+				path: RoutesName.add(),
+				component: AddComponent
+			},
+			{
+				path: ':id',
+				component: EditComponent
+			},
+			{path: '**', redirectTo: '', pathMatch: ''},
 		]
 	}
 ];
 
 @NgModule({
-	declarations: [MagazineCategoryComponent],
+	declarations: [
+		MagazineCategoryComponent, IndexComponent, AddComponent, EditComponent, FormComponent
+	],
 	imports: [
 		CommonModule,
 		RouterModule.forChild(routes),
 		PagesModule,
 		MatDividerModule,
 		TranslateModule,
+		GalleryModule,
 	]
 })
 export class MagazineCategoryModule {

@@ -13,12 +13,17 @@ export class MagazineCategorySerializer extends BaseSerializer implements Serial
 	}
 
 	toJson(model: MagazineCategoryModel): any {
-		return {
+		let object =  {
 			id : model.id,
 			content : model.content,
-			images : model.images,
 			is_active : model.is_active,
 		};
+
+		if (model.images){
+			object['images'] = model.images;
+		}
+
+		return object;
 	}
 
 	toFormData(object: MagazineCategoryModel): FormData {
