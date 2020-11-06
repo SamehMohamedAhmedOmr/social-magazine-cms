@@ -191,21 +191,27 @@ export const locale = {
 				name: 'Categories',
 				single: 'Category',
 				columns: {
-				}
+				},
+				add_image :'Add Categories Images'
 			},
 
 			MAGAZINE_NEWS: {
 				name: 'News',
 				single: 'News',
 				columns: {
-				}
+				},
+				add_image :'Add News Images'
 			},
 
 			TESTIMONIAL: {
 				name: 'Testimonials',
 				single: 'Testimonial',
 				columns: {
-				}
+					image: 'Image',
+					evaluate: 'Evaluate',
+					stars: 'Stars'
+				},
+				add_image :'Add Testimonials Image'
 			},
 
 			MAGAZINE_GOAL: {
@@ -259,7 +265,23 @@ export const locale = {
 				change_type: 'User Type Changed to {{name}} successfully',
 				change_account_type : 'Change Account Type'
 
-			}
+			},
+
+			Gallery: {
+				name: 'Gallery',
+				single: 'Image',
+				images:'Images',
+				columns: {
+				},
+				view_image: 'View Image',
+				upload:'Upload',
+				no_images : 'No Gallery Image yet',
+				save_selected_images : 'Save Selected Image',
+				guide_msg: 'Note :: you should select {{image}} then Click on {{save_selected_images}}',
+				delete_image : 'Delete Image',
+				delete_image_body : 'Are you sure ? this Image will be deleted Permanently!',
+				open_gallery : 'Open Gallery'
+			},
 
 		},
 

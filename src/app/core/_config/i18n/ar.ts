@@ -193,21 +193,27 @@ export const locale = {
 				name: 'التصنيف',
 				single: 'التصنيف',
 				columns: {
-				}
+				},
+				add_image :'اضافة صور للتصنيف'
 			},
 
 			MAGAZINE_NEWS: {
 				name: 'الاخبار',
 				single: 'الخبر',
 				columns: {
-				}
+				},
+				add_image :'اضافة صور للاخبار'
 			},
 
 			TESTIMONIAL: {
 				name: 'قالوا عننا',
 				single: 'التوصية',
 				columns: {
-				}
+					image: 'صورة',
+					evaluate: 'التقييم',
+					stars: 'النجوم'
+				},
+				add_image :'اضافة صورة للتوصية'
 			},
 
 			MAGAZINE_GOAL: {
@@ -259,7 +265,23 @@ export const locale = {
 				},
 				change_type: 'تم تغيير نوع المستخدم الى {{name}} بنجاح',
 				change_account_type : 'تغيير نوع الحساب'
-			}
+			},
+
+			Gallery: {
+				name: 'المعرض',
+				single: 'الصورة',
+				images: 'صور',
+				columns: {
+				},
+				view_image: 'عرض الصورة',
+				upload:'رفع',
+				no_images : 'لا يوجد صورة ف المعرض حتى الان',
+				save_selected_images : 'حفظ الصور المختاره',
+				guide_msg: 'ملاحظة :: يجب ان تختار {{image}} ثم تضغط هلى {{save_selected_images}}',
+				delete_image : 'حذف الصورة',
+				delete_image_body : 'هل انت متأكد ؟ سيتم حذف الصورة نهائيا!',
+				open_gallery : 'فتح المعرض'
+			},
 
 		},
 

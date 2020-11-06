@@ -6,6 +6,7 @@ export class TestimonialModel extends ModelBase {
 	public name:string;
 	public stars:number;
 	public image:any;
+	public image_id:number;
 	public is_active:boolean;
 
 	constructor(id: number) {
