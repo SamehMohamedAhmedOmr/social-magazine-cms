@@ -13,13 +13,18 @@ export class MagazineNewsSerializer extends BaseSerializer implements Serializer
 	}
 
 	toJson(model: MagazineNewsModel): any {
-		return {
+		let object =  {
 			id : model.id,
 			title : model.title,
 			content : model.content,
-			images : model.images,
 			is_active : model.is_active,
 		};
+
+		if (model.images.length){
+			object['images'] = model.images;
+		}
+
+		return object;
 	}
 
 	toFormData(object: MagazineNewsModel): FormData {

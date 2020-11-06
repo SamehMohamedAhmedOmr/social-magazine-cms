@@ -6,8 +6,8 @@ import {HelperService} from '../../../../../core/services/helper.service';
 import {FormErrorService} from '../../../../../core/services/FormError.service';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {TranslateService} from '@ngx-translate/core';
-import {MagazineCategoriesService} from '../../../../../core/services/Section-Module/magazine.categories.service';
-import {MagazineCategoryModel} from '../../../../../core/models/section-module/magazine.category.model';
+import {MagazineNewsService} from '../../../../../core/services/Section-Module/magazine.news.service';
+import {MagazineNewsModel} from '../../../../../core/models/section-module/magazine.news.model';
 
 @Component({
 	selector: 'kt-edit',
@@ -25,7 +25,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	isLoadingResults: any = true;
 	form: FormGroup;
-	model: MagazineCategoryModel;
+	model: MagazineNewsModel;
 
 	id = null;
 	is_result:boolean;
@@ -33,7 +33,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 	images:[] = [];
 
 	constructor(private formBuilder: FormBuilder ,
-				private service: MagazineCategoriesService,
+				private service: MagazineNewsService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
@@ -46,9 +46,9 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.MAGAZINE_CATEGORY.name');
-		this.content_name = this.translateService.instant('Components.MAGAZINE_CATEGORY.single');
-		this.dialog_title = this.translateService.instant('Components.MAGAZINE_CATEGORY.add_image');
+		this.page_name = this.translateService.instant('Components.MAGAZINE_NEWS.name');
+		this.content_name = this.translateService.instant('Components.MAGAZINE_NEWS.single');
+		this.dialog_title = this.translateService.instant('Components.MAGAZINE_NEWS.add_image');
 	}
 
 	initialiseComponent() {
@@ -89,6 +89,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 	 */
 	initializeForm() {
 		this.form = this.formBuilder.group({
+			title:		[this.model.title +'', Validators.required] ,
 			content:	[this.model.content +'', Validators.required] ,
 			images:		[''] ,
 			is_active: 	[this.model.is_active + '', Validators.required],
@@ -117,6 +118,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			return this.formErrorService.markAsTouched(controls);
 		}
 
+		this.model.title = controls['title'].value;
 		this.model.content = controls['content'].value;
 		this.model.images = (controls['images'].value) ?  controls['images'].value : [];
 

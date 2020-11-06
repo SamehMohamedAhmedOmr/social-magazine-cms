@@ -2,6 +2,25 @@
 
 	<form class="p-3" [formGroup]="form" autocomplete="off">
 
+		<!-- title  -->
+		<div class="my-4">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'COMMON.title' | translate }}</mat-label>
+					<input matInput
+						   formControlName="title"
+						   placeholder="{{ 'COMMON.title' | translate }}" >
+				</mat-form-field>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'title'"
+				[validationType]="'required'"
+				[controlText]= "'COMMON.title' | translate"
+			></kt-form-error>
+		</div>
+		<!-- title  -->
+
 		<!-- content  -->
 		<div class="my-3">
 			<div>
@@ -26,7 +45,7 @@
 		<div class="p-0">
 			<div class="d-flex justify-content-end">
 				<button type="button" class="btn btn-outline-success mx-3"
-						(click)="showGallery('MAGAZINE_CATEGORY')">
+						(click)="showGallery('NEWS')">
 					{{ 'Components.Gallery.open_gallery' | translate }}
 				</button>
 			</div>

@@ -19,7 +19,7 @@ export class MagazineCategorySerializer extends BaseSerializer implements Serial
 			is_active : model.is_active,
 		};
 
-		if (model.images){
+		if (model.images.length){
 			object['images'] = model.images;
 		}
 
