@@ -57,7 +57,7 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 		this.form = this.fb.group({
 			title:['', Validators.required] ,
 			content:['', Validators.required] ,
-			images:['', Validators.required] ,
+			images:[''] ,
 			is_active: 		['1', Validators.required],
 		});
 	}
@@ -79,7 +79,7 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 		model.content = controls['content'].value;
 		model.is_active = controls['is_active'].value;
 
-		model.images = controls['images'].value;
+		model.images = (controls['images'].value) ? controls['images'].value : [];
 
 		// call service to store Banner
 		this.isLoadingResults = true;
