@@ -89,7 +89,9 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 			});
 	}
 
-
+	changePageIndex($event) {
+		this.pageIndex = $event
+	}
 
 	/**
 	 * On destroy

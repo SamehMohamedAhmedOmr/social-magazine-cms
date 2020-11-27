@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PageEvent} from '@angular/material/paginator';
 import {IndexInterface} from '../../Base-Interface/Index.Interface';
 import {PaginateParams} from '../../../../core/models/paginateParams.interface';
@@ -27,6 +27,8 @@ export class UserListComponent implements OnInit {
 	@Input() current_type = 0;
 
 	user_types: [] = [];
+
+	@Output() pageIndexEvent = new EventEmitter<number>();
 
 	constructor(private authNoticeService: AuthNoticeService,
 				public translateService : TranslateService,
@@ -68,6 +70,7 @@ export class UserListComponent implements OnInit {
 	// pagination data tables
 	public pagination (event?:PageEvent) {
 		this.pageIndex = event.pageIndex;
+		this.pageIndexEvent.emit(event.pageIndex)
 		this.headerParams.next_page_index = this.pageIndex;
 		this.currentComponent.get(this.headerParams);
 	}

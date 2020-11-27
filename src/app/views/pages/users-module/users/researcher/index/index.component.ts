@@ -103,6 +103,10 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 		}
 	}
 
+	changePageIndex($event) {
+		this.pageIndex = $event
+	}
+
 	pageIcon(){
 		return SectionIconsName.RESEARCHER();
 	}
