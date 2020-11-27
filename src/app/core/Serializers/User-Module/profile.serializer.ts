@@ -24,10 +24,6 @@ export class ProfileSerializer extends BaseSerializer implements Serializer {
 			title_id : model.title_id,
 			educational_level_id : model.educational_level_id,
 			educational_degree_id : model.educational_degree_id,
-			educational_field : model.educational_field,
-			university : model.university,
-			faculty : model.faculty,
-			fax_number : model.fax_number,
 			address : model.address,
 		};
 	}
@@ -51,11 +47,7 @@ export class ProfileSerializer extends BaseSerializer implements Serializer {
 		object.educational_degree_id = item.educational_degree_id;
 		object.country_id = item.country_id;
 		object.types = (item.types) ? item.types : [];
-		object.educational_field = item.educational_field;
-		object.university = item.university;
-		object.faculty = item.faculty;
 		object.phone_number = item.phone_number;
-		object.fax_number = item.fax_number;
 		object.address = item.address;
 
 

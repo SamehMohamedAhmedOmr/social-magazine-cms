@@ -45,22 +45,6 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 			user_object['educational_degree_id'] = model.educational_degree.id;
 		}
 
-		if (model.educational_field){
-			user_object['educational_field'] = model.educational_field;
-		}
-
-		if (model.university){
-			user_object['university'] = model.university;
-		}
-
-		if (model.faculty){
-			user_object['faculty'] = model.faculty;
-		}
-
-		if (model.fax_number){
-			user_object['fax_number'] = model.fax_number;
-		}
-
 		if (model.account_type_id){
 			user_object['account_type_id'] = model.account_type_id;
 		}
@@ -91,11 +75,7 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 		object.educational_degree = item.educational_degree;
 		object.country = item.country;
 		object.types = item.types;
-		object.educational_field = item.educational_field;
-		object.university = item.university;
-		object.faculty = item.faculty;
 		object.phone_number = item.phone_number;
-		object.fax_number = item.fax_number;
 		object.address = item.address;
 
 		return  object;

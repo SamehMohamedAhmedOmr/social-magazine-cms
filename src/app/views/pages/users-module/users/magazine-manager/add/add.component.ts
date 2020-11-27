@@ -68,7 +68,6 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 
 			// Additional Data
-			fax_number:[''] ,
 			alternative_email:[''] ,
 			address:[''] ,
 		});
@@ -78,9 +77,6 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 			educational_degree:['', Validators.required] ,
 			educational_level:['', Validators.required] ,
 			title:['', Validators.required] ,
-			educational_field:[''] ,
-			university:[''] ,
-			faculty:[''] ,
 		});
 	}
 
@@ -116,16 +112,12 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 		model.phone_number = controls['phone'].value;
 		model.country.id = controls['country'].value;
 
-		model.fax_number = controls['fax_number'].value;
 		model.alternative_email = controls['alternative_email'].value;
 		model.address = controls['address'].value;
 
 		model.title.id = controls_educational_form['title'].value;
 		model.educational_degree.id = controls_educational_form['educational_degree'].value;
 		model.educational_level.id = controls_educational_form['educational_level'].value;
-		model.educational_field = controls_educational_form['educational_field'].value;
-		model.university = controls_educational_form['university'].value;
-		model.faculty = controls_educational_form['faculty'].value;
 
 		// call service to store Banner
 		this.isLoadingResults = true;
