@@ -212,6 +212,40 @@ export const locale = {
 				add_image :'Add News Images'
 			},
 
+			EVENTS: {
+				name: 'Events',
+				single: 'Event',
+				columns: {
+					date: 'Date'
+				},
+				add_image :'Add Events Images'
+			},
+
+			ACTIVITIES: {
+				name: 'Activities',
+				single: 'Activity',
+				columns: {
+				},
+				add_image :'Add Activities Images'
+			},
+
+			VIDEOS: {
+				name: 'Videos',
+				single: 'Video',
+				columns: {
+					link : 'Youtube Link'
+				},
+				add_image :'Add Videos Images'
+			},
+
+			PHOTOS: {
+				name: 'Photos',
+				single: 'Photos',
+				columns: {
+				},
+				add_image :'Add Images'
+			},
+
 			TESTIMONIAL: {
 				name: 'Testimonials',
 				single: 'Testimonial',

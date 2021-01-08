@@ -111,17 +111,6 @@ const routes: Routes = [
 					.then(m => m.MagazineCategoryModule)
 			},
 
-			// الاخبار
-			{
-				path: RoutesName.magazineNews(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
-				loadChildren: () => import('./views/pages/section-module/magazine-news/magazine-news.module')
-					.then(m => m.MagazineNewsModule)
-			},
-
 			// قالوا-عنا
 			{
 				path: RoutesName.testimonial(),
@@ -208,7 +197,60 @@ const routes: Routes = [
 			// 		.then(m => m.ResearcherModule)
 			// },
 
+			// الاخبار
+			{
+				path: RoutesName.magazineNews(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/magazine-news/magazine-news.module')
+					.then(m => m.MagazineNewsModule)
+			},
 
+			// EVENTS
+			{
+				path: RoutesName.EVENTS(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/events/events.module')
+					.then(m => m.EventsModule)
+			},
+
+			// ACTIVITIES
+			{
+				path: RoutesName.ACTIVITIES(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/activities/activities.module')
+					.then(m => m.ActivitiesModule)
+			},
+
+			// VIDEOS
+			{
+				path: RoutesName.VIDEOS(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/videos/videos.module')
+					.then(m => m.VideosModule)
+			},
+
+			// PHOTOS
+			{
+				path: RoutesName.PHOTOS(),
+				// canActivate: [PermissionsGuard],
+				// data: {
+				// 	permissions: permissionCatalogueConfig.product_permissions,
+				// },
+				loadChildren: () => import('./views/pages/section-module/photos/photos.module')
+					.then(m => m.PhotosModule)
+			},
 		]
 	},
 

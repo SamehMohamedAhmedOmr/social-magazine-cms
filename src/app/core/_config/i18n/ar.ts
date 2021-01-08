@@ -214,6 +214,40 @@ export const locale = {
 				add_image :'اضافة صور للاخبار'
 			},
 
+			EVENTS: {
+				name: 'الفاعليات',
+				single: 'الفاعلية',
+				columns: {
+					date: 'تاريخ'
+				},
+				add_image :'اضافة صور للفاعليات'
+			},
+
+			ACTIVITIES: {
+				name: 'الأنشطة',
+				single: 'النشاط',
+				columns: {
+				},
+				add_image :'اضافة صور للأتشاط'
+			},
+
+			VIDEOS: {
+				name: 'الفيديوهات',
+				single: 'الفيديو',
+				columns: {
+				},
+				add_image :'اضافة صور للفيديوهات'
+			},
+
+			PHOTOS: {
+				name: 'الصور',
+				single: 'الصور',
+				columns: {
+					link : 'رابط اليوتيوب'
+				},
+				add_image :'اضافة صور'
+			},
+
 			TESTIMONIAL: {
 				name: 'قالوا عننا',
 				single: 'التوصية',
