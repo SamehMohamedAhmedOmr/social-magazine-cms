@@ -10,6 +10,7 @@ export class MagazineInformationModel extends ModelBase {
 	public fax_number:string;
 	public email:string;
 	public postal_code:string;
+	public magazine_link:string;
 
 	constructor(id: number) {
 		super(id);
@@ -26,6 +27,7 @@ export class MagazineInformationModel extends ModelBase {
 			'fax_number' : this.fax_number,
 			'email' : this.email,
 			'postal_code' : this.postal_code,
+			'magazine_link' : this.magazine_link,
 		};
 	}
 

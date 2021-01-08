@@ -64,9 +64,9 @@ export class UsersMenuConfig {
 	public checkRoutePermissions(){
 
 		this.attachMenuItem([],this.MAGAZINE_EDITOR_MANAGER);
-		this.attachMenuItem([],this.JOURNAL_EDITOR_DIRECTOR);
-		this.attachMenuItem([],this.REFEREES);
-		this.attachMenuItem([],this.RESEARCHER);
+		// this.attachMenuItem([],this.JOURNAL_EDITOR_DIRECTOR);
+		// this.attachMenuItem([],this.REFEREES);
+		// this.attachMenuItem([],this.RESEARCHER);
 
 		this.attachMenu();
 

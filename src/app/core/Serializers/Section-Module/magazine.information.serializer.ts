@@ -22,7 +22,7 @@ export class MagazineInformationSerializer extends BaseSerializer implements Ser
 			fax_number : model.fax_number,
 			email : model.email,
 			postal_code : model.postal_code,
-
+			magazine_link: model.magazine_link,
 		};
 	}
 
@@ -43,6 +43,7 @@ export class MagazineInformationSerializer extends BaseSerializer implements Ser
 		object.fax_number = item.fax_number;
 		object.postal_code = item.postal_code;
 		object.email = item.email;
+		object.magazine_link = item.magazine_link;
 
 		return object;
 	}

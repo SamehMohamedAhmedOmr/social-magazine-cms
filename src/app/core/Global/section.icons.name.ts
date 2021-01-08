@@ -57,7 +57,7 @@ export class SectionIconsName {
 
 	public static JOURNAL_EDITOR_DIRECTOR(){
 		return 'fas fa-user-tag';
-	}a
+	}
 
 	public static REFEREES(){
 		return 'fas fa-users-cog';
@@ -65,6 +65,22 @@ export class SectionIconsName {
 
 	public static RESEARCHER(){
 		return 'fas fa-user-friends';
+	}
+
+	public static EVENTS() {
+		return 'flaticon-event-calendar-symbol';
+	}
+
+	public static ACTIVITIES() {
+		return 'fab fa-buffer';
+	}
+
+	public static VIDEOS() {
+		return 'fas fa-photo-video';
+	}
+
+	public static PHOTOS() {
+		return 'flaticon2-photograph';
 	}
 
 }

@@ -79,4 +79,20 @@ export class RoutesName {
 		return 'الباحثين';
 	}
 
+	public static EVENTS() {
+		return 'الفاعليات';
+	}
+
+	public static ACTIVITIES() {
+		return 'الانشطة';
+	}
+
+	public static VIDEOS() {
+		return 'الفيديوهات';
+	}
+
+	public static PHOTOS() {
+		return 'الصور';
+	}
+
 }

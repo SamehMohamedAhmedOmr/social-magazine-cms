@@ -54,13 +54,6 @@ export class MagazineSettingMenuConfig {
 		page: RoutesName.magazineCategory()
 	};
 
-	public MAGAZINE_NEWS = {
-		icon: SectionIconsName.magazineNews(),
-		title: 'MENUS.MAGAZINE_SETTINGS.menu.MAGAZINE_NEWS',
-		translate: 'MENUS.MAGAZINE_SETTINGS.menu.MAGAZINE_NEWS',
-		page: RoutesName.magazineNews()
-	};
-
 	public TESTIMONIAL = {
 		icon: SectionIconsName.testimonial(),
 		title: 'MENUS.MAGAZINE_SETTINGS.menu.TESTIMONIAL',
@@ -91,8 +84,6 @@ export class MagazineSettingMenuConfig {
 
 
 	public checkRoutePermissions(){
-
-		this.attachMenuItem([],this.MAGAZINE_NEWS);
 
 		this.attachMenuItem([],this.MAGAZINE_INFORMATION);
 

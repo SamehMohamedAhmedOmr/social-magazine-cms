@@ -3,6 +3,7 @@ import {AddNewMenuConfig} from './header-menues/add.new.menu.config';
 import {RoutesName} from '../Global/routes.name';
 import {UsersMenuConfig} from './aside-menues/users.menu.config';
 import {MagazineSettingMenuConfig} from './aside-menues/magazine-setting.menu.config';
+import {WebsiteContentConfig} from './aside-menues/website.content.config';
 
 
 
@@ -11,6 +12,7 @@ export class MenuConfig {
 	// Aside Menu
 	magazineSettingMenuConfig: MagazineSettingMenuConfig;
 	usersMenuConfig: UsersMenuConfig;
+	websiteContentConfig: WebsiteContentConfig;
 
 	// Header Menu
 	shortAccessMenuConfig: ShortAccessMenuConfig;
@@ -19,6 +21,7 @@ export class MenuConfig {
 	constructor() {
 		this.magazineSettingMenuConfig = new MagazineSettingMenuConfig();
 		this.usersMenuConfig = new UsersMenuConfig();
+		this.websiteContentConfig = new WebsiteContentConfig();
 
 		this.shortAccessMenuConfig = new ShortAccessMenuConfig();
 		this.addNewMenuConfig = new AddNewMenuConfig();
@@ -60,11 +63,15 @@ export class MenuConfig {
 		return this.defaults;
 	}
 
-	public attachAsideMenuItems(){
-
+	public attachAsideMenuItems()
+	{
 		// users Config
 		let usersMenuConfig = this.usersMenuConfig.configs;
 		this.attachAsideMenu(usersMenuConfig);
+
+		// Website Content Config
+		let websiteContentConfig = this.websiteContentConfig.configs;
+		this.attachAsideMenu(websiteContentConfig);
 
 		// Magazine Setting Config
 		let magazine_setting_config = this.magazineSettingMenuConfig.configs;

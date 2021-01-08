@@ -90,6 +90,16 @@ export const locale = {
 					RESEARCHER: 'Researcher',
 				}
 			},
+			WEBSITE_CONTENT:{
+				TITLE : 'Website Content',
+				menu:{
+					MAGAZINE_NEWS: 'Magazine News',
+					EVENTS: 'Events',
+					ACTIVITIES: 'Activities',
+					VIDEOS: 'Videos',
+					PHOTOS: 'Photos',
+				}
+			},
 			MAGAZINE_SETTINGS:{
 				TITLE : 'Magazine Settings',
 				menu:{
@@ -97,7 +107,6 @@ export const locale = {
 					PUBLICATION_RULE: 'Publication Rule',
 					ADVISORY_BODY: 'Advisory Body',
 					MAGAZINE_CATEGORY: 'Magazine Category',
-					MAGAZINE_NEWS: 'Magazine News',
 					TESTIMONIAL: 'Testimonial',
 					MAGAZINE_GOAL: 'Magazine Goals',
 					MAGAZINE_INFORMATION: 'Magazine Information',
@@ -228,6 +237,7 @@ export const locale = {
 					mission: 'mission',
 					fax_number: 'fax_number',
 					postal_code: 'postal_code',
+					magazine_link: 'Magazine Link'
 				}
 			},
 

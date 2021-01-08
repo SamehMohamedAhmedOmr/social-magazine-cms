@@ -85,6 +85,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			fax_number: 	[this.model.fax_number],
 			email: 	[this.model.email],
 			postal_code: 	[this.model.postal_code],
+			magazine_link: 	[this.model.magazine_link],
 		});
 
 		this.isLoadingResults = false;
@@ -117,6 +118,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 		this.model.fax_number = controls['fax_number'].value;
 		this.model.email = controls['email'].value;
 		this.model.postal_code = controls['postal_code'].value;
+		this.model.magazine_link = controls['magazine_link'].value;
 
 		// call service to store shipping rule
 		this.isLoadingResults = true;

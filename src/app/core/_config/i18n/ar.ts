@@ -90,6 +90,16 @@ export const locale = {
 					RESEARCHER: 'الباحثين',
 				}
 			},
+			WEBSITE_CONTENT:{
+				TITLE : 'محتوى الموقع',
+				menu:{
+					MAGAZINE_NEWS: 'الاخبار',
+					EVENTS: 'الفاعليات',
+					ACTIVITIES: 'الأنشطة',
+					VIDEOS: 'الفيديوهات',
+					PHOTOS: 'الصور',
+				}
+			},
 			MAGAZINE_SETTINGS:{
 				TITLE : 'اعدادات المجلة',
 				menu:{
@@ -97,7 +107,6 @@ export const locale = {
 					PUBLICATION_RULE: 'شروط النشر',
 					ADVISORY_BODY: 'الهيئة الاستشارية',
 					MAGAZINE_CATEGORY: 'التصنيف',
-					MAGAZINE_NEWS: 'الاخبار',
 					TESTIMONIAL: 'قالوا عنا',
 					MAGAZINE_GOAL: 'اهداف المجلة',
 					MAGAZINE_INFORMATION: 'معلومات المجلة',
@@ -230,6 +239,7 @@ export const locale = {
 					mission: 'الرسالة',
 					fax_number: 'رقم الفاكس',
 					postal_code: 'الكود البريدي',
+					magazine_link: 'رابط المجلة العلمية'
 				}
 			},
 
