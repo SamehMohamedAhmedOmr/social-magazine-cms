@@ -54,23 +54,13 @@ export const locale = {
 		},
 
 		STATISTICS: {
-			ORDERS: {
-				orders_count: 'Total Orders',
-				orders_total_price: 'Total Orders Price',
-				canceled_orders: 'Canceled orders',
-				delivered_orders: 'Delivered orders',
-				pending_orders: 'Pending orders',
-			},
-
-			CARTS: {
-				pending_cart_item_count: 'Pending Cart items',
-				pending_carts_count: 'Pending Carts',
-			},
-
-			CUSTOMERS: {
-				new_customers: 'New Customers in last month',
-			}
-
+			name : 'Statistics',
+			visitors_count: 'Visitor Count',
+			news_count: 'News Count',
+			activities_count: 'Activities Count',
+			events_count: 'Events Count',
+			videos_count: 'Videos Count',
+			advisory_bodies_count: 'Advisory Bodies Count',
 		},
 
 		Sales: {

@@ -54,23 +54,13 @@ export const locale = {
 		},
 
 		STATISTICS: {
-			ORDERS: {
-				orders_count: 'اجمالي الطلبات',
-				orders_total_price: 'اجمالي سعر الطلبات',
-				canceled_orders: 'الطلبات الملغاة',
-				delivered_orders: 'الطلبات الموصلة',
-				pending_orders: 'الطلبات قيد الانتظار',
-			},
-
-			CARTS: {
-				pending_cart_item_count: 'المنتجات قيد الانتظار في السلة',
-				pending_carts_count: 'اجمالي السلات التي بها منتجات',
-			},
-
-			CUSTOMERS: {
-				new_customers: 'العملاء الجدد في اخر شهر',
-			}
-
+			name : 'الاحصائيات',
+			visitors_count: 'عدد الزيارات',
+			news_count: 'عدد الأخبار',
+			activities_count: 'عدد الأنشطة',
+			events_count: 'عدد الفعاليات',
+			videos_count: 'عدد الفيديوهات',
+			advisory_bodies_count: 'عدد أعضاء الهيئة الاستشارية',
 		},
 
 		Sales: {
