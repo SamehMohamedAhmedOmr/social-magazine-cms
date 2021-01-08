@@ -41,34 +41,25 @@
 		</div>
 		<!-- content  -->
 
-		<!-- Image -->
-		<div class="p-0">
-			<div class="d-flex justify-content-end">
-				<button type="button" class="btn btn-outline-success mx-3"
-						(click)="showGallery('NEWS')">
-					{{ 'Components.Gallery.open_gallery' | translate }}
-				</button>
+
+		<!-- link  -->
+		<div class="my-5">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'Components.VIDEOS.columns.link' | translate }}</mat-label>
+					<input matInput
+						   formControlName="link"
+						   placeholder="{{ 'Components.VIDEOS.columns.link' | translate }}" >
+				</mat-form-field>
 			</div>
 			<kt-form-error
 				[form]="form"
-				[controlName]="'image'"
+				[controlName]="'title'"
 				[validationType]="'required'"
-				[controlText]="'COMMON.image' | translate"
+				[controlText]= "'Components.VIDEOS.columns.link' | translate"
 			></kt-form-error>
 		</div>
-		<!-- Image -->
-
-
-		<div class="my-4" *ngIf="old_images.length" style="direction: ltr;">
-			<gallery [items]="old_images" thumbPosition="left"></gallery>
-		</div>
-
-<!--		<div *ngIf="old_images.length" class="uploaded-preview my-4">-->
-<!--			<div *ngFor="let image of imgURL">-->
-<!--				<img src="{{ image.image }}" alt="">-->
-<!--			</div>-->
-
-<!--		</div>-->
+		<!-- link  -->
 
 		<!--Active -->
 		<div class="my-3">

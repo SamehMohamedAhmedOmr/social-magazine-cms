@@ -6,8 +6,8 @@ import {FormErrorService} from '../../../../../core/services/FormError.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {TranslateService} from '@ngx-translate/core';
-import {MagazineNewsService} from '../../../../../core/services/Section-Module/magazine.news.service';
-import {MagazineNewsModel} from '../../../../../core/models/section-module/magazine.news.model';
+import {VideosService} from '../../../../../core/services/Section-Module/videos.service';
+import {VideosModel} from '../../../../../core/models/section-module/videos.model';
 
 @Component({
 	selector: 'kt-add',
@@ -26,7 +26,7 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 	isLoadingResults: any = true;
 	form: FormGroup;
 	constructor(private fb: FormBuilder ,
-				private service: MagazineNewsService,
+				private service: VideosService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
@@ -38,9 +38,9 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.MAGAZINE_NEWS.name');
-		this.content_name = this.translateService.instant('Components.MAGAZINE_NEWS.single');
-		this.dialog_title = this.translateService.instant('Components.MAGAZINE_NEWS.add_image');
+		this.page_name = this.translateService.instant('Components.VIDEOS.name');
+		this.content_name = this.translateService.instant('Components.VIDEOS.single');
+		this.dialog_title = this.translateService.instant('Components.VIDEOS.add_image');
 	}
 
 	initialiseComponent() {
@@ -57,7 +57,7 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 		this.form = this.fb.group({
 			title:['', Validators.required] ,
 			content:['', Validators.required] ,
-			images:[''] ,
+			link:['', Validators.required] ,
 			is_active: 		['1', Validators.required],
 		});
 	}
@@ -74,12 +74,11 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 			return this.formErrorService.markAsTouched(controls);
 		}
 
-		const model = new MagazineNewsModel(null);
+		const model = new VideosModel(null);
 		model.title = controls['title'].value;
 		model.content = controls['content'].value;
 		model.is_active = controls['is_active'].value;
-
-		model.images = (controls['images'].value) ? controls['images'].value : [];
+		model.link = controls['link'].value;
 
 		// call service to store Banner
 		this.isLoadingResults = true;

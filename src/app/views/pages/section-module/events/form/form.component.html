@@ -41,11 +41,41 @@
 		</div>
 		<!-- content  -->
 
+
+		<!-- Date  -->
+		<div class="row my-4">
+			<div class="col-12">
+				<div class="w-100 row">
+					<mat-form-field class="col-10">
+						<label class="w-100">
+							<input [matDatepicker]="picker2"
+								   (click)="picker2.open()"
+								   formControlName="date"
+								   matInput
+								   placeholder="{{ 'Components.EVENTS.columns.date' | translate}}">
+						</label>
+						<mat-datepicker #picker2></mat-datepicker>
+					</mat-form-field>
+					<div class="col-2 d-flex justify-content-center align-items-center">
+						<button  mat-raised-button (click)="picker2.open()">فتح</button>
+					</div>
+				</div>
+
+				<kt-form-error
+					[form]="form"
+					[controlName]="'date'"
+					[validationType]="'required'"
+					[controlText]="'Components.EVENTS.columns.date' | translate"
+				></kt-form-error>
+			</div>
+		</div>
+		<!-- Date  -->
+
 		<!-- Image -->
 		<div class="p-0">
 			<div class="d-flex justify-content-end">
 				<button type="button" class="btn btn-outline-success mx-3"
-						(click)="showGallery('NEWS')">
+						(click)="showGallery('EVENTS')">
 					{{ 'Components.Gallery.open_gallery' | translate }}
 				</button>
 			</div>

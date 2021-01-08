@@ -32,6 +32,13 @@ export class AddNewMenuConfig {
 		page: RoutesName.MAGAZINE_EDITOR_MANAGER() + '/' + RoutesName.add()
 	};
 
+	public MAGAZINE_NEWS = {
+		icon: SectionIconsName.magazineNews(),
+		title: 'MENUS.WEBSITE_CONTENT.menu.MAGAZINE_NEWS',
+		translate: 'MENUS.WEBSITE_CONTENT.menu.MAGAZINE_NEWS',
+		page: RoutesName.magazineNews() + '/' + RoutesName.add()
+	};
+
 	public menu: any = {
 		items: [
 		]
@@ -40,6 +47,7 @@ export class AddNewMenuConfig {
 	public checkRoutePermissions(){
 
 		this.attachMenuItem([], this.MAGAZINE_EDITOR_MANAGER);
+		this.attachMenuItem([], this.MAGAZINE_NEWS);
 
 		this.attachMenu();
 	}

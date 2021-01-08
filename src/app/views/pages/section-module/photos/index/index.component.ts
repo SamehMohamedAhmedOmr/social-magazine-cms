@@ -13,6 +13,7 @@ import {SectionIconsName} from '../../../../../core/Global/section.icons.name';
 import {TranslateService} from '@ngx-translate/core';
 import {RoutesName} from '../../../../../core/Global/routes.name';
 import {MagazineNewsService} from '../../../../../core/services/Section-Module/magazine.news.service';
+import {PhotosService} from '../../../../../core/services/Section-Module/photos.service';
 
 declare var $ :any;
 
@@ -50,7 +51,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	};
 
 	constructor(private cdr: ChangeDetectorRef ,
-				public service: MagazineNewsService,
+				public service: PhotosService,
 				private authNoticeService: AuthNoticeService,
 				public translateService : TranslateService,
 				private router: Router,
@@ -61,8 +62,8 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	// onInit get Data from api
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.MAGAZINE_NEWS.name');
-		this.content_name = this.translateService.instant('Components.MAGAZINE_NEWS.single');
+		this.page_name = this.translateService.instant('Components.PHOTOS.name');
+		this.content_name = this.translateService.instant('Components.PHOTOS.single');
 		this.add_route = RoutesName.add();
 	}
 
@@ -109,7 +110,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	}
 
 	pageIcon(){
-		return SectionIconsName.magazineNews();
+		return SectionIconsName.PHOTOS();
 	}
 
 	displayContent(text){

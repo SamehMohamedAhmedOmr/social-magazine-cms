@@ -6,8 +6,9 @@ import {FormErrorService} from '../../../../../core/services/FormError.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {TranslateService} from '@ngx-translate/core';
-import {MagazineNewsService} from '../../../../../core/services/Section-Module/magazine.news.service';
-import {MagazineNewsModel} from '../../../../../core/models/section-module/magazine.news.model';
+import {EventsService} from '../../../../../core/services/Section-Module/events.service';
+import {EventsModel} from '../../../../../core/models/section-module/events.model';
+import {DatePipe} from '@angular/common';
 
 @Component({
 	selector: 'kt-add',
@@ -26,10 +27,11 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 	isLoadingResults: any = true;
 	form: FormGroup;
 	constructor(private fb: FormBuilder ,
-				private service: MagazineNewsService,
+				private service: EventsService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
+				private datePipe: DatePipe,
 				public translateService : TranslateService,
 				private authNoticeService: AuthNoticeService,
 				private helper: HelperService) {
@@ -38,9 +40,9 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.MAGAZINE_NEWS.name');
-		this.content_name = this.translateService.instant('Components.MAGAZINE_NEWS.single');
-		this.dialog_title = this.translateService.instant('Components.MAGAZINE_NEWS.add_image');
+		this.page_name = this.translateService.instant('Components.EVENTS.name');
+		this.content_name = this.translateService.instant('Components.EVENTS.single');
+		this.dialog_title = this.translateService.instant('Components.EVENTS.add_image');
 	}
 
 	initialiseComponent() {
@@ -58,6 +60,7 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 			title:['', Validators.required] ,
 			content:['', Validators.required] ,
 			images:[''] ,
+			date: ['', Validators.required],
 			is_active: 		['1', Validators.required],
 		});
 	}
@@ -74,10 +77,11 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 			return this.formErrorService.markAsTouched(controls);
 		}
 
-		const model = new MagazineNewsModel(null);
+		const model = new EventsModel(null);
 		model.title = controls['title'].value;
 		model.content = controls['content'].value;
 		model.is_active = controls['is_active'].value;
+		model.date = this.transformDate(controls['date'].value);
 
 		model.images = (controls['images'].value) ? controls['images'].value : [];
 
@@ -110,6 +114,9 @@ export class AddComponent implements OnInit, OnDestroy, InitializeComponentInter
 		if (this.isValidationError){
 			this.authNoticeService.setNotice(null);
 		}
+	}
 
+	transformDate(date) {
+		return this.datePipe.transform(date, 'yyyy-MM-dd');
 	}
 }

@@ -6,8 +6,9 @@ import {HelperService} from '../../../../../core/services/helper.service';
 import {FormErrorService} from '../../../../../core/services/FormError.service';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {TranslateService} from '@ngx-translate/core';
-import {MagazineNewsService} from '../../../../../core/services/Section-Module/magazine.news.service';
-import {MagazineNewsModel} from '../../../../../core/models/section-module/magazine.news.model';
+import {EventsService} from '../../../../../core/services/Section-Module/events.service';
+import {EventsModel} from '../../../../../core/models/section-module/events.model';
+import {DatePipe} from '@angular/common';
 
 @Component({
 	selector: 'kt-edit',
@@ -25,7 +26,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	isLoadingResults: any = true;
 	form: FormGroup;
-	model: MagazineNewsModel;
+	model: EventsModel;
 
 	id = null;
 	is_result:boolean;
@@ -33,11 +34,12 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 	images:[] = [];
 
 	constructor(private formBuilder: FormBuilder ,
-				private service: MagazineNewsService,
+				private service: EventsService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
 				private cdr: ChangeDetectorRef,
+				private datePipe: DatePipe,
 				private authNoticeService: AuthNoticeService,
 				public translateService : TranslateService,
 				private helper: HelperService) {
@@ -46,9 +48,9 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.MAGAZINE_NEWS.name');
-		this.content_name = this.translateService.instant('Components.MAGAZINE_NEWS.single');
-		this.dialog_title = this.translateService.instant('Components.MAGAZINE_NEWS.add_image');
+		this.page_name = this.translateService.instant('Components.EVENTS.name');
+		this.content_name = this.translateService.instant('Components.EVENTS.single');
+		this.dialog_title = this.translateService.instant('Components.EVENTS.add_image');
 	}
 
 	initialiseComponent() {
@@ -92,6 +94,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			title:		[this.model.title +'', Validators.required] ,
 			content:	[this.model.content +'', Validators.required] ,
 			images:		[''] ,
+			date: 		[this.model.date +'', Validators.required],
 			is_active: 	[this.model.is_active + '', Validators.required],
 		});
 
@@ -120,6 +123,8 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 		this.model.title = controls['title'].value;
 		this.model.content = controls['content'].value;
+		this.model.date = this.transformDate(controls['date'].value);
+
 		this.model.images = (controls['images'].value) ?  controls['images'].value : [];
 
 		this.model.is_active = controls['is_active'].value;
@@ -156,6 +161,10 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			this.authNoticeService.setNotice(null);
 		}
 
+	}
+
+	transformDate(date) {
+		return this.datePipe.transform(date, 'yyyy-MM-dd');
 	}
 
 }

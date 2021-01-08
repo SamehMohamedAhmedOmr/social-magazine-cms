@@ -33,6 +33,19 @@ export class ShortAccessMenuConfig {
 		page: RoutesName.MAGAZINE_EDITOR_MANAGER()
 	};
 
+	public MAGAZINE_NEWS = {
+		icon: SectionIconsName.magazineNews(),
+		title: 'MENUS.WEBSITE_CONTENT.menu.MAGAZINE_NEWS',
+		translate: 'MENUS.WEBSITE_CONTENT.menu.MAGAZINE_NEWS',
+		page: RoutesName.magazineNews()
+	};
+
+	public MAGAZINE_INFORMATION = {
+		icon: SectionIconsName.magazineInformation(),
+		title: 'MENUS.MAGAZINE_SETTINGS.menu.MAGAZINE_INFORMATION',
+		translate: 'MENUS.MAGAZINE_SETTINGS.menu.MAGAZINE_INFORMATION',
+		page: RoutesName.magazineInformation()
+	};
 
 	public menu: any = {
 		items: [
@@ -42,6 +55,10 @@ export class ShortAccessMenuConfig {
 	public checkRoutePermissions(){
 
 		this.attachMenuItem([], this.MAGAZINE_EDITOR_MANAGER);
+
+		this.attachMenuItem([], this.MAGAZINE_NEWS);
+
+		this.attachMenuItem([], this.MAGAZINE_INFORMATION);
 
 		this.attachMenu();
 	}

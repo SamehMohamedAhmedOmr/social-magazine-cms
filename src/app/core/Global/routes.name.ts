@@ -80,7 +80,7 @@ export class RoutesName {
 	}
 
 	public static EVENTS() {
-		return 'الفاعليات';
+		return 'الفعاليات';
 	}
 
 	public static ACTIVITIES() {

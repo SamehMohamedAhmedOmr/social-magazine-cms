@@ -94,7 +94,7 @@ export const locale = {
 				TITLE : 'محتوى الموقع',
 				menu:{
 					MAGAZINE_NEWS: 'الاخبار',
-					EVENTS: 'الفاعليات',
+					EVENTS: 'الفعاليات',
 					ACTIVITIES: 'الأنشطة',
 					VIDEOS: 'الفيديوهات',
 					PHOTOS: 'الصور',
@@ -215,12 +215,12 @@ export const locale = {
 			},
 
 			EVENTS: {
-				name: 'الفاعليات',
-				single: 'الفاعلية',
+				name: 'الفعاليات',
+				single: 'الفعالية',
 				columns: {
 					date: 'تاريخ'
 				},
-				add_image :'اضافة صور للفاعليات'
+				add_image :'اضافة صور لللفعاليات'
 			},
 
 			ACTIVITIES: {
@@ -235,6 +235,7 @@ export const locale = {
 				name: 'الفيديوهات',
 				single: 'الفيديو',
 				columns: {
+					link: 'رابط فيديو اليوتيوب'
 				},
 				add_image :'اضافة صور للفيديوهات'
 			},

@@ -6,8 +6,8 @@ import {HelperService} from '../../../../../core/services/helper.service';
 import {FormErrorService} from '../../../../../core/services/FormError.service';
 import {InitializeComponentInterface} from '../../../../shared/Base-Interface/Initialize.Component.Interface';
 import {TranslateService} from '@ngx-translate/core';
-import {MagazineNewsService} from '../../../../../core/services/Section-Module/magazine.news.service';
-import {MagazineNewsModel} from '../../../../../core/models/section-module/magazine.news.model';
+import {PhotosService} from '../../../../../core/services/Section-Module/photos.service';
+import {PhotosModel} from '../../../../../core/models/section-module/photos.model';
 
 @Component({
 	selector: 'kt-edit',
@@ -25,7 +25,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	isLoadingResults: any = true;
 	form: FormGroup;
-	model: MagazineNewsModel;
+	model: PhotosModel;
 
 	id = null;
 	is_result:boolean;
@@ -33,7 +33,7 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 	images:[] = [];
 
 	constructor(private formBuilder: FormBuilder ,
-				private service: MagazineNewsService,
+				private service: PhotosService,
 				private formErrorService: FormErrorService,
 				private route: ActivatedRoute,
 				private router:Router,
@@ -46,9 +46,9 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 
 	ngOnInit() {
 		this.initialiseComponent();
-		this.page_name = this.translateService.instant('Components.MAGAZINE_NEWS.name');
-		this.content_name = this.translateService.instant('Components.MAGAZINE_NEWS.single');
-		this.dialog_title = this.translateService.instant('Components.MAGAZINE_NEWS.add_image');
+		this.page_name = this.translateService.instant('Components.PHOTOS.name');
+		this.content_name = this.translateService.instant('Components.PHOTOS.single');
+		this.dialog_title = this.translateService.instant('Components.PHOTOS.add_image');
 	}
 
 	initialiseComponent() {
