@@ -1,6 +1,5 @@
 import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 
-
 import {TranslateService, TranslationChangeEvent} from '@ngx-translate/core';
 import {InitializeComponentInterface} from '../../shared/Base-Interface/Initialize.Component.Interface';
 import {Router} from '@angular/router';
@@ -20,11 +19,10 @@ export class DashboardComponent implements OnInit, OnDestroy, InitializeComponen
 
 	isLoadingResults: boolean = true;
 
-	statistics:StatisticsModel;
+	statistics: StatisticsModel;
 
 
-	constructor(
-				private translate: TranslateService,
+	constructor(private translate: TranslateService,
 				private router: Router,
 				private service: StatisticsService,
 				private helper: HelperService,
@@ -42,7 +40,6 @@ export class DashboardComponent implements OnInit, OnDestroy, InitializeComponen
 	}
 
 	get() {
-		this.isLoadingResults = true;
 		this.service.get().subscribe(
 			(resp) => {
 				this.statistics = resp;
@@ -66,24 +63,24 @@ export class DashboardComponent implements OnInit, OnDestroy, InitializeComponen
 		}
 	}
 
-	VIDEOS(){
-		return  SectionIconsName.VIDEOS();
+	VIDEOS() {
+		return SectionIconsName.VIDEOS();
 	}
 
-	ACTIVITIES(){
-		return  SectionIconsName.ACTIVITIES();
+	ACTIVITIES() {
+		return SectionIconsName.ACTIVITIES();
 	}
 
-	advisoryBody(){
-		return  SectionIconsName.advisoryBody();
+	advisoryBody() {
+		return SectionIconsName.advisoryBody();
 	}
 
-	magazineNews(){
-		return  SectionIconsName.magazineNews();
+	magazineNews() {
+		return SectionIconsName.magazineNews();
 	}
 
-	EVENTS(){
-		return  SectionIconsName.EVENTS();
+	EVENTS() {
+		return SectionIconsName.EVENTS();
 	}
 
 

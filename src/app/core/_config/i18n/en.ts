@@ -316,7 +316,7 @@ export const locale = {
 		},
 
 		BASIC: {
-			APP_NAME: 'JFSC',
+			APP_NAME: 'Arab Society for Human and Environmental Development\n',
 			ADMIN_PANEL: 'Admin Panel',
 		},
 

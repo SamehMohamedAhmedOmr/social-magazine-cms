@@ -44821,7 +44821,8 @@ and (max-width: 1024px) {
 
 .kt-aside__brand .kt-aside__brand-logo {
 	display: flex;
-	justify-content: flex-begin
+	justify-content: center;
+	height: inherit;
 }
 
 .kt-aside--minimize .kt-aside__brand .kt-aside__brand-logo img {
