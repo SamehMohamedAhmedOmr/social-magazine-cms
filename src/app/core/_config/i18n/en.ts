@@ -26,9 +26,9 @@ export const locale = {
 			FORM: {
 				NAME: 'Forms',
 				ITEMS1:
-				{
-					NAME: 'forms 1 '
-				}
+					{
+						NAME: 'forms 1 '
+					}
 			},
 			DATA_TABLE: 'Data Table',
 			BANNER: {
@@ -54,7 +54,7 @@ export const locale = {
 		},
 
 		STATISTICS: {
-			name : 'Statistics',
+			name: 'Statistics',
 			visitors_count: 'Visitor Count',
 			news_count: 'News Count',
 			activities_count: 'Activities Count',
@@ -70,19 +70,19 @@ export const locale = {
 			}
 		},
 
-		MENUS:{
-			USERS:{
-				TITLE : 'Users',
-				menu:{
+		MENUS: {
+			USERS: {
+				TITLE: 'Users',
+				menu: {
 					MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Manager',
 					JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Director',
 					REFEREES: 'Referees',
 					RESEARCHER: 'Researcher',
 				}
 			},
-			WEBSITE_CONTENT:{
-				TITLE : 'Website Content',
-				menu:{
+			WEBSITE_CONTENT: {
+				TITLE: 'Website Content',
+				menu: {
 					MAGAZINE_NEWS: 'Magazine News',
 					EVENTS: 'Events',
 					ACTIVITIES: 'Activities',
@@ -90,9 +90,9 @@ export const locale = {
 					PHOTOS: 'Photos',
 				}
 			},
-			MAGAZINE_SETTINGS:{
-				TITLE : 'Magazine Settings',
-				menu:{
+			MAGAZINE_SETTINGS: {
+				TITLE: 'Magazine Settings',
+				menu: {
 					WHO_IS_US: 'Who is us',
 					PUBLICATION_RULE: 'Publication Rule',
 					ADVISORY_BODY: 'Advisory Body',
@@ -142,8 +142,8 @@ export const locale = {
 
 		Components: {
 			item_per_page: 'Item Per Page',
-			filter_by: "Filter by",
-			actions: "Actions",
+			filter_by: 'Filter by',
+			actions: 'Actions',
 			all: 'All',
 			marked: 'Marked',
 			active: 'Active',
@@ -162,20 +162,18 @@ export const locale = {
 			date: 'Date',
 			Select: 'Select',
 			export: 'Export',
-			no_image:'No Image Yet',
+			no_image: 'No Image Yet',
 
 			WHO_IS_US: {
 				name: 'Who Is us',
 				single: 'Content',
-				columns: {
-				}
+				columns: {}
 			},
 
 			PUBLICATION_RULE: {
 				name: 'Publication Rules',
 				single: 'Publication Rule',
-				columns: {
-				}
+				columns: {}
 			},
 
 			ADVISORY_BODY: {
@@ -189,17 +187,15 @@ export const locale = {
 			MAGAZINE_CATEGORY: {
 				name: 'Categories',
 				single: 'Category',
-				columns: {
-				},
-				add_image :'Add Categories Images'
+				columns: {},
+				add_image: 'Add Categories Images'
 			},
 
 			MAGAZINE_NEWS: {
 				name: 'News',
 				single: 'News',
-				columns: {
-				},
-				add_image :'Add News Images'
+				columns: {},
+				add_image: 'Add News Images'
 			},
 
 			EVENTS: {
@@ -208,32 +204,30 @@ export const locale = {
 				columns: {
 					date: 'Date'
 				},
-				add_image :'Add Events Images'
+				add_image: 'Add Events Images'
 			},
 
 			ACTIVITIES: {
 				name: 'Activities',
 				single: 'Activity',
-				columns: {
-				},
-				add_image :'Add Activities Images'
+				columns: {},
+				add_image: 'Add Activities Images'
 			},
 
 			VIDEOS: {
 				name: 'Videos',
 				single: 'Video',
 				columns: {
-					link : 'Youtube Link'
+					link: 'Youtube Link'
 				},
-				add_image :'Add Videos Images'
+				add_image: 'Add Videos Images'
 			},
 
 			PHOTOS: {
 				name: 'Photos',
 				single: 'Photos',
-				columns: {
-				},
-				add_image :'Add Images'
+				columns: {},
+				add_image: 'Add Images'
 			},
 
 			TESTIMONIAL: {
@@ -244,14 +238,13 @@ export const locale = {
 					evaluate: 'Evaluate',
 					stars: 'Stars'
 				},
-				add_image :'Add Testimonials Image'
+				add_image: 'Add Testimonials Image'
 			},
 
 			MAGAZINE_GOAL: {
 				name: 'Magazine Goal',
 				single: 'Goal',
-				columns: {
-				}
+				columns: {}
 			},
 
 			MAGAZINE_INFORMATION: {
@@ -261,7 +254,11 @@ export const locale = {
 					mission: 'mission',
 					fax_number: 'fax_number',
 					postal_code: 'postal_code',
-					magazine_link: 'Magazine Link'
+					magazine_link: 'Magazine Link',
+					facebook: 'Facebook',
+					twitter: 'Twitter',
+					instgram: 'Instgram',
+					whatsapp: 'Whatsapp',
 				}
 			},
 
@@ -280,7 +277,7 @@ export const locale = {
 				RESEARCHER_SINGLE: 'Researcher',
 
 				profile: 'Profile',
-				change_password : 'تغيير كلمة المرور',
+				change_password: 'تغيير كلمة المرور',
 				columns: {
 					first_name: 'First Name',
 					family_name: 'Family Name',
@@ -297,86 +294,83 @@ export const locale = {
 					account_type: 'Account type'
 				},
 				change_type: 'User Type Changed to {{name}} successfully',
-				change_account_type : 'Change Account Type'
+				change_account_type: 'Change Account Type'
 
 			},
 
 			Gallery: {
 				name: 'Gallery',
 				single: 'Image',
-				images:'Images',
-				columns: {
-				},
+				images: 'Images',
+				columns: {},
 				view_image: 'View Image',
-				upload:'Upload',
-				no_images : 'No Gallery Image yet',
-				save_selected_images : 'Save Selected Image',
+				upload: 'Upload',
+				no_images: 'No Gallery Image yet',
+				save_selected_images: 'Save Selected Image',
 				guide_msg: 'Note :: you should select {{image}} then Click on {{save_selected_images}}',
-				delete_image : 'Delete Image',
-				delete_image_body : 'Are you sure ? this Image will be deleted Permanently!',
-				open_gallery : 'Open Gallery'
+				delete_image: 'Delete Image',
+				delete_image_body: 'Are you sure ? this Image will be deleted Permanently!',
+				open_gallery: 'Open Gallery'
 			},
 
 		},
 
-		BASIC:{
-			APP_NAME : 'JFSC',
-			ADMIN_PANEL : "Admin Panel",
+		BASIC: {
+			APP_NAME: 'JFSC',
+			ADMIN_PANEL: 'Admin Panel',
 		},
 
-		COMMON:{
+		COMMON: {
 			id: 'ID',
-			in_active : 'Inactive',
-			active : 'active',
+			in_active: 'Inactive',
+			active: 'active',
 			activation: 'Activation',
 
 			activation_button: 'Active',
 			deactivation_button: 'Inactive',
 
-			email : 'Email',
-			password : 'Password',
-			remember_me : 'Remember me',
+			email: 'Email',
+			password: 'Password',
+			remember_me: 'Remember me',
 			password_confirmation: 'Password Confirmation',
 			forget_password: 'Forget Password ?',
 			reset_password: 'Reset Your Password',
-			token : 'Token',
+			token: 'Token',
 			content: 'Content',
-			name : 'Name',
-			title : 'Title',
+			name: 'Name',
+			title: 'Title',
 			images: 'Images',
-			image : 'Image',
+			image: 'Image',
 			phone: 'Phone',
 			address: 'Address',
 			visitors: 'Visitors',
-			visit_number : 'Visits',
-			clear_form : 'Clear Form',
-			no_record_found : 'No Record Found',
+			visit_number: 'Visits',
+			clear_form: 'Clear Form',
+			no_record_found: 'No Record Found',
 			Add_Button: 'Add {{name}}',
 			Edit_Button: 'Edit {{name}}',
 			Delete_Title: 'Delete {{name}}',
 			Delete_Button: 'Delete',
 			Delete_Body: 'Are your sure to delete {{name}} that have id {{id}} ?, This will delete permanently!',
-			Added_successfully : '{{name}} added Successfully',
-			Edited_successfully : '{{name}} edited Successfully',
-			Deleted_successfully : '{{name}} deleted Successfully',
+			Added_successfully: '{{name}} added Successfully',
+			Edited_successfully: '{{name}} edited Successfully',
+			Deleted_successfully: '{{name}} deleted Successfully',
 			Item_not_found: '{{name}} is Not Found or not exists anymore',
 			status_changed: 'Status changed successfully',
-			old_password : 'Old Password',
-			new_password : 'New Password',
+			old_password: 'Old Password',
+			new_password: 'New Password',
 		},
 
-		MSG:{
+		MSG: {},
 
-		},
-
-		stepper:{
-			basic_data : 'Basic Data',
-			additional_data : 'Additional Data',
-			education_degree: "المستوى التعليمي",
+		stepper: {
+			basic_data: 'Basic Data',
+			additional_data: 'Additional Data',
+			education_degree: 'المستوى التعليمي',
 			vision_mission: 'Vision and Mission',
 			next: 'Next',
-			back:'Back',
-			error:"Please Enter the Required Data"
+			back: 'Back',
+			error: 'Please Enter the Required Data'
 
 		},
 

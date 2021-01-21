@@ -86,6 +86,11 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 			email: 	[this.model.email],
 			postal_code: 	[this.model.postal_code],
 			magazine_link: 	[this.model.magazine_link],
+
+			facebook: 	[this.model.facebook],
+			twitter: 	[this.model.twitter],
+			instgram: 	[this.model.instgram],
+			whatsapp: 	[this.model.whatsapp],
 		});
 
 		this.isLoadingResults = false;
@@ -119,6 +124,11 @@ export class EditComponent implements OnInit, OnDestroy, InitializeComponentInte
 		this.model.email = controls['email'].value;
 		this.model.postal_code = controls['postal_code'].value;
 		this.model.magazine_link = controls['magazine_link'].value;
+
+		this.model.facebook = controls['facebook'].value;
+		this.model.twitter = controls['twitter'].value;
+		this.model.instgram = controls['instgram'].value;
+		this.model.whatsapp = controls['whatsapp'].value;
 
 		// call service to store shipping rule
 		this.isLoadingResults = true;

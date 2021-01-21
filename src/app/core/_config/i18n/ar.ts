@@ -264,7 +264,11 @@ export const locale = {
 					mission: 'الرسالة',
 					fax_number: 'رقم الفاكس',
 					postal_code: 'الكود البريدي',
-					magazine_link: 'رابط المجلة العلمية'
+					magazine_link: 'رابط المجلة العلمية',
+					facebook: 'فيسبوك',
+					twitter: 'تويتر',
+					instgram: 'انستجرام',
+					whatsapp: 'واتساب',
 				}
 			},
 

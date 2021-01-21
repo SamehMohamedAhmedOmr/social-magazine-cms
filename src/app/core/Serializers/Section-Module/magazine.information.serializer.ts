@@ -23,6 +23,11 @@ export class MagazineInformationSerializer extends BaseSerializer implements Ser
 			email : model.email,
 			postal_code : model.postal_code,
 			magazine_link: model.magazine_link,
+
+			facebook: model.facebook,
+			instgram: model.instgram,
+			twitter: model.twitter,
+			whatsapp: model.whatsapp,
 		};
 	}
 
@@ -44,6 +49,11 @@ export class MagazineInformationSerializer extends BaseSerializer implements Ser
 		object.postal_code = item.postal_code;
 		object.email = item.email;
 		object.magazine_link = item.magazine_link;
+
+		object.facebook = item.facebook;
+		object.instgram = item.instgram;
+		object.twitter = item.twitter;
+		object.whatsapp = item.whatsapp;
 
 		return object;
 	}

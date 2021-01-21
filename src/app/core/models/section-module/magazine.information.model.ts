@@ -11,6 +11,10 @@ export class MagazineInformationModel extends ModelBase {
 	public email:string;
 	public postal_code:string;
 	public magazine_link:string;
+	public facebook:string;
+	public instgram:string;
+	public twitter:string;
+	public whatsapp:string;
 
 	constructor(id: number) {
 		super(id);
@@ -28,6 +32,11 @@ export class MagazineInformationModel extends ModelBase {
 			'email' : this.email,
 			'postal_code' : this.postal_code,
 			'magazine_link' : this.magazine_link,
+
+			'facebook' : this.facebook,
+			'instgram' : this.instgram,
+			'twitter' : this.twitter,
+			'whatsapp' : this.whatsapp,
 		};
 	}
 
