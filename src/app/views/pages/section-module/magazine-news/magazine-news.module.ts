@@ -11,6 +11,7 @@ import {AddComponent} from './add/add.component';
 import {EditComponent} from './edit/edit.component';
 import {FormComponent} from './form/form.component';
 import {GalleryModule} from '@ngx-gallery/core';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 const routes: Routes = [
 	{
@@ -38,14 +39,15 @@ const routes: Routes = [
 	declarations: [
 		MagazineNewsComponent, IndexComponent, AddComponent, EditComponent, FormComponent
 	],
-	imports: [
-		CommonModule,
-		RouterModule.forChild(routes),
-		PagesModule,
-		MatDividerModule,
-		TranslateModule,
-		GalleryModule,
-	]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        PagesModule,
+        MatDividerModule,
+        TranslateModule,
+        GalleryModule,
+        CKEditorModule,
+    ]
 })
 export class MagazineNewsModule {
 }

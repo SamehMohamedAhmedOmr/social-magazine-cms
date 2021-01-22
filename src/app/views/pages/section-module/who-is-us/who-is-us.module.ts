@@ -10,6 +10,7 @@ import {AddComponent} from './add/add.component';
 import {EditComponent} from './edit/edit.component';
 import {FormComponent} from './form/form.component';
 import {RoutesName} from '../../../../core/Global/routes.name';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 const routes: Routes = [
 	{
@@ -35,13 +36,14 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [WhoIsUsComponent, IndexComponent, AddComponent, EditComponent, FormComponent],
-	imports: [
-		CommonModule,
-		RouterModule.forChild(routes),
-		PagesModule,
-		MatDividerModule,
-		TranslateModule,
-	]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        PagesModule,
+        MatDividerModule,
+        TranslateModule,
+        CKEditorModule,
+    ]
 })
 export class WhoIsUsModule {
 }

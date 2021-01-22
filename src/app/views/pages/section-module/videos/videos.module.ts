@@ -11,6 +11,7 @@ import {MatDividerModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 import {GalleryModule} from '@ngx-gallery/core';
 import {RoutesName} from '../../../../core/Global/routes.name';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 
 const routes: Routes = [
@@ -38,14 +39,15 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [VideosComponent, IndexComponent, AddComponent, EditComponent, FormComponent],
-	imports: [
-		CommonModule,
-		RouterModule.forChild(routes),
-		PagesModule,
-		MatDividerModule,
-		TranslateModule,
-		GalleryModule,
-	]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        PagesModule,
+        MatDividerModule,
+        TranslateModule,
+        GalleryModule,
+        CKEditorModule,
+    ]
 })
 export class VideosModule {
 }

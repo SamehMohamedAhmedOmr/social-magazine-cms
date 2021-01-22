@@ -9,8 +9,9 @@ import {TranslateModule} from '@ngx-translate/core';
 import {EditComponent} from './edit/edit.component';
 import {IndexComponent} from './index/index.component';
 import {AddComponent} from './add/add.component';
-import { FormComponent } from './form/form.component';
+import {FormComponent} from './form/form.component';
 import {RoutesName} from '../../../../core/Global/routes.name';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 const routes: Routes = [
 	{
@@ -46,6 +47,7 @@ const routes: Routes = [
 		PagesModule,
 		MatDividerModule,
 		TranslateModule,
+		CKEditorModule,
 	]
 })
 export class PublicationRuleModule {
