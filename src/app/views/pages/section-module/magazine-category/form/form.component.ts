@@ -61,7 +61,6 @@ export class FormComponent implements OnInit {
 			slider.push(imageItem);
 		});
 		this.old_images = slider;
-		console.log(this.old_images);
 		this.cdr.markForCheck();
 	}
 

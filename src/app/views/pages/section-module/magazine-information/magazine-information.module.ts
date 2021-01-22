@@ -7,6 +7,7 @@ import {MatDividerModule, MatStepperModule} from '@angular/material';
 import {TranslateModule} from '@ngx-translate/core';
 import {EditComponent} from './edit/edit.component';
 import {FormComponent} from './form/form.component';
+import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 
 const routes: Routes = [
 	{
@@ -23,14 +24,15 @@ const routes: Routes = [
 
 @NgModule({
 	declarations: [MagazineInformationComponent, EditComponent , FormComponent],
-	imports: [
-		CommonModule,
-		RouterModule.forChild(routes),
-		PagesModule,
-		MatDividerModule,
-		TranslateModule,
-		MatStepperModule,
-	]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        PagesModule,
+        MatDividerModule,
+        TranslateModule,
+        MatStepperModule,
+        CKEditorModule,
+    ]
 })
 export class MagazineInformationModule {
 }

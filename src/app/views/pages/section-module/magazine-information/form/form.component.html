@@ -184,28 +184,28 @@
 
 				<!-- vision  -->
 				<div class="my-3">
-					<div>
-						<mat-form-field class="w-100">
-							<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.vision' | translate }}</mat-label>
-							<textarea matInput
-									  formControlName="vision"
-									  placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.vision' | translate }}"
-							></textarea>
-						</mat-form-field>
+					<div aria-label="content">
+						<mat-label class="d-block mb-4">{{ 'Components.MAGAZINE_INFORMATION.columns.vision' | translate }}</mat-label>
+						<ckeditor
+							[editor]="Editor"
+							[config]="config_vision"
+							(ready)="onReady($event)"
+							formControlName="vision">
+						</ckeditor>
 					</div>
 				</div>
 				<!-- vision  -->
 
 				<!-- mission  -->
 				<div class="my-3">
-					<div>
-						<mat-form-field class="w-100">
-							<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.mission' | translate }}</mat-label>
-							<textarea matInput
-									  formControlName="mission"
-									  placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.mission' | translate }}"
-							></textarea>
-						</mat-form-field>
+					<div aria-label="content">
+						<mat-label class="d-block mb-4">{{ 'Components.MAGAZINE_INFORMATION.columns.mission' | translate }}</mat-label>
+						<ckeditor
+							[editor]="Editor"
+							[config]="config_mission"
+							(ready)="onReady($event)"
+							formControlName="mission">
+						</ckeditor>
 					</div>
 				</div>
 				<!-- mission  -->

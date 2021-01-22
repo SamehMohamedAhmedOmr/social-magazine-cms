@@ -113,7 +113,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 	}
 
 	displayContent(text){
-		return (text.length > 70) ? text.substring(0, 70) + ' ......' : text;
+		return GlobalConfig.displayContent(text);
 	}
 
 }
