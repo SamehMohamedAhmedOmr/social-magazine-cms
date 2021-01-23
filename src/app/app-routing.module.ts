@@ -39,41 +39,11 @@ const routes: Routes = [
 				loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule)
 			},
 
-			// Temporally Section
-			{
-				path: 'Forms-structure', // <= Page URL
-				component: FormsComponent // <= Page component registration
-			},
-
-			{
-				path: 'data-tables', // <= Page URL
-				component: DataTablesComponent // <= Page component registration
-			},
-
-			{
-				path: 'analytics', // <= Page URL
-				component: AnalyticsComponent // <= Page component registration
-			},
-
-			// Project Module
-			{
-				path: 'clients', // <= Page URL ,
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
-				loadChildren: () => import('./views/pages/clients/clients.module')
-					.then(m => m.ClientsModule)
-			},
-
 			// Section - Module
 			// ًمن-نحن
 			{
 				path: RoutesName.whoIsUs(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/who-is-us/who-is-us.module')
 					.then(m => m.WhoIsUsModule)
 			},
@@ -81,10 +51,7 @@ const routes: Routes = [
 			// الهيئة-الاستشارية
 			{
 				path: RoutesName.advisoryBody(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/advisory-body/advisory-body.module')
 					.then(m => m.AdvisoryBodyModule)
 			},
@@ -92,10 +59,7 @@ const routes: Routes = [
 			// شروط-النشر
 			{
 				path: RoutesName.publicationRules(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/publication-rule/publication-rule.module')
 					.then(m => m.PublicationRuleModule)
 			},
@@ -103,10 +67,7 @@ const routes: Routes = [
 			// التصنيف
 			{
 				path: RoutesName.magazineCategory(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/magazine-category/magazine-category.module')
 					.then(m => m.MagazineCategoryModule)
 			},
@@ -114,10 +75,7 @@ const routes: Routes = [
 			// قالوا-عنا
 			{
 				path: RoutesName.testimonial(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/testimonial/testimonial.module')
 					.then(m => m.TestimonialModule)
 			},
@@ -125,10 +83,7 @@ const routes: Routes = [
 			// اهداف-المجلة
 			{
 				path: RoutesName.magazineGoals(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/magazine-goals/magazine-goals.module')
 					.then(m => m.MagazineGoalsModule)
 			},
@@ -136,10 +91,7 @@ const routes: Routes = [
 			// معلومات-عن-المجلة
 			{
 				path: RoutesName.magazineInformation(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/section-module/magazine-information/magazine-information.module')
 					.then(m => m.MagazineInformationModule)
 			},
@@ -156,10 +108,7 @@ const routes: Routes = [
 			// رؤساء التحرير
 			{
 				path: RoutesName.MAGAZINE_EDITOR_MANAGER(),
-				// canActivate: [PermissionsGuard],
-				// data: {
-				// 	permissions: permissionCatalogueConfig.product_permissions,
-				// },
+				canActivate: [PermissionsGuard],
 				loadChildren: () => import('./views/pages/users-module/users/magazine-manager/magazine-manager.module')
 					.then(m => m.MagazineManagerModule)
 			},

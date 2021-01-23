@@ -9,6 +9,7 @@ export class UsersModel extends ModelBase {
 	public alternative_email:string;
 	public password:string;
 	public is_active:boolean;
+	public user_type:number;
 
 	public gender:{
 		id: number,
@@ -75,6 +76,7 @@ export class UsersModel extends ModelBase {
 			'address' : this.address,
 			'types' : this.types,
 			'account_type_id' : this.account_type_id,
+			'user_type' : this.user_type,
 		};
 	}
 

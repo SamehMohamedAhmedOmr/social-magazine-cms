@@ -74,7 +74,7 @@ export const locale = {
 			USERS:{
 				TITLE : 'المستخدمين',
 				menu:{
-					MAGAZINE_EDITOR_MANAGER: 'رؤساء التحرير',
+					MAGAZINE_EDITOR_MANAGER: 'مديرين الموقع',
 					JOURNAL_EDITOR_DIRECTOR: 'مديرين التحرير',
 					REFEREES: 'المحكمين',
 					RESEARCHER: 'الباحثين',
@@ -275,12 +275,12 @@ export const locale = {
 			USERS: {
 				users: 'المستخدمين',
 				single: 'المستخدم',
-				MAGAZINE_EDITOR_MANAGER: 'رؤساء التحرير',
+				MAGAZINE_EDITOR_MANAGER: 'مديرين الموقع',
 				JOURNAL_EDITOR_DIRECTOR: 'مديرين التحرير',
 				REFEREES: 'المحكمين',
 				RESEARCHER: 'الباحثين',
 
-				MAGAZINE_EDITOR_MANAGER_SINGLE: 'رئيس التحرير',
+				MAGAZINE_EDITOR_MANAGER_SINGLE: 'مدير الموقع',
 				JOURNAL_EDITOR_DIRECTOR_SINGLE: 'مدير التحرير',
 				REFEREES_SINGLE: 'محكم',
 				RESEARCHER_SINGLE: 'باحث',
@@ -334,6 +334,8 @@ export const locale = {
 			in_active : 'غير مفعل',
 			active : 'مفعل',
 			activation: 'التفعيل',
+
+			user_type: 'نوع الحساب',
 
 			activation_button: 'تفعيل',
 			deactivation_button: 'تعطيل',

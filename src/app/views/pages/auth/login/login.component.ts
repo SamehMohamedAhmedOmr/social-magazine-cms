@@ -129,6 +129,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 			(resp: Admin) => {
 				localStorage.setItem('token', resp.body.token);
 				localStorage.setItem('name', resp.body.first_name);
+				localStorage.setItem('user_type', resp.body.user_type);
 				localStorage.setItem('token_expired', String(resp.body.expire_at));
 
 				this.cdr.markForCheck();

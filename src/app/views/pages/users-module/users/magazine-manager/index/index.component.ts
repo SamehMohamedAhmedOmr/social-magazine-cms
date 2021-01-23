@@ -34,7 +34,7 @@ export class IndexComponent implements OnInit , OnDestroy, IndexInterface , Init
 
 	//Data table variables
 	dataSource;
-	displayedColumns: string[] = ['id' , 'full_name' , 'email' , 'is_active'  , 'options'];
+	displayedColumns: string[] = ['id' , 'full_name' , 'email' , 'type' , 'is_active'  , 'options'];
 	isLoadingResults:boolean = true;
 	// pagination variables
 	resultsLength = 0;

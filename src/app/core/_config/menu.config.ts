@@ -65,17 +65,25 @@ export class MenuConfig {
 
 	public attachAsideMenuItems()
 	{
-		// users Config
-		let usersMenuConfig = this.usersMenuConfig.configs;
-		this.attachAsideMenu(usersMenuConfig);
+		let user_type = localStorage.getItem('user_type');
+
+		if (user_type == '0'){
+			// users Config
+			let usersMenuConfig = this.usersMenuConfig.configs;
+			this.attachAsideMenu(usersMenuConfig);
+		}
 
 		// Website Content Config
 		let websiteContentConfig = this.websiteContentConfig.configs;
 		this.attachAsideMenu(websiteContentConfig);
 
-		// Magazine Setting Config
-		let magazine_setting_config = this.magazineSettingMenuConfig.configs;
-		this.attachAsideMenu(magazine_setting_config);
+
+		if (user_type == '0'){
+			// Magazine Setting Config
+			let magazine_setting_config = this.magazineSettingMenuConfig.configs;
+			this.attachAsideMenu(magazine_setting_config);
+		}
+
 	}
 
 	public attachHeaderMenuItems() {

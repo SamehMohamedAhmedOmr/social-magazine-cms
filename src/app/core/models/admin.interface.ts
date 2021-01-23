@@ -6,6 +6,7 @@ export interface Admin {
 		first_name: string,
 		family_name: string,
 		email: string,
+		user_type: string,
 		account_types: {
 			id: number,
 			name: string,

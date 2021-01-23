@@ -77,6 +77,7 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 		object.types = item.types;
 		object.phone_number = item.phone_number;
 		object.address = item.address;
+		object.user_type = item.user_type;
 
 		return  object;
 	}
@@ -87,9 +88,9 @@ export class UsersSerializer extends BaseSerializer implements Serializer {
 		};
 	}
 
-	user_type(account_type_id): any {
+	user_type(user_type): any {
 		return {
-			'account_type_id' : account_type_id,
+			'user_type' : user_type,
 		};
 	}
 

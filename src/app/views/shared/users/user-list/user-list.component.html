@@ -45,13 +45,14 @@
 					{{ 'Components.USERS.columns.account_type' | translate }}
 				</th>
 				<td mat-cell *matCellDef="let element">
-					<button mat-button [matMenuTriggerFor]="menu">
-						{{ 'Components.USERS.change_account_type' | translate }}
+					<button [matMenuTriggerFor]="menu" class="btn btn-primary">
+						{{ (element.user_type) ?  'مشرف' : 'ادمن' }}
 					</button>
 					<mat-menu #menu="matMenu">
-						<button mat-menu-item *ngFor="let type of getAvailableType()"
-							(click)="changeUserType(element, type.id, type.name)">
-							{{ type.name }}
+						<button class="w-100"
+							mat-menu-item
+							(click)="changeUserType(element, getTargetTypeKey(element.user_type) , getTargetTypeName(element.user_type))">
+							{{ getTargetTypeName(element.user_type) }}
 						</button>
 					</mat-menu>
 				</td>

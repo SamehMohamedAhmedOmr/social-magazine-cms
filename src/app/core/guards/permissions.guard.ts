@@ -8,7 +8,6 @@ import {RoutesName} from '../Global/routes.name';
 })
 export class PermissionsGuard {
 
-	route_permissions:Array<string>;
 	constructor(private router: Router,
 				private AccountPermissionsService: AccountPermissionsService) {
 
@@ -17,49 +16,15 @@ export class PermissionsGuard {
 	canActivate(route: ActivatedRouteSnapshot,
 				state: RouterStateSnapshot): boolean {
 
-		let permissions = route.data.permissions as Array<string>;
+		let user_type = localStorage.getItem('user_type');
 
-		this.route_permissions = permissions;
-
-		let stored_permissions = JSON.parse(localStorage.getItem('permissions'));
-
-		if (!stored_permissions) {
-			return this.getPermission();
+		if (user_type == '0'){
+			return true;
 		}
-		else {
-			return this.checkPermissions(stored_permissions, permissions);
-		}
+
+		this.router.navigate([RoutesName.cms()]);
+		return false;
 	}
 
-	checkPermissions(stored_permissions, permissions){
-
-		permissions.forEach((permission)=>{
-			let check = stored_permissions.includes(permission);
-			if (!check){
-				this.router.navigate([RoutesName.cms()]);
-				return false;
-			}
-		});
-
-		return true;
-	}
-
-	getPermission() {
-		let check = false;
-		this.AccountPermissionsService.list().subscribe(
-			(resp) => {
-				let permissions = this.AccountPermissionsService.preparePermissions(resp);
-				localStorage.setItem('permissions', JSON.stringify(permissions));
-				check = this.reactivate(permissions);
-			},
-			(handler) => {
-			}
-		);
-		return check;
-	}
-
-	reactivate(stored_permissions){
-		return this.checkPermissions(stored_permissions, this.route_permissions);
-	}
 
 }

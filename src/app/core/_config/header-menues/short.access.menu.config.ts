@@ -53,12 +53,17 @@ export class ShortAccessMenuConfig {
 	};
 
 	public checkRoutePermissions(){
+		let user_type = localStorage.getItem('user_type');
 
-		this.attachMenuItem([], this.MAGAZINE_EDITOR_MANAGER);
+		if (user_type == '0') {
+			this.attachMenuItem([], this.MAGAZINE_EDITOR_MANAGER);
+		}
 
 		this.attachMenuItem([], this.MAGAZINE_NEWS);
 
-		this.attachMenuItem([], this.MAGAZINE_INFORMATION);
+		if (user_type == '0') {
+			this.attachMenuItem([], this.MAGAZINE_INFORMATION);
+		}
 
 		this.attachMenu();
 	}

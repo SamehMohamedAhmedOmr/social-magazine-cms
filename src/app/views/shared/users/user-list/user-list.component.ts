@@ -26,7 +26,7 @@ export class UserListComponent implements OnInit {
 	@Input() pageIndex;
 	@Input() current_type = 0;
 
-	user_types: [] = [];
+	// user_types: [] = [];
 
 	@Output() pageIndexEvent = new EventEmitter<number>();
 
@@ -38,25 +38,15 @@ export class UserListComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		this.loadDependencies();
 	}
 
-	loadDependencies(){
-		this.usersTypesService.list(null).subscribe(
-			(resp) => {
-				this.user_types = resp;
-				this.cdr.markForCheck();
-			} , error => {
-				this.user_types = [];
-				this.cdr.markForCheck();
-			});
-	}
 
 	displayContent(text){
 		return (text.length > 70) ? text.substring(0, 70) + ' ......' : text;
 	}
 
 	changeUserType(item, new_type_id, type){
+		console.log('here', item, new_type_id, type);
 		this.currentService.changeUserType(item.id, new_type_id).subscribe(res => {
 			this.authNoticeService.setNotice(this.translateService.instant('Components.USERS.change_type',
 				{name: type}),
@@ -75,9 +65,13 @@ export class UserListComponent implements OnInit {
 		this.currentComponent.get(this.headerParams);
 	}
 
-	getAvailableType(){
-		// @ts-ignore
-		return this.user_types.filter(k => k.id != this.current_type);
+
+	getTargetTypeName(user_type){
+		return (user_type) ?  'ادمن' : 'مشرف';
+	}
+
+	getTargetTypeKey(user_type){
+		return (user_type) ? 0 : 1;
 	}
 
 }
