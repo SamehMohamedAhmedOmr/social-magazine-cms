@@ -28579,7 +28579,7 @@ and (max-width: 768px) {
 .kt-portlet .kt-portlet__head .kt-portlet__head-label .kt-portlet__head-title {
 	margin: 0;
 	padding: 0;
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	font-weight: 500;
 	color: #48465b
 }
@@ -44821,7 +44821,8 @@ and (max-width: 1024px) {
 
 .kt-aside__brand .kt-aside__brand-logo {
 	display: flex;
-	justify-content: flex-begin
+	justify-content: center;
+	height: inherit;
 }
 
 .kt-aside--minimize .kt-aside__brand .kt-aside__brand-logo img {

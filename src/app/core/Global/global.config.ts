@@ -33,4 +33,8 @@ export class GlobalConfig {
 		}
 		return item.value;
 	}
+
+	public static displayContent(text){
+		return (text.length > 200) ? text.substring(0, 200) + ' ......' : text;
+	}
 }

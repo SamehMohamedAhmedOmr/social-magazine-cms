@@ -1,14 +1,17 @@
 export interface Admin {
 	message : string,
-	data: {
-		id:number,
-		email: string ,
-		name: string,
-		profilePicture: string,
+	body: {
+		token: string ,
+		expire_at: string,
+		first_name: string,
+		family_name: string,
+		email: string,
+		user_type: string,
+		account_types: {
+			id: number,
+			name: string,
+			key: string
+		}[]
 	},
-	meta: {
-		access_token:string,
-		expires_in:number,
-		refresh_token:string
-	}
+	pagination: {}
 }

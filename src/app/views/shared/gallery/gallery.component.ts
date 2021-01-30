@@ -9,6 +9,7 @@ import {GalleryInterface} from '../Base-Interface/gallery.Interface';
 import {DeleteModalComponent} from '../delete-modal/delete-modal.component';
 import {MatDialog} from '@angular/material';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+import {TranslateService} from '@ngx-translate/core';
 
 declare var $: any;
 
@@ -51,6 +52,7 @@ export class GalleryComponent implements OnInit {
 				private fb: FormBuilder ,
 				private formErrorService: FormErrorService,
 				private authNoticeService: AuthNoticeService,
+				public translateService : TranslateService,
 				public dialog: MatDialog,
 				private helper: HelperService) {
 	}
@@ -145,7 +147,7 @@ export class GalleryComponent implements OnInit {
 		this.service.createFormData(galleryData).subscribe(resp => {
 			this.imgURL = null;
 			this.isLoadingResults = false;
-			this.authNoticeService.setNotice('Image Added Successfully', 'success');
+			this.authNoticeService.setNotice(null);
 			this.get(this.headerParams);
 			this.cdr.markForCheck();
 		} , handler => {
@@ -158,15 +160,15 @@ export class GalleryComponent implements OnInit {
 		const dialogRef = this.dialog.open(DeleteModalComponent, {
 			width: '40rem',
 			data: {
-				title: 'Image will be deleted ?',
-				body: `Are you sure , Image will be permanently deleted !!!`,
-				name: 'Images',
+				title: this.translateService.instant('Components.Gallery.delete_image'),
+				body: this.translateService.instant('Components.Gallery.delete_image_body'),
+				name: this.translateService.instant('Components.Gallery.single'),
 			}
 		});
 		dialogRef.afterClosed().subscribe(result => {
 			if (result) {
 				this.service.delete(item.id).subscribe(res => {
-					this.authNoticeService.setNotice('Image deleted successfully', 'success');
+					//this.authNoticeService.setNotice('Image deleted successfully', 'success');
 					this.get(this.headerParams);
 				}, handler => {
 					this.authNoticeService.setNotice(this.helper.showingErrors(handler.error), 'danger');

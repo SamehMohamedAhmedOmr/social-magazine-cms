@@ -1,0 +1,72 @@
+<div class="form-div">
+	<form class="p-3" [formGroup]="form" autocomplete="off">
+
+		<!-- name  -->
+		<div class="my-4">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'COMMON.name' | translate }}</mat-label>
+					<input matInput
+						   formControlName="name"
+						   placeholder="{{ 'COMMON.name' | translate }}" >
+				</mat-form-field>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'name'"
+				[validationType]="'required'"
+				[controlText]= "'COMMON.name' | translate"
+			></kt-form-error>
+		</div>
+		<!-- name  -->
+
+		<!-- job  -->
+		<div class="my-4">
+			<div>
+				<mat-form-field class="w-100">
+					<mat-label>{{ 'Components.ADVISORY_BODY.columns.job' | translate }}</mat-label>
+					<input matInput
+						   formControlName="job"
+						   placeholder="{{ 'Components.ADVISORY_BODY.columns.job' | translate }}" >
+				</mat-form-field>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'job'"
+				[validationType]="'required'"
+				[controlText]= "'Components.ADVISORY_BODY.columns.job' | translate"
+			></kt-form-error>
+		</div>
+		<!-- job  -->
+
+
+		<!--Active -->
+		<div class="my-3">
+			<div class="row">
+				<label class="col-4 pl-4">{{ 'COMMON.activation' | translate }}: </label>
+				<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+								 formControlName="is_active">
+					<div class="row ">
+						<div class="col-md-6 p-0">
+							<mat-radio-button class=" example-radio-button" checked value="1">&nbsp;{{ 'COMMON.active' | translate }}
+							</mat-radio-button>
+						</div>
+						<div class="col-md-6 p-0">
+							<mat-radio-button class="example-radio-button" value="0">&nbsp;{{ 'COMMON.in_active' | translate }}
+							</mat-radio-button>
+						</div>
+					</div>
+				</mat-radio-group>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'is_active'"
+				[validationType]="'required'"
+				[controlText]= "'COMMON.activation' | translate"
+			></kt-form-error>
+		</div>
+		<!--Active-->
+
+	</form>
+</div>
+

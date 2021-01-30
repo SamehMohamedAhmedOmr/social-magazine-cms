@@ -1,4 +1,3 @@
-
 <div *ngIf="show_gallery">
 	<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
 
@@ -14,17 +13,22 @@
 					<!-- Image -->
 					<div class="col-6 p-0">
 						<label class="btn btn-outline-dark">
-							Gallery Image <i class="flaticon2-image-file"></i>
+							{{ 'Components.Gallery.view_image' | translate }}
+							<i class="flaticon2-image-file"></i>
 							<input type="file" (change)="onFileSelect($event)" hidden/>
 						</label>
-						<mat-error *ngIf="isControlHasError('image','required')">
-							<strong>{{ 'Gallery Image Field is required'}}</strong>
-						</mat-error>
+						<kt-form-error
+							[form]="uploadForm"
+							[controlName]="'image'"
+							[validationType]="'required'"
+							[controlText]="'Components.image' | translate"
+						></kt-form-error>
 					</div>
 
-					<div class="col-6 text-center px-3">
-						<button type="submit" class="btn btn-outline-success mx-3" (click)="submitForm()">
-							Add to Gallery
+					<div class="col-6 text-center px-3" *ngIf="imgURL">
+						<button type="submit" class="btn btn-success mx-3" (click)="submitForm()">
+							{{ 'Components.Gallery.upload' | translate }}
+							<i class="fas fa-cloud-upload-alt"></i>
 						</button>
 					</div>
 				</div>
@@ -44,75 +48,63 @@
 		<mat-divider class="my-5"></mat-divider>
 
 		<div class="row d-flex justify-content-center mb-4">
-			<button type="button" class="btn btn-outline-success mx-3" (click)="saveSelectedImages()"
+			<button type="button" class="btn btn-primary mx-3" (click)="saveSelectedImages()"
 					[disabled]="!selectedImages.length">
-				Save Selected Images
+				{{ 'Components.Gallery.save_selected_images' | translate }}
+				<i class="fas fa-save"></i>
 			</button>
 		</div>
 
 		<div class="row" aria-label="gallery">
 
-			<div class="col-md-4 col-12" aria-label="Selected Images" *ngIf="multiple_images">
-				<h4>
-					Selected Images
-				</h4>
-
-				<div class="row" cdkDropList (cdkDropListDropped)="drop($event)">
-					<div class="col-6 text-center mb-4 image-preview flex-column" cdkDrag
-						 *ngFor="let selectedImage of selectedImages">
-						<div class="image-checkbox" style="cursor: move;">
-							<img class="img-responsive gallery-image" [src]="selectedImage.image" />
-						</div>
-						<div class="row d-flex justify-content-center my-3">
-							<button type="button" class="btn btn-outline-danger mx-3" (click)="cancelSelectImage(selectedImage)">
-								Remove  <i class="flaticon2-cancel"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div *ngIf="! selectedImages.length">
-					No Selected Image yet
-				</div>
-
-			</div>
-
-			<div [ngClass]="(multiple_images) ? 'col-md-8 col-12' : 'col-12'"
+			<div class="col-12"
 				 aria-label="Gallery Images">
 
-				<h4>
-					Gallery Images
-				</h4>
+				<div class="btn-success py-3 my-4">
+					<h5 *ngIf="multiple_images" class="mb-0 text-center">
+						{{ 'Components.Gallery.guide_msg' | translate:{
+						image: 'Components.Gallery.images' | translate ,
+						save_selected_images: 'Components.Gallery.save_selected_images' | translate} }}
+					</h5>
 
-				<div class="row border-left" *ngIf="images.length">
-					<div class="col-md-4 col-6 text-center mb-4 image-preview" *ngFor="let image of images">
-						<div>
-							<div *ngIf="multiple_images"
-								class="image-checkbox" [class.image-checkbox-checked] = "checkSelected(image.id)"
-								 (click)="toggleSelectImage(image)">
-								<img class="img-responsive gallery-image" [src]="image.image" />
-								<input type="checkbox" name="image[]" value="" />
-								<i class="fa fa-check hidden"></i>
-							</div>
-							<div *ngIf="!multiple_images"
-								 class="image-checkbox"
-								 [class.image-checkbox-checked] = "checkSelected(image.id)"
-								 (click)="toggleSelectImage(image)">
-								<img class="img-responsive gallery-image" [src]="image.image" />
-								<input type="checkbox" name="image" value="" />
-								<i class="fa fa-check hidden"></i>
-							</div>
-							<div class="row d-flex justify-content-center my-3">
-								<button type="button" class="btn btn-outline-danger mx-3" (click)="deleteModal(image)">
-									{{ 'Components.Delete' | translate }}  <i class="flaticon-delete"></i>
-								</button>
+					<h5 *ngIf="!multiple_images" class="mb-0 text-center">
+						{{ 'Components.Gallery.guide_msg' | translate:{
+						image: 'Components.Gallery.single' | translate ,
+						save_selected_images: 'Components.Gallery.save_selected_images' | translate} }}
+					</h5>
+				</div>
+
+				<div class="mt-3">
+					<div class="row" *ngIf="images.length">
+						<div class="col-md-6 col-12 text-center mb-4 image-preview" *ngFor="let image of images">
+							<div>
+								<div *ngIf="multiple_images"
+									 class="image-checkbox" [class.image-checkbox-checked]="checkSelected(image.id)"
+									 (click)="toggleSelectImage(image)">
+									<img class="img-responsive gallery-image" [src]="image.image"/>
+									<input type="checkbox" name="image[]" value=""/>
+									<i class="fa fa-check hidden"></i>
+								</div>
+								<div *ngIf="!multiple_images"
+									 class="image-checkbox"
+									 [class.image-checkbox-checked]="checkSelected(image.id)"
+									 (click)="toggleSelectImage(image)">
+									<img class="img-responsive gallery-image" [src]="image.image"/>
+									<input type="checkbox" name="image" value=""/>
+									<i class="fa fa-check hidden"></i>
+								</div>
+								<div class="row d-flex justify-content-center my-3">
+									<button type="button" class="btn btn-outline-danger mx-3" (click)="deleteModal(image)">
+										{{ 'Components.Delete' | translate }}  <i class="flaticon-delete"></i>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div *ngIf="! images.length">
-					No Gallery Image yet
+					<div *ngIf="! images.length">
+						{{ 'Components.Gallery.no_images' | translate }}
+					</div>
 				</div>
 
 			</div>

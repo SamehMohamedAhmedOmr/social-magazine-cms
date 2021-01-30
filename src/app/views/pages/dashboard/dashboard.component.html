@@ -1,63 +1,32 @@
 <kt-global-notice></kt-global-notice>
-<!--<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>-->
+
+<kt-api-loader [isLoadingResults]="isLoadingResults"></kt-api-loader>
+
 <div class="row">
 	<div class="col-xl-12">
 		<div class="row row-full-height" *ngIf="!isLoadingResults">
 
-
-			<div class="col-lg-6 col-12" aria-label="orders-counts">
-				<kt-portlet [class]="' kt-portlet--border-bottom-brand'">
-					<kt-portlet-body class="pie-container">
-						<!--Start line chart-->
-						<div class="my-3 d-flex chart-parent pie" style="height: 450px;">
-							<ngx-charts-advanced-pie-chart
-								[scheme]="colorScheme"
-								[results]="orders_counts"
-								[label]=" 'STATISTICS.ORDERS.orders_count' | translate "
-								[gradient]="gradient"
-								(select)="onSelect($event)">
-							</ngx-charts-advanced-pie-chart>
-						</div>
-						<!--End line chart Chart-->
-					</kt-portlet-body>
-				</kt-portlet>
-			</div>
-
-			<div class="col-lg-6 col-12" aria-label="orders prices">
-				<kt-portlet [class]="' kt-portlet--border-bottom-brand'">
-					<kt-portlet-body class="pie-container">
-						<!--Start line chart-->
-						<div class="my-3 d-flex chart-parent pie" style="height: 450px;">
-							<ngx-charts-advanced-pie-chart
-								[scheme]="colorScheme"
-								[results]="orders_prices"
-								[label]=" 'STATISTICS.ORDERS.orders_total_price' | translate "
-								[gradient]="gradient"
-								(select)="onSelect($event)">
-							</ngx-charts-advanced-pie-chart>
-						</div>
-						<!--End line chart Chart-->
-					</kt-portlet-body>
-				</kt-portlet>
-			</div>
-
 			<div class="col-12 col-12" aria-label="orders prices">
 				<kt-portlet [class]="' kt-portlet--border-bottom-brand p-5'">
 					<kt-portlet-body class="pie-container">
+
+						<div class="alert alert-primary text-center font-weight-bold title" role="alert">
+							{{ 'STATISTICS.name' | translate }}
+						</div>
 
 						<div class="row">
 
 							<div class="col-md-4">
 								<div class="dbox dbox--color-1">
 									<div class="dbox__icon">
-										<i class="fas fa-cart-plus"></i>
+										<i class="fas fa-users"></i>
 									</div>
 									<div class="dbox__body">
 										<span class="dbox__count">
-											{{ pending_cart_item_count }}
+											{{ statistics.visitors_count }}
 										</span>
 										<span class="dbox__title">
-											{{ 'STATISTICS.CARTS.pending_cart_item_count' | translate }}
+											{{ 'STATISTICS.visitors_count' | translate }}
 										</span>
 									</div>
 								</div>
@@ -66,14 +35,14 @@
 							<div class="col-md-4">
 								<div class="dbox dbox--color-2">
 									<div class="dbox__icon">
-										<i class="fas fa-shopping-cart"></i>
+										<i class="{{magazineNews()}} fas"></i>
 									</div>
 									<div class="dbox__body">
 										<span class="dbox__count">
-											{{ pending_carts_count }}
+											{{ statistics.news_count }}
 										</span>
 										<span class="dbox__title">
-											{{ 'STATISTICS.CARTS.pending_carts_count' | translate }}
+											{{ 'STATISTICS.news_count' | translate }}
 										</span>
 									</div>
 								</div>
@@ -82,20 +51,73 @@
 							<div class="col-md-4">
 								<div class="dbox dbox--color-3">
 									<div class="dbox__icon">
-										<i class="fas fa-users"></i>
+										<i class="{{ACTIVITIES()}}"></i>
 									</div>
 									<div class="dbox__body">
 										<span class="dbox__count">
-											{{ new_customers }}
+											{{ statistics.activities_count }}
 										</span>
 										<span class="dbox__title">
-											{{ 'STATISTICS.CUSTOMERS.new_customers' | translate }}
+											{{ 'STATISTICS.activities_count' | translate }}
 										</span>
 									</div>
 								</div>
 							</div>
 
 						</div>
+
+						<div class="row my-3">
+
+							<div class="col-md-4">
+								<div class="dbox dbox--color-1">
+									<div class="dbox__icon">
+										<i class="{{ EVENTS()}} fas"></i>
+									</div>
+									<div class="dbox__body">
+										<span class="dbox__count">
+											{{ statistics.events_count }}
+										</span>
+										<span class="dbox__title">
+											{{ 'STATISTICS.events_count' | translate }}
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="dbox dbox--color-2">
+									<div class="dbox__icon">
+										<i class="{{VIDEOS()}}"></i>
+									</div>
+									<div class="dbox__body">
+										<span class="dbox__count">
+											{{ statistics.videos_count }}
+										</span>
+										<span class="dbox__title">
+											{{ 'STATISTICS.videos_count' | translate }}
+										</span>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="dbox dbox--color-3">
+									<div class="dbox__icon">
+										<i class="{{ advisoryBody() }} fas"></i>
+									</div>
+									<div class="dbox__body">
+										<span class="dbox__count">
+											{{ statistics.advisory_bodies_count }}
+										</span>
+										<span class="dbox__title">
+											{{ 'STATISTICS.advisory_bodies_count' | translate }}
+										</span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
 
 					</kt-portlet-body>
 				</kt-portlet>

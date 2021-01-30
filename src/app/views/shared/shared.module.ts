@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterComponent } from './filter/filter.component';
 import {
-    MatDividerModule,
-    MatDialogModule,
-    MatInputModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatTooltipModule, MatButtonModule, MatDatepickerModule, MatCheckboxModule, MatIconModule
+	MatDividerModule,
+	MatDialogModule,
+	MatInputModule,
+	MatProgressSpinnerModule,
+	MatRadioModule,
+	MatSelectModule,
+	MatTooltipModule, MatButtonModule, MatDatepickerModule, MatCheckboxModule, MatIconModule, MatStepperModule, MatMenuModule
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -26,6 +26,12 @@ import { NextPreviousListComponent } from './next-previous-list/next-previous-li
 import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
 import { PopupGalleryComponent } from './popup-gallery/popup-gallery.component';
 import {GlobalNoticeComponent} from './global-notice/global-notice.component';
+import { SoonComponent } from './soon/soon.component';
+import { NoRecordFoundComponent } from './no-record-found/no-record-found.component';
+import { FormErrorComponent } from './form-error/form-error.component';
+import { ListOptionsComponent } from './list-options/list-options.component';
+import { UserFormComponent } from './users/user-form/user-form.component';
+import { UserListComponent } from './users/user-list/user-list.component';
 
 
 
@@ -34,31 +40,34 @@ import {GlobalNoticeComponent} from './global-notice/global-notice.component';
 		AuthNoticeComponent,GlobalNoticeComponent,
     	FilterComponent, ApiLoaderComponent,
 		DeleteModalComponent, GalleryComponent,
-		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent
+		SuccessModalComponent, NextPreviousListComponent, PopupGalleryComponent,
+		SoonComponent, NoRecordFoundComponent, FormErrorComponent, ListOptionsComponent, UserFormComponent, UserListComponent,
 	],
-    imports: [
-        CommonModule,
-        MatSelectModule,
-        RouterModule,
-        FormsModule,
-        MatDividerModule,
-        MatRadioModule,
-        MatInputModule,
-        MatProgressSpinnerModule,
-        TranslateModule,
-        MatDialogModule,
-        ReactiveFormsModule,
-        DragDropModule,
-        MatTableModule,
-        MatSortModule,
-        MatPaginatorModule,
-        MatTooltipModule,
-        MatButtonModule,
-        MatDatepickerModule,
-        NgxMatSelectSearchModule,
-        MatCheckboxModule,
-        MatIconModule,
-    ],
+	imports: [
+		CommonModule,
+		MatSelectModule,
+		RouterModule,
+		FormsModule,
+		MatDividerModule,
+		MatRadioModule,
+		MatInputModule,
+		MatProgressSpinnerModule,
+		TranslateModule,
+		MatDialogModule,
+		ReactiveFormsModule,
+		DragDropModule,
+		MatTableModule,
+		MatSortModule,
+		MatPaginatorModule,
+		MatTooltipModule,
+		MatButtonModule,
+		MatDatepickerModule,
+		NgxMatSelectSearchModule,
+		MatCheckboxModule,
+		MatIconModule,
+		MatStepperModule,
+		MatMenuModule,
+	],
     entryComponents: [
         DeleteModalComponent,
 		SuccessModalComponent,
@@ -72,7 +81,13 @@ import {GlobalNoticeComponent} from './global-notice/global-notice.component';
 		GalleryComponent,
 		AuthNoticeComponent,
 		GlobalNoticeComponent,
-		NextPreviousListComponent
+		NextPreviousListComponent,
+		SoonComponent,
+		NoRecordFoundComponent,
+		FormErrorComponent,
+		ListOptionsComponent,
+		UserListComponent,
+		UserFormComponent,
 	]
 })
 export class SharedModule { }

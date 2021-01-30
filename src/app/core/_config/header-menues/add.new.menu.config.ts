@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {SystemPermissionsHelperService} from '../../services/Helpers/system.permissions.helper.service';
+import {SectionIconsName} from '../../Global/section.icons.name';
+import {RoutesName} from '../../Global/routes.name';
 
 
 @Injectable({
@@ -23,11 +25,18 @@ export class AddNewMenuConfig {
 		]
 	};
 
-	private clients_url = {
-		icon: 'flaticon-users-1',
-		title: 'Project',
-		translate: 'Sales.menu.projects',
-		page: '/cms/clients/add'
+	public MAGAZINE_EDITOR_MANAGER = {
+		icon: SectionIconsName.MAGAZINE_EDITOR_MANAGER(),
+		title: 'MAGAZINE_EDITOR_MANAGER',
+		translate: 'MENUS.USERS.menu.MAGAZINE_EDITOR_MANAGER',
+		page: RoutesName.MAGAZINE_EDITOR_MANAGER() + '/' + RoutesName.add()
+	};
+
+	public MAGAZINE_NEWS = {
+		icon: SectionIconsName.magazineNews(),
+		title: 'MENUS.WEBSITE_CONTENT.menu.MAGAZINE_NEWS',
+		translate: 'MENUS.WEBSITE_CONTENT.menu.MAGAZINE_NEWS',
+		page: RoutesName.magazineNews() + '/' + RoutesName.add()
 	};
 
 	public menu: any = {
@@ -36,8 +45,13 @@ export class AddNewMenuConfig {
 	};
 
 	public checkRoutePermissions(){
+		let user_type = localStorage.getItem('user_type');
+		
+		if (user_type == '0') {
+			this.attachMenuItem([], this.MAGAZINE_EDITOR_MANAGER);
+		}
 
-		this.attachMenuItem([], this.clients_url);
+		this.attachMenuItem([], this.MAGAZINE_NEWS);
 
 		this.attachMenu();
 	}

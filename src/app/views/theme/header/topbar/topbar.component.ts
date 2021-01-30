@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {LangService} from '../../../../core/services/lang.service';
 import {Router} from '@angular/router';
 import {AuthService} from '../../../../core/services/auth.service';
+import {RoutesName} from '../../../../core/Global/routes.name';
 
 @Component({
 	selector: 'kt-topbar',
@@ -19,14 +20,14 @@ export class TopbarComponent implements OnInit {
 
 	ngOnInit(): void {
 		// check Lang in local storage
-		if (localStorage.getItem('cms_pam_lang')) {
-			this.lang = localStorage.getItem('cms_pam_lang');
+		if (localStorage.getItem('cms_lang')) {
+			this.lang = localStorage.getItem('cms_lang');
 		}
 		// switch styles based on lang
 	}
 
 	switchLanguage() {
-		localStorage.setItem('cms_pam_lang', this.lang);
+		localStorage.setItem('cms_lang', this.lang);
 		this.router.navigateByUrl(this.router.url, {skipLocationChange: true}).then();
 		this.langService.loadStyle();
 	}
@@ -73,5 +74,9 @@ export class TopbarComponent implements OnInit {
 
 		return abbreviation;
 
+	}
+
+	profileLink(){
+		return RoutesName.profile();
 	}
 }

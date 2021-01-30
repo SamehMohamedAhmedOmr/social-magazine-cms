@@ -1,10 +1,10 @@
 // Angular
 import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import {APP_INITIALIZER, ErrorHandler, NgModule} from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GestureConfig, MatProgressSpinnerModule } from '@angular/material';
+import {GestureConfig, MatPaginatorIntl, MatProgressSpinnerModule} from '@angular/material';
 import { OverlayModule } from '@angular/cdk/overlay';
 // Angular in memory
 // Perfect Scroll bar
@@ -51,6 +51,8 @@ import * as json from 'highlight.js/lib/languages/json';
 import {Interceptor} from './interceptor';
 import {NgxMatSelectSearchModule} from 'ngx-mat-select-search';
 import {DatePipe} from '@angular/common';
+import {getPaginatorIntl} from './core/_config/paginatior.language';
+import {GlobalErrorHandler} from './core/_config/global.error.handle';
 
 // tslint:disable-next-line:class-name
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -136,6 +138,8 @@ export function hljsLanguages(): HighlightLanguage[] {
 		TypesUtilsService,
 		LayoutUtilsService,
 		DatePipe,
+		{ provide: MatPaginatorIntl, useValue: getPaginatorIntl() },
+		[{provide: ErrorHandler, useClass: GlobalErrorHandler}]
 	],
 	bootstrap: [AppComponent]
 })

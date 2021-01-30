@@ -1,0 +1,57 @@
+<div class="form-div">
+
+	<form class="p-3" [formGroup]="form" autocomplete="off">
+
+		<!-- content  -->
+		<div class="my-3">
+			<div aria-label="content">
+				<mat-label class="d-block mb-4">{{ 'COMMON.content' | translate }}</mat-label>
+				<ckeditor
+					[editor]="Editor"
+					[config]="config"
+					(ready)="onReady($event)"
+					formControlName="content">
+				</ckeditor>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'content'"
+				[validationType]="'required'"
+				[controlText]="'COMMON.content' | translate"
+			></kt-form-error>
+		</div>
+		<!-- content  -->
+
+		<!--Active -->
+		<div class="my-3">
+			<div class="row">
+				<label class="col-4 pl-4">{{ 'COMMON.activation' | translate }}: </label>
+				<mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+								 formControlName="is_active">
+					<div class="row ">
+						<div class="col-md-6 p-0">
+							<mat-radio-button class=" example-radio-button" checked value="1">
+								&nbsp;{{ 'COMMON.active' | translate }}
+							</mat-radio-button>
+						</div>
+						<div class="col-md-6 p-0">
+							<mat-radio-button class="example-radio-button" value="0">
+								&nbsp;{{ 'COMMON.in_active' | translate }}
+							</mat-radio-button>
+						</div>
+					</div>
+				</mat-radio-group>
+			</div>
+			<kt-form-error
+				[form]="form"
+				[controlName]="'is_active'"
+				[validationType]="'required'"
+				[controlText]="'COMMON.activation' | translate"
+			></kt-form-error>
+		</div>
+
+		<!--Active-->
+
+	</form>
+
+</div>

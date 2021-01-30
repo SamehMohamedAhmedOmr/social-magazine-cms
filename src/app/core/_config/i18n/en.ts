@@ -5,6 +5,7 @@ export const locale = {
 		TRANSLATOR: {
 			SELECT: 'Select your language',
 		},
+
 		MENU: {
 			NEW: 'new',
 			ACTIONS: 'Actions',
@@ -25,9 +26,9 @@ export const locale = {
 			FORM: {
 				NAME: 'Forms',
 				ITEMS1:
-				{
-					NAME: 'forms 1 '
-				}
+					{
+						NAME: 'forms 1 '
+					}
 			},
 			DATA_TABLE: 'Data Table',
 			BANNER: {
@@ -38,24 +39,28 @@ export const locale = {
 
 		},
 
+		VALIDATION: {
+			INVALID: '{{name}} is not valid',
+			REQUIRED: '{{name}} is required',
+			REQUIRED_F: '{{name}} is required',
+			MIN_LENGTH: '{{name}} minimum length is {{min}}',
+			AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
+			NOT_FOUND: 'The requested {{name}} is not found',
+			INVALID_LOGIN: 'The login detail is incorrect',
+			REQUIRED_FIELD: 'Required field',
+			MIN_LENGTH_FIELD: 'Minimum field length:',
+			MAX_LENGTH_FIELD: 'Maximum field length:',
+			INVALID_FIELD: 'Field is not valid',
+		},
+
 		STATISTICS: {
-			ORDERS: {
-				orders_count: 'Total Orders',
-				orders_total_price: 'Total Orders Price',
-				canceled_orders: 'Canceled orders',
-				delivered_orders: 'Delivered orders',
-				pending_orders: 'Pending orders',
-			},
-
-			CARTS: {
-				pending_cart_item_count: 'Pending Cart items',
-				pending_carts_count: 'Pending Carts',
-			},
-
-			CUSTOMERS: {
-				new_customers: 'New Customers in last month',
-			}
-
+			name: 'Statistics',
+			visitors_count: 'Visitor Count',
+			news_count: 'News Count',
+			activities_count: 'Activities Count',
+			events_count: 'Events Count',
+			videos_count: 'Videos Count',
+			advisory_bodies_count: 'Advisory Bodies Count',
 		},
 
 		Sales: {
@@ -64,6 +69,41 @@ export const locale = {
 				projects: 'Clients',
 			}
 		},
+
+		MENUS: {
+			USERS: {
+				TITLE: 'Users',
+				menu: {
+					MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Manager',
+					JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Director',
+					REFEREES: 'Referees',
+					RESEARCHER: 'Researcher',
+				}
+			},
+			WEBSITE_CONTENT: {
+				TITLE: 'Website Content',
+				menu: {
+					MAGAZINE_NEWS: 'Magazine News',
+					EVENTS: 'Events',
+					ACTIVITIES: 'Activities',
+					VIDEOS: 'Videos',
+					PHOTOS: 'Photos',
+				}
+			},
+			MAGAZINE_SETTINGS: {
+				TITLE: 'Magazine Settings',
+				menu: {
+					WHO_IS_US: 'Who is us',
+					PUBLICATION_RULE: 'Publication Rule',
+					ADVISORY_BODY: 'Advisory Body',
+					MAGAZINE_CATEGORY: 'Magazine Category',
+					TESTIMONIAL: 'Testimonial',
+					MAGAZINE_GOAL: 'Magazine Goals',
+					MAGAZINE_INFORMATION: 'Magazine Information',
+				}
+			},
+		},
+
 
 		AUTH: {
 			GENERAL: {
@@ -98,24 +138,12 @@ export const locale = {
 				CONFIRM_PASSWORD: 'Confirm Password',
 				USERNAME: 'Username'
 			},
-			VALIDATION: {
-				INVALID: '{{name}} is not valid',
-				REQUIRED: '{{name}} is required',
-				MIN_LENGTH: '{{name}} minimum length is {{min}}',
-				AGREEMENT_REQUIRED: 'Accepting terms & conditions are required',
-				NOT_FOUND: 'The requested {{name}} is not found',
-				INVALID_LOGIN: 'The login detail is incorrect',
-				REQUIRED_FIELD: 'Required field',
-				MIN_LENGTH_FIELD: 'Minimum field length:',
-				MAX_LENGTH_FIELD: 'Maximum field length:',
-				INVALID_FIELD: 'Field is not valid',
-			}
 		},
 
 		Components: {
 			item_per_page: 'Item Per Page',
-			filter_by: "Filter by",
-			actions: "Actions",
+			filter_by: 'Filter by',
+			actions: 'Actions',
 			all: 'All',
 			marked: 'Marked',
 			active: 'Active',
@@ -134,22 +162,217 @@ export const locale = {
 			date: 'Date',
 			Select: 'Select',
 			export: 'Export',
-			no_image:'No Image Yet',
+			no_image: 'No Image Yet',
 
-			CLIENTS: {
-				name: 'Clients',
-				Add_Button: 'Add New Client',
-				Delete_Button: 'Delete Client',
-				Delete_Body: 'Aِre you sure, Client with id [{{value}}] will be permanently deleted !!!',
-				filter: 'Filter Client Titles',
+			WHO_IS_US: {
+				name: 'Who Is us',
+				single: 'Content',
+				columns: {}
+			},
+
+			PUBLICATION_RULE: {
+				name: 'Publication Rules',
+				single: 'Publication Rule',
+				columns: {}
+			},
+
+			ADVISORY_BODY: {
+				name: 'Advisory Bodies',
+				single: 'Member',
 				columns: {
-					Title: 'Title',
-					Image: 'Image',
-					admin_email: 'Admin Email',
-					expiration_date: 'Expiration date',
+					job: 'Job'
 				}
 			},
 
+			MAGAZINE_CATEGORY: {
+				name: 'Categories',
+				single: 'Category',
+				columns: {},
+				add_image: 'Add Categories Images'
+			},
+
+			MAGAZINE_NEWS: {
+				name: 'News',
+				single: 'News',
+				columns: {},
+				add_image: 'Add News Images'
+			},
+
+			EVENTS: {
+				name: 'Events',
+				single: 'Event',
+				columns: {
+					date: 'Date'
+				},
+				add_image: 'Add Events Images'
+			},
+
+			ACTIVITIES: {
+				name: 'Activities',
+				single: 'Activity',
+				columns: {},
+				add_image: 'Add Activities Images'
+			},
+
+			VIDEOS: {
+				name: 'Videos',
+				single: 'Video',
+				columns: {
+					link: 'Youtube Link'
+				},
+				add_image: 'Add Videos Images'
+			},
+
+			PHOTOS: {
+				name: 'Photos',
+				single: 'Photos',
+				columns: {},
+				add_image: 'Add Images'
+			},
+
+			TESTIMONIAL: {
+				name: 'Testimonials',
+				single: 'Testimonial',
+				columns: {
+					image: 'Image',
+					evaluate: 'Evaluate',
+					stars: 'Stars'
+				},
+				add_image: 'Add Testimonials Image'
+			},
+
+			MAGAZINE_GOAL: {
+				name: 'Magazine Goal',
+				single: 'Goal',
+				columns: {}
+			},
+
+			MAGAZINE_INFORMATION: {
+				name: 'Magazine Information',
+				columns: {
+					vision: 'vision',
+					mission: 'mission',
+					fax_number: 'fax_number',
+					postal_code: 'postal_code',
+					magazine_link: 'Magazine Link',
+					facebook: 'Facebook',
+					twitter: 'Twitter',
+					instgram: 'Instgram',
+					whatsapp: 'Whatsapp',
+				}
+			},
+
+			USERS: {
+				users: 'Users',
+				single: 'User',
+
+				MAGAZINE_EDITOR_MANAGER: 'Magazine Editor Managers',
+				JOURNAL_EDITOR_DIRECTOR: 'Journal Editor Directors',
+				REFEREES: 'Referees',
+				RESEARCHER: 'Researchers',
+
+				MAGAZINE_EDITOR_MANAGER_SINGLE: 'Magazine Editor Manager',
+				JOURNAL_EDITOR_DIRECTOR_SINGLE: 'Journal Editor Director',
+				REFEREES_SINGLE: 'Referee',
+				RESEARCHER_SINGLE: 'Researcher',
+
+				profile: 'Profile',
+				change_password: 'تغيير كلمة المرور',
+				columns: {
+					first_name: 'First Name',
+					family_name: 'Family Name',
+					alternative_email: 'Alternative Email',
+					country: 'Country',
+					gender: 'Gender',
+					title: 'Title',
+					educational_level: 'Educational level',
+					educational_degree: 'Educational degree',
+					educational_field: 'Educational field',
+					university: 'University',
+					faculty: 'Faculty',
+					fax_number: 'Fax number',
+					account_type: 'Account type'
+				},
+				change_type: 'User Type Changed to {{name}} successfully',
+				change_account_type: 'Change Account Type'
+
+			},
+
+			Gallery: {
+				name: 'Gallery',
+				single: 'Image',
+				images: 'Images',
+				columns: {},
+				view_image: 'View Image',
+				upload: 'Upload',
+				no_images: 'No Gallery Image yet',
+				save_selected_images: 'Save Selected Image',
+				guide_msg: 'Note :: you should select {{image}} then Click on {{save_selected_images}}',
+				delete_image: 'Delete Image',
+				delete_image_body: 'Are you sure ? this Image will be deleted Permanently!',
+				open_gallery: 'Open Gallery'
+			},
+
 		},
+
+		BASIC: {
+			APP_NAME: 'Arab Society for Human and Environmental Development\n',
+			ADMIN_PANEL: 'Admin Panel',
+		},
+
+		COMMON: {
+			id: 'ID',
+			in_active: 'Inactive',
+			active: 'active',
+			activation: 'Activation',
+
+			activation_button: 'Active',
+			deactivation_button: 'Inactive',
+
+			email: 'Email',
+			password: 'Password',
+			remember_me: 'Remember me',
+			password_confirmation: 'Password Confirmation',
+			forget_password: 'Forget Password ?',
+			reset_password: 'Reset Your Password',
+			token: 'Token',
+			content: 'Content',
+			name: 'Name',
+			title: 'Title',
+			images: 'Images',
+			image: 'Image',
+			phone: 'Phone',
+			address: 'Address',
+			visitors: 'Visitors',
+			visit_number: 'Visits',
+			clear_form: 'Clear Form',
+			no_record_found: 'No Record Found',
+			Add_Button: 'Add {{name}}',
+			Edit_Button: 'Edit {{name}}',
+			Delete_Title: 'Delete {{name}}',
+			Delete_Button: 'Delete',
+			Delete_Body: 'Are your sure to delete {{name}} that have id {{id}} ?, This will delete permanently!',
+			Added_successfully: '{{name}} added Successfully',
+			Edited_successfully: '{{name}} edited Successfully',
+			Deleted_successfully: '{{name}} deleted Successfully',
+			Item_not_found: '{{name}} is Not Found or not exists anymore',
+			status_changed: 'Status changed successfully',
+			old_password: 'Old Password',
+			new_password: 'New Password',
+		},
+
+		MSG: {},
+
+		stepper: {
+			basic_data: 'Basic Data',
+			additional_data: 'Additional Data',
+			education_degree: 'المستوى التعليمي',
+			vision_mission: 'Vision and Mission',
+			next: 'Next',
+			back: 'Back',
+			error: 'Please Enter the Required Data'
+
+		},
+
 	}
 };

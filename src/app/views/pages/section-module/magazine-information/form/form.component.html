@@ -1,0 +1,226 @@
+<div class="form-div">
+	<form class="p-3" [formGroup]="form" autocomplete="off">
+
+		<mat-horizontal-stepper #stepper>
+			<mat-step>
+				<ng-template matStepLabel>
+					{{ 'stepper.basic_data' | translate }}
+				</ng-template>
+
+				<!-- title  -->
+				<div class="my-4">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'COMMON.title' | translate }}</mat-label>
+							<input matInput
+								   [readonly]="true"
+								   formControlName="title"
+								   placeholder="{{ 'COMMON.title' | translate }}" >
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- title  -->
+
+				<!-- magazine_link  -->
+				<div class="my-4">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.magazine_link' | translate }}</mat-label>
+							<input matInput
+								   formControlName="magazine_link"
+								   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.magazine_link' | translate }}" >
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- magazine_link  -->
+
+				<div class="row">
+
+					<div class="col-md-6 col-12">
+
+						<!-- phone  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'COMMON.phone' | translate }}</mat-label>
+									<input matInput
+										   formControlName="phone"
+										   placeholder="{{ 'COMMON.phone' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- phone  -->
+
+						<!-- fax_number  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.fax_number' | translate }}</mat-label>
+									<input matInput
+										   formControlName="fax_number"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.fax_number' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- fax_number  -->
+
+						<!-- facebook  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.facebook' | translate }}</mat-label>
+									<input matInput
+										   formControlName="facebook"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.facebook' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- facebook  -->
+
+						<!-- instgram  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.instgram' | translate }}</mat-label>
+									<input matInput
+										   formControlName="instgram"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.instgram' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- instgram  -->
+
+					</div>
+
+					<div class="col-md-6 col-12">
+
+						<!-- email  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'COMMON.email' | translate }}</mat-label>
+									<input matInput
+										   formControlName="email"
+										   placeholder="{{ 'COMMON.email' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- email  -->
+
+						<!-- postal_code  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.postal_code' | translate }}</mat-label>
+									<input matInput
+										   formControlName="postal_code"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.postal_code' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- postal_code  -->
+
+
+						<!-- twitter  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.twitter' | translate }}</mat-label>
+									<input matInput
+										   formControlName="twitter"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.twitter' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- twitter  -->
+
+						<!-- whatsapp  -->
+						<div class="my-4">
+							<div>
+								<mat-form-field class="w-100">
+									<mat-label>{{ 'Components.MAGAZINE_INFORMATION.columns.whatsapp' | translate }}</mat-label>
+									<input matInput
+										   formControlName="whatsapp"
+										   placeholder="{{ 'Components.MAGAZINE_INFORMATION.columns.whatsapp' | translate }}" >
+								</mat-form-field>
+							</div>
+						</div>
+						<!-- whatsapp  -->
+
+					</div>
+
+
+
+				</div>
+
+
+
+				<!-- address  -->
+				<div class="my-3">
+					<div>
+						<mat-form-field class="w-100">
+							<mat-label>{{ 'COMMON.address' | translate }}</mat-label>
+							<textarea matInput
+									  formControlName="address"
+									  placeholder="{{ 'COMMON.address' | translate }}"
+							></textarea>
+						</mat-form-field>
+					</div>
+				</div>
+				<!-- address  -->
+
+				<div class="d-flex justify-content-end">
+					<button matStepperNext class="btn btn-primary">
+						{{ 'stepper.next' | translate }}
+					</button>
+				</div>
+			</mat-step>
+
+			<mat-step>
+				<ng-template matStepLabel>
+					{{ 'stepper.vision_mission' | translate }}
+				</ng-template>
+
+
+				<!-- vision  -->
+				<div class="my-3">
+					<div aria-label="content">
+						<mat-label class="d-block mb-4">{{ 'Components.MAGAZINE_INFORMATION.columns.vision' | translate }}</mat-label>
+						<ckeditor
+							[editor]="Editor"
+							[config]="config_vision"
+							(ready)="onReady($event)"
+							formControlName="vision">
+						</ckeditor>
+					</div>
+				</div>
+				<!-- vision  -->
+
+				<!-- mission  -->
+				<div class="my-3">
+					<div aria-label="content">
+						<mat-label class="d-block mb-4">{{ 'Components.MAGAZINE_INFORMATION.columns.mission' | translate }}</mat-label>
+						<ckeditor
+							[editor]="Editor"
+							[config]="config_mission"
+							(ready)="onReady($event)"
+							formControlName="mission">
+						</ckeditor>
+					</div>
+				</div>
+				<!-- mission  -->
+
+
+				<div class="d-flex justify-content-end">
+					<button matStepperPrevious class="btn btn-dark">
+						{{ 'stepper.back' | translate }}
+					</button>
+				</div>
+
+			</mat-step>
+
+		</mat-horizontal-stepper>
+
+	</form>
+</div>
+
